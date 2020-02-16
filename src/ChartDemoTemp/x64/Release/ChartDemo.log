@@ -1,0 +1,18 @@
+﻿  Reading Qt configuration (C:\AlphaProgram\Qt\Qt5.9.0\5.9\msvc2015_64\bin\qmake.exe)
+  uic ChartDemo01Widget.ui
+  uic ChartDemo02Widget.ui
+  uic ChartDemoWidget.ui
+  rcc ChartDemoWidget.qrc
+  moc ChartDemoWidget.h
+  moc ChartDemo01Widget.h
+  moc ChartDemo02Widget.h
+   RCC: Warning: No resources in 'D:\Alpha\a1\alpha\project\AlphaQtDemo\code\ChartDemo\ChartDemoWidget.qrc'.
+  ChartDemo01Widget.cpp
+  ChartDemo02Widget.cpp
+  ChartDemoWidget.cpp
+  main.cpp
+  qrc_ChartDemoWidget.cpp
+  moc_ChartDemoWidget.cpp
+  moc_ChartDemo01Widget.cpp
+  moc_ChartDemo02Widget.cpp
+  ChartDemo.vcxproj -> D:\Alpha\a1\alpha\project\AlphaQtDemo\x64\Release\ChartDemo.exe

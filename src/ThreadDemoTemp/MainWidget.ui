@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWidget</class>
+ <widget class="QWidget" name="MainWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWidget</string>
+  </property>
+  <layout class="QGridLayout" name="mainWidgetLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="rootWidget" native="true">
+     <layout class="QVBoxLayout" name="rootWidgetLayout" stretch="1,10">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="topWidget" native="true">
+        <layout class="QHBoxLayout" name="topWidgetLayout">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <property name="leftMargin">
+          <number>10</number>
+         </property>
+         <property name="topMargin">
+          <number>10</number>
+         </property>
+         <property name="rightMargin">
+          <number>10</number>
+         </property>
+         <property name="bottomMargin">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="QComboBox" name="comboBox"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="startButton">
+           <property name="text">
+            <string>启动</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="threadAHoverButton">
+           <property name="text">
+            <string>线程A Hover</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="threadAStopButton">
+           <property name="text">
+            <string>线程A stop</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="bottomWidget" native="true">
+        <property name="styleSheet">
+         <string notr="true">background-color:black;
+color:rgb(154, 209, 26)</string>
+        </property>
+        <layout class="QGridLayout" name="bottomWidgetLayout">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QTextBrowser" name="textBrowser"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>startButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>clickStartButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>97</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>122</x>
+     <y>-131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>threadAHoverButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>clickThreadAHoverButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>-155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>threadAStopButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidget</receiver>
+   <slot>clickThreadAStopButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>333</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>-74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWidget</receiver>
+   <slot>comboBoxCurrentIndexChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>41</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>73</x>
+     <y>-106</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>clickStartButton()</slot>
+  <slot>clickThreadAHoverButton()</slot>
+  <slot>clickThreadAStopButton()</slot>
+  <slot>comboBoxCurrentIndexChanged()</slot>
+ </slots>
+</ui>

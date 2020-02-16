@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DatabaseDemo01Widget</class>
+ <widget class="QWidget" name="DatabaseDemo01Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DatabaseDemo01Widget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="rootWidget" native="true">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <layout class="QGridLayout" name="rootWidgetLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab1">
+         <attribute name="title">
+          <string>Tab 1</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="tab1VerticalLayout" stretch="1,5">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="tab1TopWidget" native="true">
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="2" column="3">
+              <widget class="QComboBox" name="productTypeComboBox"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QPushButton" name="addDetectLogButton">
+               <property name="text">
+                <string>新增检测记录</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QPushButton" name="findProductTypeButton">
+               <property name="text">
+                <string>查询产品型号</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QDateTimeEdit" name="stopDateTimeEdit"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDateTimeEdit" name="startDateTimeEdit"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="addProductTypeButton">
+               <property name="text">
+                <string>新增产品型号</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QPushButton" name="initDatabaseButton">
+               <property name="text">
+                <string>初始化数据库</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="4">
+              <widget class="QPushButton" name="findDetectLogButton">
+               <property name="text">
+                <string>查询检测记录</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="5">
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="tab1BottomWidget" native="true">
+            <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QWidget" name="leftWidget" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QTableWidget" name="productTypeTableWidget"/>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="detectLogTableWidget"/>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="rightWidget" native="true">
+               <layout class="QGridLayout" name="gridLayout_2">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QChartView" name="chartViewWidget"/>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab2">
+         <attribute name="title">
+          <string>Tab 2</string>
+         </attribute>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">QtCharts</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>initDatabaseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DatabaseDemo01Widget</receiver>
+   <slot>initDatabaseButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>84</x>
+     <y>-41</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addProductTypeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DatabaseDemo01Widget</receiver>
+   <slot>addProductTypeButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>46</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>73</x>
+     <y>-63</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>findProductTypeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DatabaseDemo01Widget</receiver>
+   <slot>findProductTypeButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>112</x>
+     <y>-52</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addDetectLogButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DatabaseDemo01Widget</receiver>
+   <slot>addDetectLogButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>16</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>23</x>
+     <y>-92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>findDetectLogButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DatabaseDemo01Widget</receiver>
+   <slot>findDetectLogButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>471</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>-64</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>initDatabaseButtonClicked()</slot>
+  <slot>addProductTypeButtonClicked()</slot>
+  <slot>findProductTypeButtonClicked()</slot>
+  <slot>addDetectLogButtonClicked()</slot>
+  <slot>findDetectLogButtonClicked()</slot>
+ </slots>
+</ui>

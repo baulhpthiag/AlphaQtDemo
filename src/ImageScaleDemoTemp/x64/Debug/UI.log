@@ -1,0 +1,13 @@
+﻿  Uic'ing MainWidget.ui...
+  Rcc'ing MainWidget.qrc...
+  Moc'ing MainWidget.h...
+  Moc'ing ImageCoordinateCalculate.h...
+   RCC: Warning: No resources in 'D:\alpha\a0\缂栫▼\Qt\QtDemoImageScale\UI\MainWidget.qrc'.
+  ImageCoordinateCalculate.cpp
+  main.cpp
+  MainWidget.cpp
+  qrc_MainWidget.cpp
+  moc_MainWidget.cpp
+  moc_ImageCoordinateCalculate.cpp
+  UI.vcxproj -> D:\alpha\a0\编程\Qt\QtDemoImageScale\x64\Debug\UI.exe
+  UI.vcxproj -> D:\alpha\a0\编程\Qt\QtDemoImageScale\x64\Debug\UI.pdb (Full PDB)

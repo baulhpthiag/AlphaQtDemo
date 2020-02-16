@@ -1,0 +1,20 @@
+﻿  Reading Qt configuration (C:\AlphaProgram\Qt\Qt5.9.0\5.9\msvc2015_64\bin\qmake.exe)
+  uic MainWidget.ui
+  uic ThreadDemo0.ui
+  rcc QThreadDemo.qrc
+  moc AlphaThread0.h
+  moc MainWidget.h
+  moc AlphaThread1.h
+  moc ThreadDemo0.h
+   RCC: Warning: No resources in 'D:\Alpha\a1\alpha\project\AlphaQtDemo\code\QThreadDemo\QThreadDemo.qrc'.
+  AlphaThread1.cpp
+  main.cpp
+  MainWidget.cpp
+  AlphaThread0.cpp
+  ThreadDemo0.cpp
+  qrc_QThreadDemo.cpp
+  moc_AlphaThread0.cpp
+  moc_MainWidget.cpp
+  moc_AlphaThread1.cpp
+  moc_ThreadDemo0.cpp
+  QThreadDemo.vcxproj -> D:\Alpha\a1\alpha\project\AlphaQtDemo\x64\Release\QThreadDemo.exe
