@@ -30,15 +30,23 @@ void PointerDemoTempMainWindow::test01()
 	QSharedPointer<Student> ptr(student2);
 	sharedPointer1 = ptr;
 	qDebug() << "------";
-	//delete student2;
-	//student2 = nullptr;
 
-	
-	qDebug() << "------";
-	
 }
 
 void PointerDemoTempMainWindow::test02()
+{
+	Student *student2 = new Student;
+	student2->name = "student2";
+	QSharedPointer<Student> ptr(student2);
+	sharedPointer1 = ptr;
+	qDebug() << "------";
+	delete student2;
+	student2 = nullptr;
+
+	qDebug() << "------";
+}
+
+void PointerDemoTempMainWindow::test03()
 {
 	Student studentC;
 	studentC.name = "student3";
