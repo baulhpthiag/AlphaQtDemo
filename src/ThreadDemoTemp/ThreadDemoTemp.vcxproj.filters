@@ -28,43 +28,52 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainWidget.cpp">
+    <ClCompile Include="ThreadDemoMainWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AlphaThread0.cpp">
+    <ClCompile Include="ThreadDemo01Widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AlphaThread1.cpp">
+    <ClCompile Include="ThreadDemo02Widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ThreadDemo0.cpp">
+    <ClCompile Include="Worker01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="MainWidget.h">
+    <QtMoc Include="ThreadDemoMainWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="AlphaThread0.h">
+    <QtMoc Include="ThreadDemo01Widget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="AlphaThread1.h">
+    <QtMoc Include="ThreadDemo02Widget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="ThreadDemo0.h">
+    <QtMoc Include="Worker01.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Controller01.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="MainWidget.ui">
+    <QtUic Include="ThreadDemoMainWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="ThreadDemo0.ui">
+    <QtUic Include="ThreadDemo01Widget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ThreadDemo02Widget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="QThreadDemo.qrc">
+    <QtRcc Include="ThreadDemoMainWidget.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>

@@ -1,8 +1,8 @@
 <UI version="4.0" >
- <class>ThreadDemo0</class>
- <widget class="QWidget" name="ThreadDemo0" >
+ <class>ThreadDemo02Widget</class>
+ <widget class="QWidget" name="ThreadDemo02Widget" >
   <property name="objectName" >
-   <string notr="true">ThreadDemo0</string>
+   <string notr="true">ThreadDemo02Widget</string>
   </property>
   <property name="geometry" >
    <rect>
@@ -13,7 +13,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>ThreadDemo0</string>
+   <string>ThreadDemo02Widget</string>
   </property>
  </widget>
  <layoutDefault spacing="6" margin="11" />

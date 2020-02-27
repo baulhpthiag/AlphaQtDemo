@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CAC3BE1D-73C6-480D-99C8-7598E44ED4F8}</ProjectGuid>
-    <Keyword>QtVS_v301</Keyword>
+    <ProjectGuid>{FAED3A86-4F43-4BC7-8DB1-371508D8D35A}</ProjectGuid>
+    <Keyword>QtVS_v302</Keyword>
     <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
-    <ProjectName>ThreadDemoTemp</ProjectName>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -26,15 +26,6 @@
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
-    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-  </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
   </Target>
@@ -89,30 +80,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AlphaThread1.cpp" />
+    <ClCompile Include="Controller01.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainWidget.cpp" />
-    <ClCompile Include="AlphaThread0.cpp" />
-    <ClCompile Include="ThreadDemo0.cpp" />
+    <ClCompile Include="ThreadDemo01Widget.cpp" />
+    <ClCompile Include="ThreadDemo02Widget.cpp" />
+    <ClCompile Include="ThreadDemoMainWidget.cpp" />
+    <ClCompile Include="Worker01.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="MainWidget.ui" />
-    <QtUic Include="ThreadDemo0.ui" />
+    <QtMoc Include="ThreadDemoMainWidget.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="QThreadDemo.qrc" />
+    <QtUic Include="ThreadDemo01Widget.ui" />
+    <QtUic Include="ThreadDemo02Widget.ui" />
+    <QtUic Include="ThreadDemoMainWidget.ui" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="AlphaThread0.h" />
+    <QtRcc Include="ThreadDemoMainWidget.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="MainWidget.h" />
+    <QtMoc Include="ThreadDemo01Widget.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="AlphaThread1.h" />
+    <QtMoc Include="ThreadDemo02Widget.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="ThreadDemo0.h" />
+    <QtMoc Include="Worker01.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Controller01.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
