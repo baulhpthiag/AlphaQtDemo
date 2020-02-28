@@ -13,4 +13,21 @@ public:
 
 private:
 	Ui::ThreadDemo02Widget ui;
+
+	//属性
+
+	//方法
+private:
+	void init();
+	void initMember();
+
+	//事件
+
+	//qt槽
+	public slots:
+	void test01ButtonClicked();
+	void test02ButtonClicked();
+
+	//qt信号
+
 };

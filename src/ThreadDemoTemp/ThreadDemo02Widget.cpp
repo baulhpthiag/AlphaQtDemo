@@ -14,3 +14,18 @@ ThreadDemo02Widget::~ThreadDemo02Widget()
 
 	qDebug() << "~ThreadDemo02() end";
 }
+
+void ThreadDemo02Widget::init()
+{
+
+}
+
+void ThreadDemo02Widget::initMember()
+{
+
+}
+
+void ThreadDemo02Widget::test02ButtonClicked()
+{
+
+}

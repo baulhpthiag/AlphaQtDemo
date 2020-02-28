@@ -9,10 +9,8 @@ Controller01::Controller01(QObject *parent)
 
 Controller01::~Controller01()
 {
-	
-		thread01.quit();
-		thread01.wait();
-	
+	thread01.quit();
+	thread01.wait();
 }
 
 void Controller01::init()

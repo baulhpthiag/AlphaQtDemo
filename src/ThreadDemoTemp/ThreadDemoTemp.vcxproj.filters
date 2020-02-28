@@ -43,6 +43,12 @@
     <ClCompile Include="Controller01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Controller02.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Worker02.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ThreadDemoMainWidget.h">
@@ -58,6 +64,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="Controller01.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Controller02.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Worker02.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

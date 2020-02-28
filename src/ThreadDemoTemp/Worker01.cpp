@@ -10,7 +10,9 @@ Worker01::Worker01(QObject *parent)
 
 Worker01::~Worker01()
 {
-
+	qDebug() << "~work() begin";
+	
+	qDebug() << "~work() end";
 }
 
 
