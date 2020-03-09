@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include "Producer.h"
 
 class Worker02 : public QObject
 {
@@ -17,7 +18,10 @@ public:
 	//ÊÂ¼þ
 
 	//qt²Û
+public slots:
+void start(Producer* p);
 
 	//qtÐÅºÅ
-
+signals:
+void finish();
 };

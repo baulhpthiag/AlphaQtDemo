@@ -49,6 +49,9 @@
     <ClCompile Include="Worker02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Producer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ThreadDemoMainWidget.h">
@@ -70,6 +73,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="Worker02.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Producer.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

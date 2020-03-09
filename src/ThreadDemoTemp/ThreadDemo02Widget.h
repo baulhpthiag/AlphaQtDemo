@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include "ui_ThreadDemo02Widget.h"
+#include "Controller02.h"
 
 class ThreadDemo02Widget : public QWidget
 {
@@ -15,6 +16,8 @@ private:
 	Ui::ThreadDemo02Widget ui;
 
 	// Ù–‘
+private:
+	Controller02 controller;
 
 	//∑Ω∑®
 private:

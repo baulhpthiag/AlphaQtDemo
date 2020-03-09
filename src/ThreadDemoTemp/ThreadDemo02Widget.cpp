@@ -25,6 +25,11 @@ void ThreadDemo02Widget::initMember()
 
 }
 
+void ThreadDemo02Widget::test01ButtonClicked()
+{
+	controller.begin();
+}
+
 void ThreadDemo02Widget::test02ButtonClicked()
 {
 

@@ -83,6 +83,7 @@
     <ClCompile Include="Controller01.cpp" />
     <ClCompile Include="Controller02.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Producer.cpp" />
     <ClCompile Include="ThreadDemo01Widget.cpp" />
     <ClCompile Include="ThreadDemo02Widget.cpp" />
     <ClCompile Include="ThreadDemoMainWidget.cpp" />
@@ -117,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Worker02.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Producer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
