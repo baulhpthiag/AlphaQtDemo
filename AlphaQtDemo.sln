@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtDemo11", "src\QtDemo11\Qt
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtDemo12", "src\QtDemo12\QtDemo12.vcxproj", "{571A3801-20BF-3518-B69C-DC3A9EE6BBB9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LambdaDemoTemp", "LambdaDemoTemp\LambdaDemoTemp.vcxproj", "{5A78358F-F8BC-4EFD-A451-27B529C90F74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -123,6 +125,10 @@ Global
 		{571A3801-20BF-3518-B69C-DC3A9EE6BBB9}.Debug|x64.Build.0 = Debug|x64
 		{571A3801-20BF-3518-B69C-DC3A9EE6BBB9}.Release|x64.ActiveCfg = Release|x64
 		{571A3801-20BF-3518-B69C-DC3A9EE6BBB9}.Release|x64.Build.0 = Release|x64
+		{5A78358F-F8BC-4EFD-A451-27B529C90F74}.Debug|x64.ActiveCfg = Debug|x64
+		{5A78358F-F8BC-4EFD-A451-27B529C90F74}.Debug|x64.Build.0 = Debug|x64
+		{5A78358F-F8BC-4EFD-A451-27B529C90F74}.Release|x64.ActiveCfg = Release|x64
+		{5A78358F-F8BC-4EFD-A451-27B529C90F74}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
