@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FAED3A86-4F43-4BC7-8DB1-371508D8D35A}</ProjectGuid>
     <Keyword>QtVS_v302</Keyword>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -43,11 +43,11 @@
   </ImportGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <QtInstall>msvc2015_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;widgets;concurrent</QtModules>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QtInstall>msvc2015_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;widgets;concurrent</QtModules>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
     <Import Project="$(QtMsBuild)\qt.props" />
@@ -86,6 +86,7 @@
     <ClCompile Include="Producer.cpp" />
     <ClCompile Include="ThreadDemo01Widget.cpp" />
     <ClCompile Include="ThreadDemo02Widget.cpp" />
+    <ClCompile Include="ThreadDemo03Widget.cpp" />
     <ClCompile Include="ThreadDemoMainWidget.cpp" />
     <ClCompile Include="Worker01.cpp" />
     <ClCompile Include="Worker02.cpp" />
@@ -96,6 +97,7 @@
   <ItemGroup>
     <QtUic Include="ThreadDemo01Widget.ui" />
     <QtUic Include="ThreadDemo02Widget.ui" />
+    <QtUic Include="ThreadDemo03Widget.ui" />
     <QtUic Include="ThreadDemoMainWidget.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Producer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="ThreadDemo03Widget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

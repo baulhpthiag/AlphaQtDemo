@@ -1,6 +1,7 @@
 #include "ThreadDemoMainWidget.h"
 #include "ThreadDemo01Widget.h"
 #include "ThreadDemo02Widget.h"
+#include "ThreadDemo03Widget.h"
 
 ThreadDemoMainWidget::ThreadDemoMainWidget(QWidget *parent)
 	: QWidget(parent)
@@ -41,6 +42,11 @@ void ThreadDemoMainWidget::initMember()
 	ThreadDemo02Widget * threadDemo02Widget = new ThreadDemo02Widget;
 	threadDemo02Widget->setObjectName("threadDemo02Widget");
 	demoWidgets.append(threadDemo02Widget);
+
+	ThreadDemo03Widget * threadDemo03Widget = new ThreadDemo03Widget;
+	threadDemo03Widget->setObjectName("threadDemo03Widget");
+	demoWidgets.append(threadDemo03Widget);
+
 
 	for (int i = 0; i < demoWidgets.count(); i++)
 	{

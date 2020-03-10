@@ -52,6 +52,9 @@
     <ClCompile Include="Producer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ThreadDemo03Widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="ThreadDemoMainWidget.h">
@@ -78,6 +81,9 @@
     <QtMoc Include="Producer.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="ThreadDemo03Widget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="ThreadDemoMainWidget.ui">
@@ -87,6 +93,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="ThreadDemo02Widget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ThreadDemo03Widget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
