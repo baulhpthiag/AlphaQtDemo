@@ -10,6 +10,7 @@ LambdaDemoTempWidget::LambdaDemoTempWidget(QWidget *parent)
 void LambdaDemoTempWidget::test01ButtonClicked()
 {
 	/*
+
 	lambda格式
 	[capture](parameters) mutable ->return-type{ statement }
 	1.[capture]：捕捉列表。捕捉列表总是出现在Lambda函数的开始处。实际上，[]是Lambda引出符。编译器根据该引出符判断接下来的代码是否是Lambda函数。
@@ -46,5 +47,8 @@ void LambdaDemoTempWidget::test01ButtonClicked()
 		qDebug() << "c:" << c;
 	};
 	func(3);
+
+
+	QObject::connect(this, &LambdaDemoTempWidget::testSignal,this, [=]() {qDebug() << "lambda 表达式"; });
 
 }

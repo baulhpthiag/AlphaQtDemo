@@ -24,5 +24,6 @@ private:
 public slots:
 	void test01ButtonClicked();
 	//qt–≈∫≈
-
+signals:
+	void testSignal();
 };
