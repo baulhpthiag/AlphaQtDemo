@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MetaObjectDemoTempMainWidgetClass</class>
+ <widget class="QWidget" name="MetaObjectDemoTempMainWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MetaObjectDemoTempMainWidget</string>
+  </property>
+  <widget class="QPushButton" name="test01Button">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>test01</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>190</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>90</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="test02Button">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>30</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>test02</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="test03Button">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>30</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>test03</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MetaObjectDemoTempMainWidget.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>test01Button</sender>
+   <signal>clicked()</signal>
+   <receiver>MetaObjectDemoTempMainWidgetClass</receiver>
+   <slot>test01ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>102</x>
+     <y>-14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>editingFinished()</signal>
+   <receiver>MetaObjectDemoTempMainWidgetClass</receiver>
+   <slot>lineEditEditingFInished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>134</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>134</x>
+     <y>-13</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>test02Button</sender>
+   <signal>clicked()</signal>
+   <receiver>MetaObjectDemoTempMainWidgetClass</receiver>
+   <slot>test02ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>240</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>-24</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>test03Button</sender>
+   <signal>clicked()</signal>
+   <receiver>MetaObjectDemoTempMainWidgetClass</receiver>
+   <slot>test03ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>396</x>
+     <y>-11</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>test01ButtonClicked()</slot>
+  <slot>lineEditEditingFInished()</slot>
+  <slot>test02ButtonClicked()</slot>
+  <slot>test03ButtonClicked()</slot>
+ </slots>
+</ui>
