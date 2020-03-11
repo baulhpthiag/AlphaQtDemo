@@ -45,6 +45,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LambdaDemoTemp", "src\Lambd
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MetaObjectDemoTemp", "src\MetaObjectDemoTemp\MetaObjectDemoTemp.vcxproj", "{41AD157B-F7B1-47C4-8538-DE52B6CB2733}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlotAndSignalDemoTemp", "src\SlotAndSignalDemoTemp\SlotAndSignalDemoTemp.vcxproj", "{00DDE72A-89ED-484D-9F57-0FA2674A0060}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -135,6 +137,10 @@ Global
 		{41AD157B-F7B1-47C4-8538-DE52B6CB2733}.Debug|x64.Build.0 = Debug|x64
 		{41AD157B-F7B1-47C4-8538-DE52B6CB2733}.Release|x64.ActiveCfg = Release|x64
 		{41AD157B-F7B1-47C4-8538-DE52B6CB2733}.Release|x64.Build.0 = Release|x64
+		{00DDE72A-89ED-484D-9F57-0FA2674A0060}.Debug|x64.ActiveCfg = Debug|x64
+		{00DDE72A-89ED-484D-9F57-0FA2674A0060}.Debug|x64.Build.0 = Debug|x64
+		{00DDE72A-89ED-484D-9F57-0FA2674A0060}.Release|x64.ActiveCfg = Release|x64
+		{00DDE72A-89ED-484D-9F57-0FA2674A0060}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
