@@ -36,8 +36,6 @@ void MvvmDemoTempMainWidget::init()
 	connect(&student, &Student::nameChange, ui.label, &QLabel::setText);
 
 
-
-
 	//
 	int singal = ui.lineEdit->metaObject()->property("µÚi¸öÐÅºÅ").notifySignalIndex();
 	int slot = student.metaObject()->indexOfSlot("setName");
