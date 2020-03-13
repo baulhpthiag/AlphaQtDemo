@@ -49,6 +49,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlotAndSignalDemoTemp", "sr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MvvmDemoTemp", "src\MvvmDemoTemp\MvvmDemoTemp.vcxproj", "{3FC92692-9B6B-40DD-90BF-8CDD939C0789}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IniDemoTemp", "src\IniDemoTemp\IniDemoTemp.vcxproj", "{A5DE657A-05C1-49A8-880C-F5CF3699740E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -147,6 +149,10 @@ Global
 		{3FC92692-9B6B-40DD-90BF-8CDD939C0789}.Debug|x64.Build.0 = Debug|x64
 		{3FC92692-9B6B-40DD-90BF-8CDD939C0789}.Release|x64.ActiveCfg = Release|x64
 		{3FC92692-9B6B-40DD-90BF-8CDD939C0789}.Release|x64.Build.0 = Release|x64
+		{A5DE657A-05C1-49A8-880C-F5CF3699740E}.Debug|x64.ActiveCfg = Debug|x64
+		{A5DE657A-05C1-49A8-880C-F5CF3699740E}.Debug|x64.Build.0 = Debug|x64
+		{A5DE657A-05C1-49A8-880C-F5CF3699740E}.Release|x64.ActiveCfg = Release|x64
+		{A5DE657A-05C1-49A8-880C-F5CF3699740E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

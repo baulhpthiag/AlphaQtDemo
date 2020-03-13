@@ -12,13 +12,14 @@ SlotAndSignalDemoTempMainWidget::SlotAndSignalDemoTempMainWidget(QWidget *parent
 
 void SlotAndSignalDemoTempMainWidget::test01ButtonClicked()
 {
-
-		//Qt::AutoConnection	信号槽在同一线程，同Qt::DirectConnection.不在同一线程，同Qt::QueuedConnection.
-		//Qt::DirectConnection	发射完信号后立即执行槽，只有槽函数执行完成返回后，发射信号后面的代码才可以执行
-		//Qt::QueuedConnection	接收部件所在的线程的事件循环返回后再执行槽，无论槽执行与否，发射信号处后面的代码都会立即执行
-		//Qt::BlockingQueuedConnection	类似于Qt::QueuedConnection, 只能用在信号和槽在不同线程的情况下
-		//Qt::UniqueConnection	类似Qt::AutoConnection, 但是两个对象间相同的信号与槽只能有唯一关联。在Qt4.6中引入。i.e.在一组对象中，如果相同的信号已经链接到相同的槽函数，再次连接将返回失败。
-		//Qt::AutoCompactConnection	类似Qt::AutoConnection, Qt3中的默认类型，在Qt5中已移除
+	/*
+	Qt::AutoConnection	信号槽在同一线程，同Qt::DirectConnection.不在同一线程，同Qt::QueuedConnection.
+	Qt::DirectConnection	发射完信号后立即执行槽，只有槽函数执行完成返回后，发射信号后面的代码才可以执行
+	Qt::QueuedConnection	接收部件所在的线程的事件循环返回后再执行槽，无论槽执行与否，发射信号处后面的代码都会立即执行
+	Qt::BlockingQueuedConnection	类似于Qt::QueuedConnection, 只能用在信号和槽在不同线程的情况下
+	Qt::UniqueConnection	类似Qt::AutoConnection, 但是两个对象间相同的信号与槽只能有唯一关联。在Qt4.6中引入。i.e.在一组对象中，如果相同的信号已经链接到相同的槽函数，再次连接将返回失败。
+	Qt::AutoCompactConnection	类似Qt::AutoConnection, Qt3中的默认类型，在Qt5中已移除
+	*/
 
 
 
