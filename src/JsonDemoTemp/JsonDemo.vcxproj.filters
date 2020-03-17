@@ -37,6 +37,18 @@
     <ClCompile Include="JsonDemo02Widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="JsonDemo03Widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="School.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="JsonDemoWidget.h">
@@ -48,6 +60,18 @@
     <QtMoc Include="JsonDemo02Widget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="JsonDemo03Widget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="School.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Student.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="JsonHelper.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="JsonDemoWidget.ui">
@@ -57,6 +81,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="JsonDemo02Widget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="JsonDemo03Widget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

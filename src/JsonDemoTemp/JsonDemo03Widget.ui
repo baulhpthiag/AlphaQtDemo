@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>JsonDemo03Widget</class>
+ <widget class="QWidget" name="JsonDemo03Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>JsonDemo03Widget</string>
+  </property>
+  <widget class="QPushButton" name="test01Button">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>test01Button</sender>
+   <signal>clicked()</signal>
+   <receiver>JsonDemo03Widget</receiver>
+   <slot>test01ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>96</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>-40</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>test01ButtonClicked()</slot>
+ </slots>
+</ui>

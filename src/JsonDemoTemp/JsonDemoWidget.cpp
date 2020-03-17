@@ -31,6 +31,14 @@ void JsonDemoWidget::init()
 	ui.comboBox->addItem("JsonDemo02");
 	demoWidgets.append(jsonDemo02Widget);
 
+	jsonDemo03Widget = new JsonDemo03Widget;
+	bottomWidgetLayout->addWidget(jsonDemo03Widget);
+	bottomWidgetLayout->setStretch(2, 1);
+	jsonDemo03Widget->setVisible(false);
+	ui.comboBox->addItem("JsonDemo03");
+	demoWidgets.append(jsonDemo03Widget);
+
+
 	comboBoxCurrentIndexChanged();
 
 }

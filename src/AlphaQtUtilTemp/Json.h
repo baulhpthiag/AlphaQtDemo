@@ -1,10 +1,10 @@
-#ifndef JSON_H
-#define JSON_H
+
 
 #include <QJsonArray>
 #include <QJsonValue>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include "alphaqtutil_global.h"
 
 struct JsonPrivate;
 
@@ -41,7 +41,7 @@ struct JsonPrivate;
 *
 * 注意: JSON 文件要使用 UTF-8 编码。
 */
-class Json {
+ class ALPHAQTUTILTEMP_EXPORT Json {
 public:
 	/**
 	* 使用 JSON 字符串或者从文件读取 JSON 内容创建 Json 对象。
@@ -112,4 +112,3 @@ public:
 	JsonPrivate *d;
 };
 
-#endif // JSON_H

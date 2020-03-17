@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BEF6EF28-951A-41B9-B390-E31CD96F0322}</ProjectGuid>
     <Keyword>QtVS_v301</Keyword>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <ProjectName>JsonDemoTemp</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -68,14 +68,14 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalIncludeDirectories>$(SolutionDir)code\AlphaCommonUtil;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\AlphaQtUtilTemp;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>AlphaCommonUtil.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>AlphaQtUtilTemp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -84,7 +84,7 @@
       <DebugInformationFormat />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalIncludeDirectories>$(SolutionDir)code\AlphaCommonUtil;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)code\AlphaCommonUtil;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -97,8 +97,12 @@
   <ItemGroup>
     <ClCompile Include="JsonDemo01Widget.cpp" />
     <ClCompile Include="JsonDemo02Widget.cpp" />
+    <ClCompile Include="JsonDemo03Widget.cpp" />
     <ClCompile Include="JsonDemoWidget.cpp" />
+    <ClCompile Include="JsonHelper.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="School.cpp" />
+    <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="JsonDemoWidget.h" />
@@ -106,6 +110,7 @@
   <ItemGroup>
     <QtUic Include="JsonDemo01Widget.ui" />
     <QtUic Include="JsonDemo02Widget.ui" />
+    <QtUic Include="JsonDemo03Widget.ui" />
     <QtUic Include="JsonDemoWidget.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +121,18 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="JsonDemo02Widget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="JsonDemo03Widget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="School.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Student.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="JsonHelper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

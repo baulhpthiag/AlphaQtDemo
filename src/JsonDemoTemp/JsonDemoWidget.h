@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include "JsonDemo01Widget.h"
 #include "JsonDemo02Widget.h"
+#include "JsonDemo03Widget.h"
 
 class JsonDemoWidget : public QWidget
 {
@@ -17,10 +18,11 @@ private:
 	Ui::JsonDemoWidgetClass ui;
 
 private:
-	QVBoxLayout * bottomWidgetLayout = NULL;
+	QVBoxLayout * bottomWidgetLayout;
 	QList<QWidget *> demoWidgets;
-	JsonDemo01Widget * jsonDemo01Widget = NULL;
-	JsonDemo02Widget * jsonDemo02Widget = NULL;
+	JsonDemo01Widget * jsonDemo01Widget;
+	JsonDemo02Widget * jsonDemo02Widget;
+	JsonDemo03Widget * jsonDemo03Widget;
 
 private:
 	void init();
