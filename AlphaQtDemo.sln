@@ -54,6 +54,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MvvmDemoTemp", "src\MvvmDem
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IniDemoTemp", "src\IniDemoTemp\IniDemoTemp.vcxproj", "{A5DE657A-05C1-49A8-880C-F5CF3699740E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CsvDataSort", "src\CsvDataSort\CsvDataSort.vcxproj", "{07F7B17C-E134-4CBE-9DF5-EC74B4D324A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -156,6 +158,10 @@ Global
 		{A5DE657A-05C1-49A8-880C-F5CF3699740E}.Debug|x64.Build.0 = Debug|x64
 		{A5DE657A-05C1-49A8-880C-F5CF3699740E}.Release|x64.ActiveCfg = Release|x64
 		{A5DE657A-05C1-49A8-880C-F5CF3699740E}.Release|x64.Build.0 = Release|x64
+		{07F7B17C-E134-4CBE-9DF5-EC74B4D324A1}.Debug|x64.ActiveCfg = Debug|x64
+		{07F7B17C-E134-4CBE-9DF5-EC74B4D324A1}.Debug|x64.Build.0 = Debug|x64
+		{07F7B17C-E134-4CBE-9DF5-EC74B4D324A1}.Release|x64.ActiveCfg = Release|x64
+		{07F7B17C-E134-4CBE-9DF5-EC74B4D324A1}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
