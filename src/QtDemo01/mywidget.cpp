@@ -126,8 +126,8 @@ void MyWidget::Method03()
     myReceiver->setParent(this);
 
     //发生重载时，采用函数指针传递
-    void(MySender::*tempMySignal01)() = &MySender::MySignal01;
-    void(MyReceiver::*tempMySlot01)() = &MyReceiver::MySlot01;
+	void(MySender::*tempMySignal01)() = &MySender::MySignal01;
+	void(MyReceiver::*tempMySlot01)() = &MyReceiver::MySlot01;
 
 
     connect(qPushButton04,&QPushButton::clicked,mysender,tempMySignal01);

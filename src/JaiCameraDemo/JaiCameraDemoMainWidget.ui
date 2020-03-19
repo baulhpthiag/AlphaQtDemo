@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>JaiCameraDemoMainWidgetClass</class>
+ <widget class="QWidget" name="JaiCameraDemoMainWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>JaiCameraDemoMainWidget</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
+   <item>
+    <widget class="QWidget" name="leftWidget" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1">
+      <item>
+       <widget class="QWidget" name="leftTopWidget" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QPushButton" name="searchCamerasButton">
+           <property name="text">
+            <string>查找相机</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="camerasTableWidget"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="leftBottomWidget" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QPushButton" name="startButton">
+           <property name="text">
+            <string>启动</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="stopButton">
+           <property name="text">
+            <string>停止</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="exitButton">
+           <property name="text">
+            <string>退出</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="cameraConfigTableWidget"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="rightWidget" native="true">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="imageLabel">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="JaiCameraDemoMainWidget.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>searchCamerasButton</sender>
+   <signal>clicked()</signal>
+   <receiver>JaiCameraDemoMainWidgetClass</receiver>
+   <slot>searchCamerasButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>118</x>
+     <y>-22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>startButton</sender>
+   <signal>clicked()</signal>
+   <receiver>JaiCameraDemoMainWidgetClass</receiver>
+   <slot>startButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>424</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-11</x>
+     <y>424</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stopButton</sender>
+   <signal>clicked()</signal>
+   <receiver>JaiCameraDemoMainWidgetClass</receiver>
+   <slot>stopButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>449</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-34</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>JaiCameraDemoMainWidgetClass</receiver>
+   <slot>exitButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>481</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-17</x>
+     <y>482</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>searchCamerasButtonClicked()</slot>
+  <slot>startButtonClicked()</slot>
+  <slot>stopButtonClicked()</slot>
+  <slot>exitButtonClicked()</slot>
+ </slots>
+</ui>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QMetaProperty>
 
 class JsonHelper : public QObject
 {
@@ -20,17 +21,17 @@ static bool JsonHelper::saveJson(T& t, QString filePath)
 {
 	QObject *obj = (QObject*)(&t);
 	
-	const QMetaObject  metaObj = obj.metaObject();
+	const QMetaObject * metaObj = obj->metaObject();
 
-	/*int count = metaObj->propertyCount();
+	int count = metaObj->propertyCount();
 	int index = metaObj->propertyOffset();
 	for (int i = index; i < count; ++i) {
 		QMetaProperty metaproperty = metaObj->property(i);
-		metaproperty
+		
 		const char *name = metaproperty.name();
 		QVariant value = t->property(name);
 		qDebug() << name << value;
-	}*/
+	}
 
 	return true;
 
