@@ -32,15 +32,17 @@ void JsonDemo03Widget::test01ButtonClicked()
 		school._value5.append("test"+QString::number(i));
 	}
 
-	//for (int i = 0; i < 5; i++)
-	//{
-	//	//Student *s = new Student;
-	//	//s->_name = "student" + QString::number(i);
-	//	//school._students.append(s);
-	//	Student s ;
-	//	s._name = "student" + QString::number(i);
-	//	school._students.append(s);
-	//}
+	for (int i = 0; i < 5; i++)
+	{
+		//Student *s = new Student;
+		//s->_name = "student" + QString::number(i);
+		//school._students.append(s);
+
+		Student *student = new Student;
+		student->_name = "student" + QString::number(i);
+		
+		school._students.append(student);
+	}
 
 	JsonHelper::saveJson(school, qApp->applicationDirPath() + "/jsonDemo.json");
 

@@ -5,6 +5,15 @@ Student::Student(QObject *parent)
 {
 }
 
+
+//Student::Student(const Student & stu)
+//{
+//	this->_name = stu._name;
+//}
+
 Student::~Student()
 {
 }
+
+
+

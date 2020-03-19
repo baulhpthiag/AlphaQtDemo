@@ -43,6 +43,7 @@ void JsonHelper::insertValue(QJsonObject* jsonObj, QObject *obj)
 		}
 		else if (qstringTypeName.contains("QList"))
 		{
+			/*
 			QList<QString> list=val.value<QList<QString>>();
 
 			QJsonArray jsonArray;
@@ -52,6 +53,7 @@ void JsonHelper::insertValue(QJsonObject* jsonObj, QObject *obj)
 				jsonArray.append(item);
 			}
 			jsonObj->insert(qstringKey, jsonArray);
+			*/
 		}
 		else
 		{

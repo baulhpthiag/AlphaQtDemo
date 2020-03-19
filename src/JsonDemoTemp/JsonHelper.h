@@ -49,7 +49,7 @@ static bool JsonHelper::saveJson(T& t, QString filePath)
 
 }
 
-template<class T>
+template<typename T>
 bool JsonHelper::readJson(T& t,QString filePath)
 {
 	QFile loadFile(filePath);

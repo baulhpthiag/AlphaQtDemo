@@ -52,4 +52,5 @@ void PointerDemoTempMainWindow::test03()
 	studentC.name = "student3";
 	QSharedPointer<Student> ptr2(&studentC);
 	sharedPointer2 = ptr2;
+	
 }

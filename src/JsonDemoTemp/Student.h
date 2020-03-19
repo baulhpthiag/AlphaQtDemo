@@ -11,13 +11,14 @@ class Student : public QObject
 
 	Q_PROPERTY(QString name MEMBER _name)
 public:
-	Student(QObject *parent = nullptr);
+	//Student(const Student & stu);
+	 Student(QObject *parent=nullptr);
 	~Student();
 
 
 public:
 	QString _name;
-
+	
 
 
 };
