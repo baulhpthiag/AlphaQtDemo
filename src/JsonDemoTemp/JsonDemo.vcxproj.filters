@@ -49,6 +49,9 @@
     <ClCompile Include="JsonHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TestStruct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="JsonDemoWidget.h">
@@ -72,6 +75,9 @@
     <QtMoc Include="JsonHelper.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="TestStruct.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="JsonDemoWidget.ui">
@@ -91,5 +97,10 @@
     <QtRcc Include="JsonDemoWidget.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ObjectFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

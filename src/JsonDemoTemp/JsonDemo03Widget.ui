@@ -23,7 +23,20 @@
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>test01Button</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="test02Button">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>100</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>test02Button</string>
    </property>
   </widget>
  </widget>
@@ -46,8 +59,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>test02Button</sender>
+   <signal>clicked()</signal>
+   <receiver>JsonDemo03Widget</receiver>
+   <slot>test02ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-7</x>
+     <y>109</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>test01ButtonClicked()</slot>
+  <slot>test02ButtonClicked()</slot>
  </slots>
 </ui>

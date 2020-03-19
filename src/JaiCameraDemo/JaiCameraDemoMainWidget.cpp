@@ -309,26 +309,26 @@ void JaiCameraDemoMainWidget::StreamCBFunc(J_tIMAGE_INFO * pAqImageInfo)
 	// Test of chunk data
 	// Try to read one of the cunks from the test camera
 	int64_t chunkDataValue = 0;
-	//J_STATUS_TYPE err = J_Camera_GetValueInt64(m_hCam, (int8_t*)"ChunkTimestamp", &chunkDataValue);
-	//if (err == J_ST_SUCCESS)
-	//{
-	//	////todo 
-	//	//WCHAR buffer[100];
+	J_STATUS_TYPE err = J_Camera_GetValueInt64(m_hCam, (int8_t*)"ChunkTimestamp", &chunkDataValue);
+	if (err == J_ST_SUCCESS)
+	{
+		////todo 
+		//WCHAR buffer[100];
 
-	//	//wsprintf(buffer, _T("Chunk Timestamp=%I64u\n"), chunkDataValue);
-	//	//OutputDebugString(buffer);
-	//}
+		//wsprintf(buffer, _T("Chunk Timestamp=%I64u\n"), chunkDataValue);
+		//OutputDebugString(buffer);
+	}
 
-	//if (m_hView)
-	//{
-	//	if ((pAqImageInfo->iSizeX != 0)
-	//		&& (pAqImageInfo->iSizeY != 0)
-	//		&& (pAqImageInfo->iPixelType != 0))
-	//	{
-	//		// Shows image
-	//		J_Image_ShowImage(m_hView, pAqImageInfo);
-	//	}
-	//}
+	if (m_hView)
+	{
+		if ((pAqImageInfo->iSizeX != 0)
+			&& (pAqImageInfo->iSizeY != 0)
+			&& (pAqImageInfo->iPixelType != 0))
+		{
+			// Shows image
+			J_Image_ShowImage(m_hView, pAqImageInfo);
+		}
+	}
 }
 
 void JaiCameraDemoMainWidget::searchCamerasButtonClicked()

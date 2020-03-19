@@ -14,7 +14,6 @@ void MvvmDemoTempMainWidget::init()
 
 	ui.lineEdit->setProperty("binding", "name");
 
-
 	const QMetaObject * obj = student.metaObject();
 	QMetaMethod setName;
 	for (int i = 0; i < obj->methodCount(); i++)

@@ -17,4 +17,5 @@ private:
 
 	public slots:
 	void test01ButtonClicked();
+	void test02ButtonClicked();
 };
