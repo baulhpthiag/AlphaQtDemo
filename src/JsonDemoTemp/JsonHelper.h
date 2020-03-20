@@ -23,19 +23,21 @@ public:
 	static bool readJson(T& t,QString filePath);
 
 
-	static void insertValue(QJsonObject* jsonObj, QObject *obj);
+	static void setValueToJson(QJsonObject* jsonObj, QObject *obj);
+
+	static void readValueFromJson(QJsonObject* jsonObj, QObject *obj);
 };
 
 template<class T>
 static bool JsonHelper::saveJson(T& t, QString filePath)
 {
-	QJsonObject *jsonObj = new QJsonObject;
+	QJsonObject jsonObj;
 	QObject *obj = (QObject*)(&t);
 
-	insertValue(jsonObj,obj);
+	setValueToJson(&jsonObj,obj);
 
 	QJsonDocument jsonDoc;
-	jsonDoc.setObject(*jsonObj);
+	jsonDoc.setObject(jsonObj);
 	
 	QFile file(filePath);
 	if (!file.exists())
@@ -78,54 +80,9 @@ bool JsonHelper::readJson(T& t,QString filePath)
 
 	QObject *obj = (QObject*)(&t);
 
-	const QMetaObject * metaObj = obj->metaObject();
+	readValueFromJson(rootObj, obj);
 
-	int count = metaObj->propertyCount();
-	int index = metaObj->propertyOffset();
-	for (int i = index; i < count; ++i) {
-
-		QMetaProperty metaProperty = metaObj->property(i);
-		const char *key = metaProperty.name();
-		QString qstringKey = QString::fromUtf8(key);
-
-		QVariant val = obj->property(key);
-		const char * typeName = val.typeName();
-		QString qstringTypeName = QString::fromUtf8(typeName);
-
-		if ("int" == qstringTypeName)
-		{
-			obj->setProperty(key, rootObj.value(qstringKey).toInt());
-		}
-		else if ("double" == qstringTypeName)
-		{
-			obj->setProperty(key, rootObj.value(qstringKey).toDouble());
-		}
-		else if ("bool" == qstringTypeName)
-		{
-			obj->setProperty(key, rootObj.value(qstringKey).toBool());
-		}
-		else if ("QString" == qstringTypeName)
-		{
-			obj->setProperty(key, rootObj.value(qstringKey).toString());
-		}
-		else if (qstringTypeName.contains("QList"))
-		{
-			//QList<QString> list = val.value<QList<QString>>();
-
-			//QJsonArray jsonArray;
-			//for (int i = 0; i < list.count(); i++)
-			//{
-			//	QString item = (list[i]);
-			//	jsonArray.append(item);
-			//}
-			//jsonObj->insert(qstringKey, jsonArray);
-		}
-		else
-		{
-			qDebug() << "undo type " + qstringTypeName;
-		}
-
-	}
+	
 	
 
 }

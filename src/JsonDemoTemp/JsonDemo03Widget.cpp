@@ -34,13 +34,9 @@ void JsonDemo03Widget::test01ButtonClicked()
 
 	for (int i = 0; i < 5; i++)
 	{
-		//Student *s = new Student;
-		//s->_name = "student" + QString::number(i);
-		//school._students.append(s);
-
 		Student *student = new Student;
 		student->_name = "student" + QString::number(i);
-		
+		student->_age = i;
 		school._students.append(student);
 	}
 
