@@ -43,7 +43,7 @@ void JsonHelper::setValueToJson(QJsonObject* jsonObj, QObject *obj)
 		}
 		else if (qstringTypeName.contains("QList"))
 		{
-			if ("QList<QString>"==qstringTypeName)
+			if ("QList<QString>" == qstringTypeName)
 			{
 				QList<QString> list = val.value<QList<QString>>();
 				QJsonArray jsonArray;
@@ -97,7 +97,7 @@ void JsonHelper::setValueToJson(QJsonObject* jsonObj, QObject *obj)
 				jsonObj->insert(qstringKey, jsonArray);
 
 			}
-			
+
 
 		}
 		else
@@ -145,10 +145,11 @@ void JsonHelper::readValueFromJson(QJsonObject* jsonObj, QObject *obj)
 			if ("QList<QString>" == qstringTypeName)
 			{
 				QList<QString> list;
-				QJsonArray jsonArray=jsonObj->value(qstringKey).toArray();
+				QJsonArray jsonArray = jsonObj->value(qstringKey).toArray();
 
-				for each (QJsonValueRef item in jsonArray)
+				for each (auto item in jsonArray)
 				{
+
 					list.append(item.toString());
 				}
 				QVariant varParams;
@@ -158,15 +159,15 @@ void JsonHelper::readValueFromJson(QJsonObject* jsonObj, QObject *obj)
 			}
 			else if ("QList<int>" == qstringTypeName)
 			{
-				
+
 			}
 			else if ("QList<double>" == qstringTypeName)
 			{
-				
+
 			}
 			else if ("QList<bool>" == qstringTypeName)
 			{
-				
+
 			}
 			else
 			{
