@@ -76,14 +76,9 @@ bool JsonHelper::readJson(T& t,QString filePath)
 
 	QJsonObject rootObj = jsonDoc.object();
 
-
-
 	QObject *obj = (QObject*)(&t);
 
 	readValueFromJson(&rootObj, obj);
-
-	
-	
 
 }
 
