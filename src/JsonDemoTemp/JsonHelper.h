@@ -80,7 +80,7 @@ bool JsonHelper::readJson(T& t,QString filePath)
 
 	QObject *obj = (QObject*)(&t);
 
-	readValueFromJson(rootObj, obj);
+	readValueFromJson(&rootObj, obj);
 
 	
 	
