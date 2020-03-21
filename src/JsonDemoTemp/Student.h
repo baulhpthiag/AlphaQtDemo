@@ -10,7 +10,7 @@ class Student : public QObject
 	Q_OBJECT
 
 	Q_PROPERTY(QString name MEMBER _name)
-	Q_PROPERTY(QString age MEMBER _age)
+	Q_PROPERTY(int age MEMBER _age)
 
 public:
 	 Student(QObject *parent=nullptr);
