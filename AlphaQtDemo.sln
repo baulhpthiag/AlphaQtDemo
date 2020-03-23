@@ -60,6 +60,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JaiCameraDemo", "src\JaiCam
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadDll", "src\LoadDll\LoadDll.vcxproj", "{73DCE3E1-E455-483B-BE2B-5FE0D9FEEC93}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicsViewDemo", "src\GraphicsViewDemo\GraphicsViewDemo.vcxproj", "{D581C6D2-5B2E-40A9-928C-BA7517F46E81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -174,6 +176,10 @@ Global
 		{73DCE3E1-E455-483B-BE2B-5FE0D9FEEC93}.Debug|x64.Build.0 = Debug|x64
 		{73DCE3E1-E455-483B-BE2B-5FE0D9FEEC93}.Release|x64.ActiveCfg = Release|x64
 		{73DCE3E1-E455-483B-BE2B-5FE0D9FEEC93}.Release|x64.Build.0 = Release|x64
+		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Debug|x64.ActiveCfg = Debug|x64
+		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Debug|x64.Build.0 = Debug|x64
+		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Release|x64.ActiveCfg = Release|x64
+		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

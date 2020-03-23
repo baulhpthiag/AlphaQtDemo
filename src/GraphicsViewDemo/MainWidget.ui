@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWidgetClass</class>
+ <widget class="QWidget" name="MainWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWidget</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,10">
+   <item>
+    <widget class="QWidget" name="leftWidget" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="openImageButton">
+        <property name="text">
+         <string>openImage</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="genRleButton">
+        <property name="text">
+         <string>genRle</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="drawEcllipseButton">
+        <property name="text">
+         <string>drawEcllipse</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="drawRectButton">
+        <property name="text">
+         <string>drawRect</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>848</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="rightWidget" native="true">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="AlphaGraphicsView" name="graphicsView"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>AlphaGraphicsView</class>
+   <extends>QGraphicsView</extends>
+   <header>AlphaGraphicsView.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="MainWidget.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>drawEcllipseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>drawEcllipseButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-102</x>
+     <y>36</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>drawRectButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>drawRectButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-53</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>genRleButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>genRleButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-71</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>openImageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>openImageButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-44</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>drawEcllipseButtonClicked()</slot>
+  <slot>drawRectButtonClicked()</slot>
+  <slot>genRleButtonClicked()</slot>
+  <slot>openImageButtonClicked()</slot>
+ </slots>
+</ui>
