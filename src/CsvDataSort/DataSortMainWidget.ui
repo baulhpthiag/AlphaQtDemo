@@ -32,6 +32,13 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="readCsvButton">
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -95,9 +102,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>readCsvButton</sender>
+   <signal>clicked()</signal>
+   <receiver>DataSortMainWidgetClass</receiver>
+   <slot>readCsvButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>262</x>
+     <y>-22</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>openCsvButtonClicked()</slot>
   <slot>writeCsvButtonClicked()</slot>
+  <slot>readCsvButtonClicked()</slot>
  </slots>
 </ui>

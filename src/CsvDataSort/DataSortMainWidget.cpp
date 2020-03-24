@@ -13,7 +13,7 @@ DataSortMainWidget::DataSortMainWidget(QWidget *parent)
 
 void DataSortMainWidget::openCsvButtonClicked()
 {
-	QString fileName=QFileDialog::getOpenFileName();
+	QString fileName = QFileDialog::getOpenFileName();
 	qDebug() << fileName;
 
 
@@ -40,7 +40,7 @@ void DataSortMainWidget::openCsvButtonClicked()
 	}
 
 	QList<QList<double>> list1;
-	for (int i=0;i<colCount;i++)
+	for (int i = 0; i < colCount; i++)
 	{
 		QList<double> temp;
 		list1.append(temp);
@@ -50,13 +50,13 @@ void DataSortMainWidget::openCsvButtonClicked()
 	for (int i = 0; i < tempOption.count(); i++)
 	{
 		QStringList tempbar = tempOption.at(i).split(",");//一行中的单元格以，区分
-		for (int j=0;j<tempbar.size();j++)
+		for (int j = 0; j < tempbar.size(); j++)
 		{
-			QString cell=tempbar.at(j);
+			QString cell = tempbar.at(j);
 			double cellD = cell.toDouble();
 
 			list0[i].append(cellD);
-			
+
 		}
 	}
 	list0.pop_back();
@@ -71,10 +71,10 @@ void DataSortMainWidget::openCsvButtonClicked()
 	//	qDebug() << line;
 	//}
 
-	
-	for (int i=0;i<list0.count();i++ )
+
+	for (int i = 0; i < list0.count(); i++)
 	{
-		for (int j=0;j<list0.at(i).count();j++)
+		for (int j = 0; j < list0.at(i).count(); j++)
 		{
 
 			list1[j].append(list0.at(i).at(j));
@@ -84,7 +84,7 @@ void DataSortMainWidget::openCsvButtonClicked()
 	for (int i = 0; i < list1.count(); i++)
 	{
 		QList<double> * temp = &list1[i];
-		qSort(temp->begin(), temp->end(), []( const double &a, const double &b) {
+		qSort(temp->begin(), temp->end(), [](const double &a, const double &b) {
 			return a > b; });
 	}
 
@@ -94,7 +94,7 @@ void DataSortMainWidget::openCsvButtonClicked()
 		for (int j = 0; j < list0.at(i).count(); j++)
 		{
 			list0[i][j] = list1[j][i];
-		
+
 		}
 	}
 
@@ -126,18 +126,14 @@ void DataSortMainWidget::openCsvButtonClicked()
 
 void DataSortMainWidget::writeCsvButtonClicked()
 {
+	QString path = qApp->applicationDirPath() + "/testWriteCsv.csv";
 
-
-
-
-	QString path = qApp->applicationDirPath()+"/testWriteCsv.csv";
-	
 	QFile csvFile(path);
 
 	QStringList lines;
-	QString  line1 = QString::fromLocal8Bit("你好啊Hello测试中\r\n");
+	QString  line1 = QString::fromLocal8Bit("你好Hello");
 
-	lines << "00,1,"+ line1 +"\n" << "aaa,false,12\n" << "20,21,22";
+	lines << line1 + ",111\n" << "aa,bb\n";
 	/*如果以ReadWrite方式打开，不会把所有数据清除，如果文件原来的长度为100字节，写操作写入了30字节，那么还剩余70字节，并且这70字节和文件打开之前保持一直*/
 	if (csvFile.open(QIODevice::ReadWrite | QIODevice::Append))
 	{
@@ -154,9 +150,44 @@ void DataSortMainWidget::writeCsvButtonClicked()
 	QMessageBox::information(nullptr, u8"信息", u8"写入完成");
 }
 
+void DataSortMainWidget::readCsvButtonClicked()
+{
+	QString path = qApp->applicationDirPath() + "/testWriteCsv.csv";
+
+	QFile csvFile(path);
+
+	if (!csvFile.open(QIODevice::ReadOnly))
+	{
+
+	}
+
+	QTextStream * out = new QTextStream(&csvFile);//文本流
+
+	QStringList tempOption = out->readAll().split("\n");//每行以\n区分
+
+	QList<QList<QString>> list0;
+
+	int rowCount = tempOption.count();
+
+
+	for (int i = 0; i < rowCount; i++)
+	{
+		QStringList inner = tempOption.at(i).split(",");
+		QList<QString> temp;
+		for (int j = 0; j < inner.count(); j++)
+		{
+			qDebug() << inner.at(j);
+			temp.append(inner.at(j));
+		}
+		list0.append(temp);
+	}
+
+
+}
+
 void DataSortMainWidget::sort(QList<double>* list)
 {
-	for (int i=0;i<list->count();i++)
+	for (int i = 0; i < list->count(); i++)
 	{
 
 	}

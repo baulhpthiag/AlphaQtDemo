@@ -16,6 +16,7 @@ private:
 public slots:
 void openCsvButtonClicked();
 void writeCsvButtonClicked();
+void readCsvButtonClicked();
 void sort(QList<double> *list);
 
 
