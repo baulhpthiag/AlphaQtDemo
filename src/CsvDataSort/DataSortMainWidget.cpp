@@ -1,6 +1,9 @@
 #include "DataSortMainWidget.h"
 #include <QFileDialog>
 #include <QDebug>
+#include <QApplication>
+#include <QMessageBox>
+#include <QTextCodec>
 
 DataSortMainWidget::DataSortMainWidget(QWidget *parent)
 	: QWidget(parent)
@@ -119,6 +122,36 @@ void DataSortMainWidget::openCsvButtonClicked()
 
 
 
+}
+
+void DataSortMainWidget::writeCsvButtonClicked()
+{
+
+
+
+
+	QString path = qApp->applicationDirPath()+"/testWriteCsv.csv";
+	
+	QFile csvFile(path);
+
+	QStringList lines;
+	QString  line1 = QString::fromLocal8Bit("你好啊Hello测试中\r\n");
+
+	lines << "00,1,"+ line1 +"\n" << "aaa,false,12\n" << "20,21,22";
+	/*如果以ReadWrite方式打开，不会把所有数据清除，如果文件原来的长度为100字节，写操作写入了30字节，那么还剩余70字节，并且这70字节和文件打开之前保持一直*/
+	if (csvFile.open(QIODevice::ReadWrite | QIODevice::Append))
+	{
+		for (int i = 0; i < lines.size(); i++)
+		{
+			/*写入每一行数据到文件*/
+
+			csvFile.write(lines[i].toLocal8Bit());
+		}
+
+		csvFile.close();
+	}
+
+	QMessageBox::information(nullptr, u8"信息", u8"写入完成");
 }
 
 void DataSortMainWidget::sort(QList<double>* list)
