@@ -55,6 +55,9 @@
     <ClCompile Include="JsonDemo04Widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QvJson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="JsonDemoWidget.h">
@@ -109,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ObjectFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QvJson.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

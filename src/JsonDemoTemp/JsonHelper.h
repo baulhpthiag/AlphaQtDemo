@@ -79,6 +79,7 @@ bool JsonHelper::readJsonFile(T& t,QString filePath)
 	QObject *obj = (QObject*)(&t);
 
 	jsonObjToObj(&rootObj, obj);
+	return true;
 
 }
 

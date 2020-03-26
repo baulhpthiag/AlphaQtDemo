@@ -102,6 +102,7 @@
     <ClCompile Include="JsonDemoWidget.cpp" />
     <ClCompile Include="JsonHelper.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="QvJson.cpp" />
     <ClCompile Include="School.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="TestStruct.cpp" />
@@ -138,6 +139,7 @@
     <QtMoc Include="JsonHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="QvJson.h" />
     <QtMoc Include="JsonDemo04Widget.h" />
     <ClInclude Include="ObjectFactory.h" />
     <QtMoc Include="TestStruct.h" />

@@ -1,4 +1,6 @@
 #include "JsonHelper.h"
+#include "ObjectFactory.h"
+#include "Student.h"
 
 JsonHelper::JsonHelper(QObject *parent)
 	: QObject(parent)
@@ -124,13 +126,14 @@ void JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 		const char * typeName = val.typeName();
 		QString qstringTypeName = QString::fromUtf8(typeName);
 		
-		if (val.canConvert<int>())
+		
+		if ("int" == qstringTypeName)
 		{
 			QVariant v;
 			v.setValue(jsonObj->value(qstringKey));
 			obj->setProperty(key, v);
 		}
-		else if (val.canConvert<double>())
+		else if ("double" == qstringTypeName)
 		{
 			QVariant v;
 			v.setValue(jsonObj->value(qstringKey));
@@ -177,26 +180,30 @@ void JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 			{
 
 			}
-			else
+			else 
 			{
+				int beginIndex = qstringTypeName.indexOf("<");
+				int endIndex = qstringTypeName.indexOf("*");
+				QString typeName = qstringTypeName.mid(beginIndex+1,endIndex -beginIndex-1);
 				QList<QObject*> list;
 				QJsonArray jsonArray = jsonObj->value(qstringKey).toArray();
+				
 
+				for each (QJsonValue item in jsonArray)
+				{
+					QJsonObject childJsonObj = item.toObject();
+					ObjectFactory fac;
+					QObject* childObj = fac.createObject(typeName.toUtf8(), nullptr);
+					jsonObjToObj(&childJsonObj, childObj);
+					list.append(childObj);
+					
 
-				QSequentialIterable it = val.value<QSequentialIterable>();
-				int size = it.size();
+				}
+				
+				QVariant varParams;
+				varParams.setValue<QList<QObject*>>(list);
 
-				qDebug() << size;
-				//for each (QJsonValueRef item in jsonArray)
-				//{
-				//	QVariant v=item.toVariant();
-				//	QObject childObject;
-
-				//}
-				//QVariant varParams;
-				//varParams.setValue<QList<QString>>(list);
-
-				//obj->setProperty(key, varParams);
+				obj->setProperty(key, varParams);
 
 			}
 

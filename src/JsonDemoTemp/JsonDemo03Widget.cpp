@@ -52,6 +52,17 @@ void JsonDemo03Widget::test02ButtonClicked()
 
 	qDebug() << school._pString;
 
+	for each (QString var in school._pStrings)
+	{
+		qDebug() << var;
+	}
+	int count = school._pStudents.count();
+	for each (Student* var in school._pStudents)
+	{
+		qDebug() << var->_name;
+		qDebug() << var->_age;
+	}
+
 
 	qDebug() << "";
 	qDebug() << "finish";
@@ -60,7 +71,10 @@ void JsonDemo03Widget::test02ButtonClicked()
 
 void JsonDemo03Widget::test3ButtonClicked()
 {
-	
+
+	QList<QObject*> list;
+
+
 }
 
 void JsonDemo03Widget::test4ButtonClicked()
