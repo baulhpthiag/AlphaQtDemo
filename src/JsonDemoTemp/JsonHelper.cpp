@@ -199,11 +199,13 @@ void JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 					
 
 				}
+				QMetaObject::invokeMethod(obj, "setStudents", Qt::DirectConnection, Q_ARG(QList<QObject*>, list));
 				
-				QVariant varParams;
-				varParams.setValue<QList<QObject*>>(list);
+				
+				//QVariant varParams;
+				//varParams.setValue<QList<QObject*>>(list);
 
-				obj->setProperty(key, varParams);
+				//obj->setProperty(key, varParams);
 
 			}
 

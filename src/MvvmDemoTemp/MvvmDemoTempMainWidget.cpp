@@ -36,6 +36,7 @@ void MvvmDemoTempMainWidget::init()
 		}
 	}
 	
+	
 	////槽和信号要同时使用反射获得
 	//connect(ui.lineEdit, &QLineEdit::textChanged, &student, setName);
 	connect(ui.lineEdit, textChanged, &student, setName);

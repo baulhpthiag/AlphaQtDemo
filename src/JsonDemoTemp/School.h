@@ -33,6 +33,7 @@ public:
 public:
 	Q_INVOKABLE QString getSchoolName();
 	Q_INVOKABLE void setSchoolName(QString schoolName);
+	Q_INVOKABLE void setStudents(QList<QObject*> students);
 
 signals:
 	void pStringChange(QString pString);
