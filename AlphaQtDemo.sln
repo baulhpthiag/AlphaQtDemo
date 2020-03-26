@@ -64,6 +64,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicsViewDemo", "src\Gra
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CustomWindow", "src\QtCustomWindow\CustomWindow.vcxproj", "{024222A1-5B72-3610-91E2-B4BEED448486}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mainwindow Demo", "src\OtherMainWindowDemo\Mainwindow Demo.vcxproj", "{6E40B463-1A87-3EED-8C59-0017470A954B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -186,6 +188,10 @@ Global
 		{024222A1-5B72-3610-91E2-B4BEED448486}.Debug|x64.Build.0 = Debug|x64
 		{024222A1-5B72-3610-91E2-B4BEED448486}.Release|x64.ActiveCfg = Release|x64
 		{024222A1-5B72-3610-91E2-B4BEED448486}.Release|x64.Build.0 = Release|x64
+		{6E40B463-1A87-3EED-8C59-0017470A954B}.Debug|x64.ActiveCfg = Debug|x64
+		{6E40B463-1A87-3EED-8C59-0017470A954B}.Debug|x64.Build.0 = Debug|x64
+		{6E40B463-1A87-3EED-8C59-0017470A954B}.Release|x64.ActiveCfg = Release|x64
+		{6E40B463-1A87-3EED-8C59-0017470A954B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
