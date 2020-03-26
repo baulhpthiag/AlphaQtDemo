@@ -54,13 +54,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MvvmDemoTemp", "src\MvvmDem
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IniDemoTemp", "src\IniDemoTemp\IniDemoTemp.vcxproj", "{A5DE657A-05C1-49A8-880C-F5CF3699740E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CsvDataSort", "src\CsvDataSort\CsvDataSort.vcxproj", "{07F7B17C-E134-4CBE-9DF5-EC74B4D324A1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CsvDemo", "src\CsvDataSort\CsvDataSort.vcxproj", "{07F7B17C-E134-4CBE-9DF5-EC74B4D324A1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JaiCameraDemo", "src\JaiCameraDemo\JaiCameraDemo.vcxproj", "{93EA5E61-96B9-4899-A539-7409AD3504A8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadDll", "src\LoadDll\LoadDll.vcxproj", "{73DCE3E1-E455-483B-BE2B-5FE0D9FEEC93}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicsViewDemo", "src\GraphicsViewDemo\GraphicsViewDemo.vcxproj", "{D581C6D2-5B2E-40A9-928C-BA7517F46E81}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CustomWindow", "src\QtCustomWindow\CustomWindow.vcxproj", "{024222A1-5B72-3610-91E2-B4BEED448486}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,6 +182,10 @@ Global
 		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Debug|x64.Build.0 = Debug|x64
 		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Release|x64.ActiveCfg = Release|x64
 		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Release|x64.Build.0 = Release|x64
+		{024222A1-5B72-3610-91E2-B4BEED448486}.Debug|x64.ActiveCfg = Debug|x64
+		{024222A1-5B72-3610-91E2-B4BEED448486}.Debug|x64.Build.0 = Debug|x64
+		{024222A1-5B72-3610-91E2-B4BEED448486}.Release|x64.ActiveCfg = Release|x64
+		{024222A1-5B72-3610-91E2-B4BEED448486}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
