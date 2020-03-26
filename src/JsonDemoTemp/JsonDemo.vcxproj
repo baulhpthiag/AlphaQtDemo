@@ -139,6 +139,7 @@
     <QtMoc Include="JsonHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="JsonSerialize.h" />
     <ClInclude Include="QvJson.h" />
     <QtMoc Include="JsonDemo04Widget.h" />
     <ClInclude Include="ObjectFactory.h" />

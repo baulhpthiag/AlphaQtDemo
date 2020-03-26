@@ -117,5 +117,8 @@
     <ClInclude Include="QvJson.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="JsonSerialize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
