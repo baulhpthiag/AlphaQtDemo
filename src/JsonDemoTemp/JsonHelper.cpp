@@ -9,7 +9,7 @@ JsonHelper::~JsonHelper()
 {
 }
 
-void JsonHelper::setValueToJson(QJsonObject* jsonObj, QObject *obj)
+void JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 {
 	const QMetaObject * metaObj = obj->metaObject();
 
@@ -27,19 +27,19 @@ void JsonHelper::setValueToJson(QJsonObject* jsonObj, QObject *obj)
 
 		if ("int" == qstringTypeName)
 		{
-			jsonObj->insert(qstringKey, val.toInt());
+			jsonObj->insert(qstringKey, QJsonValue::fromVariant(val));
 		}
 		else if ("double" == qstringTypeName)
 		{
-			jsonObj->insert(qstringKey, val.toDouble());
+			jsonObj->insert(qstringKey, QJsonValue::fromVariant(val));
 		}
 		else if ("bool" == qstringTypeName)
 		{
-			jsonObj->insert(qstringKey, val.toBool());
+			jsonObj->insert(qstringKey, QJsonValue::fromVariant(val));
 		}
 		else if ("QString" == qstringTypeName)
 		{
-			jsonObj->insert(qstringKey, val.toString());
+			jsonObj->insert(qstringKey, QJsonValue::fromVariant(val));
 		}
 		else if (qstringTypeName.contains("QList"))
 		{
@@ -91,7 +91,7 @@ void JsonHelper::setValueToJson(QJsonObject* jsonObj, QObject *obj)
 				{
 					QJsonObject childJsonObj;
 					QObject *childObject = qvariant_cast<QObject*>(v);
-					setValueToJson(&childJsonObj, childObject);
+					objToJsonObj(&childJsonObj, childObject);
 					jsonArray.append(childJsonObj);
 				}
 				jsonObj->insert(qstringKey, jsonArray);
@@ -108,7 +108,7 @@ void JsonHelper::setValueToJson(QJsonObject* jsonObj, QObject *obj)
 	}
 }
 
-void JsonHelper::readValueFromJson(QJsonObject* jsonObj, QObject *obj)
+void JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 {
 	const QMetaObject * metaObj = obj->metaObject();
 
@@ -123,22 +123,30 @@ void JsonHelper::readValueFromJson(QJsonObject* jsonObj, QObject *obj)
 		QVariant val = obj->property(key);
 		const char * typeName = val.typeName();
 		QString qstringTypeName = QString::fromUtf8(typeName);
-
-		if ("int" == qstringTypeName)
+		
+		if (val.canConvert<int>())
 		{
-			obj->setProperty(key, jsonObj->value(qstringKey).toInt());
+			QVariant v;
+			v.setValue(jsonObj->value(qstringKey));
+			obj->setProperty(key, v);
 		}
-		else if ("double" == qstringTypeName)
+		else if (val.canConvert<double>())
 		{
-			obj->setProperty(key, jsonObj->value(qstringKey).toDouble());
+			QVariant v;
+			v.setValue(jsonObj->value(qstringKey));
+			obj->setProperty(key, v);
 		}
 		else if ("bool" == qstringTypeName)
 		{
-			obj->setProperty(key, jsonObj->value(qstringKey).toBool());
+			QVariant v;
+			v.setValue(jsonObj->value(qstringKey));
+			obj->setProperty(key, v);
 		}
 		else if ("QString" == qstringTypeName)
 		{
-			obj->setProperty(key, jsonObj->value(qstringKey).toString());
+			QVariant v;
+			v.setValue(jsonObj->value(qstringKey));
+			obj->setProperty(key, v);
 		}
 		else if (qstringTypeName.contains("QList"))
 		{
@@ -174,9 +182,11 @@ void JsonHelper::readValueFromJson(QJsonObject* jsonObj, QObject *obj)
 				QList<QObject*> list;
 				QJsonArray jsonArray = jsonObj->value(qstringKey).toArray();
 
-				//QSequentialIterable it = val.value<QSequentialIterable>();
-				//
 
+				QSequentialIterable it = val.value<QSequentialIterable>();
+				int size = it.size();
+
+				qDebug() << size;
 				//for each (QJsonValueRef item in jsonArray)
 				//{
 				//	QVariant v=item.toVariant();

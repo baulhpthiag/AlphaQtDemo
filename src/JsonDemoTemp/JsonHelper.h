@@ -17,24 +17,24 @@ public:
 	~JsonHelper();
 
 	template<class T>
-	static bool saveJson(T& t,QString filePath);
+	static bool writeJsonFile(T& t,QString filePath);
 
 	template<class T>
-	static bool readJson(T& t,QString filePath);
+	static bool readJsonFile(T& t,QString filePath);
 
 
-	static void setValueToJson(QJsonObject* jsonObj, QObject *obj);
+	static void objToJsonObj(QJsonObject* jsonObj, QObject *obj);
 
-	static void readValueFromJson(QJsonObject* jsonObj, QObject *obj);
+	static void jsonObjToObj(QJsonObject* jsonObj, QObject *obj);
 };
 
 template<class T>
-static bool JsonHelper::saveJson(T& t, QString filePath)
+static bool JsonHelper::writeJsonFile(T& t, QString filePath)
 {
 	QJsonObject jsonObj;
 	QObject *obj = (QObject*)(&t);
 
-	setValueToJson(&jsonObj,obj);
+	objToJsonObj(&jsonObj,obj);
 
 	QJsonDocument jsonDoc;
 	jsonDoc.setObject(jsonObj);
@@ -52,7 +52,7 @@ static bool JsonHelper::saveJson(T& t, QString filePath)
 }
 
 template<typename T>
-bool JsonHelper::readJson(T& t,QString filePath)
+bool JsonHelper::readJsonFile(T& t,QString filePath)
 {
 	QFile loadFile(filePath);
 
@@ -78,7 +78,7 @@ bool JsonHelper::readJson(T& t,QString filePath)
 
 	QObject *obj = (QObject*)(&t);
 
-	readValueFromJson(&rootObj, obj);
+	jsonObjToObj(&rootObj, obj);
 
 }
 

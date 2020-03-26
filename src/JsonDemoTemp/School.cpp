@@ -9,12 +9,12 @@ School::~School()
 {
 }
 
-Q_INVOKABLE QString School::getValue6()
+Q_INVOKABLE QString School::getSchoolName()
 {
 	return s_School.schoolName;
 }
 
-Q_INVOKABLE void School::setValue6(QString value)
+Q_INVOKABLE void School::setSchoolName(QString value)
 {
 	s_School.schoolName = value;
 }

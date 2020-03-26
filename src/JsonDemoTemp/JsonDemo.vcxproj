@@ -98,6 +98,7 @@
     <ClCompile Include="JsonDemo01Widget.cpp" />
     <ClCompile Include="JsonDemo02Widget.cpp" />
     <ClCompile Include="JsonDemo03Widget.cpp" />
+    <ClCompile Include="JsonDemo04Widget.cpp" />
     <ClCompile Include="JsonDemoWidget.cpp" />
     <ClCompile Include="JsonHelper.cpp" />
     <ClCompile Include="main.cpp" />
@@ -112,6 +113,7 @@
     <QtUic Include="JsonDemo01Widget.ui" />
     <QtUic Include="JsonDemo02Widget.ui" />
     <QtUic Include="JsonDemo03Widget.ui" />
+    <QtUic Include="JsonDemo04Widget.ui" />
     <QtUic Include="JsonDemoWidget.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +138,7 @@
     <QtMoc Include="JsonHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="JsonDemo04Widget.h" />
     <ClInclude Include="ObjectFactory.h" />
     <QtMoc Include="TestStruct.h" />
   </ItemGroup>

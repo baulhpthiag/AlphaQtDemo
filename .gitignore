@@ -37,3 +37,4 @@ AlphaQtDemo.VC.db
 
 .vs
 *.opendb
+/src/zQtCustomWindow/debug

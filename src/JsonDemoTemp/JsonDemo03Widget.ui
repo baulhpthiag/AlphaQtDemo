@@ -39,6 +39,32 @@
     <string>test02Button</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="test3Button">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>230</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>test3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="test4Button">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>300</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>test4</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
@@ -75,9 +101,43 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>test3Button</sender>
+   <signal>clicked()</signal>
+   <receiver>JsonDemo03Widget</receiver>
+   <slot>test3ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-63</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>test4Button</sender>
+   <signal>clicked()</signal>
+   <receiver>JsonDemo03Widget</receiver>
+   <slot>test4ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-77</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>test01ButtonClicked()</slot>
   <slot>test02ButtonClicked()</slot>
+  <slot>test3ButtonClicked()</slot>
+  <slot>test4ButtonClicked()</slot>
  </slots>
 </ui>

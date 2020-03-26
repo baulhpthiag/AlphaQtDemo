@@ -9,16 +9,13 @@ class School : public QObject
 	Q_OBJECT
 	
 
-	Q_PROPERTY(QString schoolName MEMBER _schoolName NOTIFY schoolNameChange)
-	Q_PROPERTY(QString value1 MEMBER _value1 )
-	Q_PROPERTY(int value2 MEMBER _value2 )
-	Q_PROPERTY(bool value3 MEMBER _value3)
-	Q_PROPERTY(double value4 MEMBER _value4)
-	Q_PROPERTY(QList<QString> value5 MEMBER _value5)
-		
-	Q_PROPERTY(QString value6 READ getValue6 WRITE setValue6 NOTIFY schoolNameChange)
-
-	Q_PROPERTY(QList<Student*> students MEMBER _students)
+	Q_PROPERTY(int pInt MEMBER _pInt )
+	Q_PROPERTY(double pDouble MEMBER _pDouble)
+	Q_PROPERTY(bool pBool MEMBER _pBool)
+	Q_PROPERTY(QString pString MEMBER _pString NOTIFY pStringChange)
+	Q_PROPERTY(QList<QString> pStrings MEMBER _pStrings)
+	Q_PROPERTY(QString schoolName READ getSchoolName WRITE setSchoolName NOTIFY pStringChange)
+	Q_PROPERTY(QList<Student*> pStudents MEMBER _pStudents)
 public:
 	School(QObject *parent = nullptr);
 	~School();
@@ -26,20 +23,17 @@ private:
 	S_School s_School;
 
 public:
-
-	QString _schoolName;
-	QString _value1;
-	int _value2;
-	bool _value3;
-	double _value4;
-	QList<QString> _value5;
-	
-	QList<Student*> _students;
+	int _pInt;
+	double _pDouble;
+	bool _pBool;
+	QString _pString;
+	QList<QString> _pStrings;
+	QList<Student*> _pStudents;
 	
 public:
-	Q_INVOKABLE QString getValue6();
-	Q_INVOKABLE void setValue6(QString value);
+	Q_INVOKABLE QString getSchoolName();
+	Q_INVOKABLE void setSchoolName(QString schoolName);
 
 signals:
-	void schoolNameChange(QString schoolName);
+	void pStringChange(QString pString);
 };

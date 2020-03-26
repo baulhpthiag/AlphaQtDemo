@@ -4,6 +4,7 @@
 #include "JsonHelper.h"
 #include "ObjectFactory.h"
 
+
 JsonDemo03Widget::JsonDemo03Widget(QWidget *parent)
 	: QWidget(parent)
 {
@@ -21,15 +22,14 @@ void JsonDemo03Widget::test01ButtonClicked()
 	//fac.registerClass<Student>();
 
 	School school;
-	school._schoolName = "school1";
-	school._value1 = "value1";
-	school._value2 = 1;
-	school._value3 = true;
-	school._value4 = 1.0;
+	school._pInt = 1;
+	school._pDouble = 1.0;
+	school._pBool = true;
+	school._pString = "hello world";
 
 	for (int i=0;i<5;i++)
 	{
-		school._value5.append("test"+QString::number(i));
+		school._pStrings.append("test"+QString::number(i));
 	}
 
 	for (int i = 0; i < 5; i++)
@@ -37,10 +37,10 @@ void JsonDemo03Widget::test01ButtonClicked()
 		Student *student = new Student;
 		student->_name = "student" + QString::number(i);
 		student->_age = i;
-		school._students.append(student);
+		school._pStudents.append(student);
 	}
 
-	JsonHelper::saveJson(school, qApp->applicationDirPath() + "/jsonDemo.json");
+	JsonHelper::writeJsonFile(school, qApp->applicationDirPath() + "/jsonDemo.json");
 
 
 }
@@ -48,14 +48,22 @@ void JsonDemo03Widget::test01ButtonClicked()
 void JsonDemo03Widget::test02ButtonClicked()
 {
 	School school;
-	bool result = JsonHelper::readJson(school,qApp->applicationDirPath() + "/jsonDemo.json");
+	bool result = JsonHelper::readJsonFile(school,qApp->applicationDirPath() + "/jsonDemo.json");
 
-	qDebug() << school._schoolName;
+	qDebug() << school._pString;
 
-	school.setProperty("value6", "aaa");
-	QString aaa = school.getValue6();
 
 	qDebug() << "";
 	qDebug() << "finish";
+
+}
+
+void JsonDemo03Widget::test3ButtonClicked()
+{
+	
+}
+
+void JsonDemo03Widget::test4ButtonClicked()
+{
 
 }

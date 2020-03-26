@@ -18,4 +18,8 @@ private:
 	public slots:
 	void test01ButtonClicked();
 	void test02ButtonClicked();
+	void test3ButtonClicked();
+	void test4ButtonClicked();
+
+
 };
