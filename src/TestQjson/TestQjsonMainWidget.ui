@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TestQjsonMainWidgetClass</class>
+ <widget class="QWidget" name="TestQjsonMainWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TestQjsonMainWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="test01Button">
+     <property name="text">
+      <string>test01</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="test02Button">
+     <property name="text">
+      <string>test02</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="TestQjsonMainWidget.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>test01Button</sender>
+   <signal>clicked()</signal>
+   <receiver>TestQjsonMainWidgetClass</receiver>
+   <slot>test01ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-79</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>test02Button</sender>
+   <signal>clicked()</signal>
+   <receiver>TestQjsonMainWidgetClass</receiver>
+   <slot>test02ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-115</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>test01ButtonClicked()</slot>
+  <slot>test02ButtonClicked()</slot>
+ </slots>
+</ui>

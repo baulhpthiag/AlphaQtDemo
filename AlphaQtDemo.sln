@@ -62,12 +62,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadDll", "src\LoadDll\Load
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicsViewDemo", "src\GraphicsViewDemo\GraphicsViewDemo.vcxproj", "{D581C6D2-5B2E-40A9-928C-BA7517F46E81}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zMainwindow Demo", "src\zMainWindowDemo\Mainwindow Demo.vcxproj", "{6E40B463-1A87-3EED-8C59-0017470A954B}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zNetAssistant", "src\zNetAssistant\NetAssistant.vcxproj", "{499AF14A-9AB0-35A7-9599-C8C2BE8CDCE0}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zCustomWindow", "src\zQtCustomWindow\CustomWindow.vcxproj", "{024222A1-5B72-3610-91E2-B4BEED448486}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestQjson", "src\TestQjson\TestQjson.vcxproj", "{A47F1EAE-E54D-4C38-B31B-226BA7190F8C}"
 EndProject
 Global
@@ -188,18 +182,6 @@ Global
 		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Debug|x64.Build.0 = Debug|x64
 		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Release|x64.ActiveCfg = Release|x64
 		{D581C6D2-5B2E-40A9-928C-BA7517F46E81}.Release|x64.Build.0 = Release|x64
-		{6E40B463-1A87-3EED-8C59-0017470A954B}.Debug|x64.ActiveCfg = Debug|x64
-		{6E40B463-1A87-3EED-8C59-0017470A954B}.Debug|x64.Build.0 = Debug|x64
-		{6E40B463-1A87-3EED-8C59-0017470A954B}.Release|x64.ActiveCfg = Release|x64
-		{6E40B463-1A87-3EED-8C59-0017470A954B}.Release|x64.Build.0 = Release|x64
-		{499AF14A-9AB0-35A7-9599-C8C2BE8CDCE0}.Debug|x64.ActiveCfg = Debug|x64
-		{499AF14A-9AB0-35A7-9599-C8C2BE8CDCE0}.Debug|x64.Build.0 = Debug|x64
-		{499AF14A-9AB0-35A7-9599-C8C2BE8CDCE0}.Release|x64.ActiveCfg = Release|x64
-		{499AF14A-9AB0-35A7-9599-C8C2BE8CDCE0}.Release|x64.Build.0 = Release|x64
-		{024222A1-5B72-3610-91E2-B4BEED448486}.Debug|x64.ActiveCfg = Debug|x64
-		{024222A1-5B72-3610-91E2-B4BEED448486}.Debug|x64.Build.0 = Debug|x64
-		{024222A1-5B72-3610-91E2-B4BEED448486}.Release|x64.ActiveCfg = Release|x64
-		{024222A1-5B72-3610-91E2-B4BEED448486}.Release|x64.Build.0 = Release|x64
 		{A47F1EAE-E54D-4C38-B31B-226BA7190F8C}.Debug|x64.ActiveCfg = Debug|x64
 		{A47F1EAE-E54D-4C38-B31B-226BA7190F8C}.Debug|x64.Build.0 = Debug|x64
 		{A47F1EAE-E54D-4C38-B31B-226BA7190F8C}.Release|x64.ActiveCfg = Release|x64
