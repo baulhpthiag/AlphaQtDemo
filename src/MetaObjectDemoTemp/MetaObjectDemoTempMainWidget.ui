@@ -75,6 +75,19 @@
     <string>test03</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="test04Button">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>170</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>test04</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
@@ -145,11 +158,28 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>test04Button</sender>
+   <signal>clicked()</signal>
+   <receiver>MetaObjectDemoTempMainWidgetClass</receiver>
+   <slot>test04ButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>401</x>
+     <y>176</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>702</x>
+     <y>176</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>test01ButtonClicked()</slot>
   <slot>lineEditEditingFInished()</slot>
   <slot>test02ButtonClicked()</slot>
   <slot>test03ButtonClicked()</slot>
+  <slot>test04ButtonClicked()</slot>
  </slots>
 </ui>

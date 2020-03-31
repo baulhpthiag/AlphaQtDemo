@@ -80,8 +80,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Father.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MetaObjectDemoTempMainWidget.cpp" />
+    <ClCompile Include="Son.cpp" />
     <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +99,8 @@
     <QtMoc Include="Student.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="Son.h" />
+    <QtMoc Include="Father.h" />
     <ClInclude Include="ObjectFactory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

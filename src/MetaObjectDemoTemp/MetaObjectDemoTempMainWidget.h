@@ -19,6 +19,7 @@ public slots:
 	void test01ButtonClicked();
 	void test02ButtonClicked();
 	void test03ButtonClicked();
+	void test04ButtonClicked();
 	void lineEditEditingFInished();
 	void slot1();
 

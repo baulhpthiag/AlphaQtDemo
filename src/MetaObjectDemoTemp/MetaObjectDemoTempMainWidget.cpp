@@ -2,6 +2,9 @@
 #include <QDebug>
 #include <QMetaMethod>
 #include "ObjectFactory.h"
+#include "Father.h"
+#include "Son.h"
+
 
 MetaObjectDemoTempMainWidget::MetaObjectDemoTempMainWidget(QWidget *parent)
 	: QWidget(parent)
@@ -60,6 +63,29 @@ void MetaObjectDemoTempMainWidget::test02ButtonClicked()
 }
 
 void MetaObjectDemoTempMainWidget::test03ButtonClicked()
+{
+	Son son;
+	son._sonName = "son1";
+	son._sonAge = 1;
+
+	QVariant var;
+	var.setValue(son);
+
+	Son s=var.value<Son>();
+
+	Father father;
+	father.setProperty("fatherName","father1");
+	father.setProperty("fatherAge", 30);
+
+	father.setProperty("son", var);
+	
+	//QMetaObject::invokeMethod(&father, "setSon", Q_ARG(Son, son));
+	qDebug() << father._son._sonName;
+	qDebug() << father._son._sonAge;
+
+}
+
+void MetaObjectDemoTempMainWidget::test04ButtonClicked()
 {
 
 }
