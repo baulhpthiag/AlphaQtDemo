@@ -58,6 +58,18 @@
     <ClCompile Include="QvJson.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Parent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Child.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Toy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="JsonDemoWidget.h">
@@ -85,6 +97,18 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="JsonDemo04Widget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Parent.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Child.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Car.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Toy.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

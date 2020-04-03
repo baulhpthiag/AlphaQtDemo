@@ -42,5 +42,42 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>writeJsonButton</sender>
+   <signal>clicked()</signal>
+   <receiver>JsonDemo04Widget</receiver>
+   <slot>writeJson()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>76</x>
+     <y>-15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>JsonDemo04Widget</receiver>
+   <slot>readJson()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>216</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>221</x>
+     <y>-19</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>writeJson()</slot>
+  <slot>readJson()</slot>
+ </slots>
 </ui>

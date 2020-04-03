@@ -22,7 +22,6 @@ public:
 	template<class T>
 	static bool readJsonFile(T& t,QString filePath);
 
-
 	static void objToJsonObj(QJsonObject* jsonObj, QObject *obj);
 
 	static void jsonObjToObj(QJsonObject* jsonObj, QObject *obj);

@@ -1,6 +1,7 @@
 #include "JsonHelper.h"
 #include "ObjectFactory.h"
 #include "Student.h"
+#include "Car.h"
 
 JsonHelper::JsonHelper(QObject *parent)
 	: QObject(parent)
@@ -101,6 +102,15 @@ void JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 			}
 
 
+		}
+		else if ("Car" == qstringTypeName)
+		{
+
+			Car c = val.value<Car>();
+			QJsonObject childJsonObj;
+
+			objToJsonObj(&childJsonObj, &c);
+			jsonObj->insert(qstringKey, childJsonObj);
 		}
 		else
 		{

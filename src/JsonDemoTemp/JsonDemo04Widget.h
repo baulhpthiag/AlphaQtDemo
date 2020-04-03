@@ -13,4 +13,9 @@ public:
 
 private:
 	Ui::JsonDemo04Widget ui;
+
+
+public slots:
+	void writeJson();
+	void readJson();
 };

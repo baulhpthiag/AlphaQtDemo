@@ -13,13 +13,13 @@ enum ButtonType
 	ONLY_CLOSE_BUTTON		// 只有关闭按钮;
 };
 
-class BaseTitleBar : public QWidget
+class CustomTitleBar : public QWidget
 {
 	Q_OBJECT
 
 public:
-	BaseTitleBar(QWidget *parent = NULL);
-	~BaseTitleBar();
+	CustomTitleBar(QWidget *parent = NULL);
+	~CustomTitleBar();
 
 	// 设置标题栏背景色;
 	void setBackgroundColor(int r, int g, int b);

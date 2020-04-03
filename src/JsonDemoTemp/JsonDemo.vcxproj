@@ -95,6 +95,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Child.cpp" />
     <ClCompile Include="JsonDemo01Widget.cpp" />
     <ClCompile Include="JsonDemo02Widget.cpp" />
     <ClCompile Include="JsonDemo03Widget.cpp" />
@@ -102,10 +104,12 @@
     <ClCompile Include="JsonDemoWidget.cpp" />
     <ClCompile Include="JsonHelper.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Parent.cpp" />
     <ClCompile Include="QvJson.cpp" />
     <ClCompile Include="School.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="TestStruct.cpp" />
+    <ClCompile Include="Toy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="JsonDemoWidget.h" />
@@ -139,7 +143,11 @@
     <QtMoc Include="JsonHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="Toy.h" />
+    <QtMoc Include="Child.h" />
+    <QtMoc Include="Car.h" />
     <ClInclude Include="JsonSerialize.h" />
+    <QtMoc Include="Parent.h" />
     <ClInclude Include="QvJson.h" />
     <QtMoc Include="JsonDemo04Widget.h" />
     <ClInclude Include="ObjectFactory.h" />

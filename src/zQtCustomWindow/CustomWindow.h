@@ -3,15 +3,15 @@
 
 #include <QWidget>
 #include <QMainWindow>
-#include "BaseTitleBar.h"
+#include "CustomTitleBar.h"
 
-class BaseWindow : public QWidget
+class CustomWindow : public QWidget
 {
 	Q_OBJECT
 
 public:
-	BaseWindow(QWidget *parent = 0);
-	~BaseWindow();
+	CustomWindow(QWidget *parent = 0);
+	~CustomWindow();
 
 private:
 	void initTitleBar();
@@ -25,7 +25,7 @@ private slots:
 	void onButtonCloseClicked();
 
 protected:
-    BaseTitleBar* m_titleBar;
+    CustomTitleBar* m_titleBar;
 	
 };
 

@@ -3,13 +3,13 @@
 
 #include <QWidget>
 
-#include "BaseWindow.h"
+#include "CustomWindow.h"
 
 namespace Ui {
 class CustomMainWindow;
 }
 
-class CustomMainWindow : public BaseWindow
+class CustomMainWindow : public CustomWindow
 {
     Q_OBJECT
 

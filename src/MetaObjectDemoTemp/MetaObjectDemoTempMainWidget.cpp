@@ -83,6 +83,10 @@ void MetaObjectDemoTempMainWidget::test03ButtonClicked()
 	qDebug() << father._son._sonName;
 	qDebug() << father._son._sonAge;
 
+
+
+
+
 }
 
 void MetaObjectDemoTempMainWidget::test04ButtonClicked()

@@ -1,4 +1,4 @@
-#include "BaseTitleBar.h"
+#include "CustomTitleBar.h"
 #include <QHBoxLayout>
 #include <QPainter>
 #include <QFile>
@@ -9,7 +9,7 @@
 #define BUTTON_WIDTH 30			// 按钮宽度;
 #define TITLE_HEIGHT 30			// 标题栏高度;
 
-BaseTitleBar::BaseTitleBar(QWidget *parent)
+CustomTitleBar::CustomTitleBar(QWidget *parent)
 	: QWidget(parent)
 	, m_colorR(153)
 	, m_colorG(153)
@@ -23,13 +23,13 @@ BaseTitleBar::BaseTitleBar(QWidget *parent)
     loadStyleSheet("MyTitle");
 }
 
-BaseTitleBar::~BaseTitleBar()
+CustomTitleBar::~CustomTitleBar()
 {
 
 }
 
 // 初始化控件;
-void BaseTitleBar::initControl()
+void CustomTitleBar::initControl()
 {
 	m_pIcon = new QLabel;
 	m_pTitleContent = new QLabel;
@@ -68,7 +68,7 @@ void BaseTitleBar::initControl()
 }
 
 // 信号槽的绑定;
-void BaseTitleBar::initConnections()
+void CustomTitleBar::initConnections()
 {
 	connect(m_pButtonMin, SIGNAL(clicked()), this, SLOT(onButtonMinClicked()));
 	connect(m_pButtonRestore, SIGNAL(clicked()), this, SLOT(onButtonRestoreClicked()));
@@ -78,7 +78,7 @@ void BaseTitleBar::initConnections()
 
 // 设置标题栏背景色,在paintEvent事件中进行绘制标题栏背景色;
 //在构造函数中给了默认值，可以外部设置颜色值改变标题栏背景色;
-void BaseTitleBar::setBackgroundColor(int r, int g, int b)
+void CustomTitleBar::setBackgroundColor(int r, int g, int b)
 {
 	m_colorR = r;
 	m_colorG = g;
@@ -88,21 +88,21 @@ void BaseTitleBar::setBackgroundColor(int r, int g, int b)
 }
 
 // 设置标题栏图标;
-void BaseTitleBar::setTitleIcon(QString filePath)
+void CustomTitleBar::setTitleIcon(QString filePath)
 {
 	QPixmap titleIcon(filePath);
     m_pIcon->setPixmap(titleIcon.scaled(25 , 25));
 }
 
 // 设置标题内容;
-void BaseTitleBar::setTitleContent(QString titleContent)
+void CustomTitleBar::setTitleContent(QString titleContent)
 {
 	m_pTitleContent->setText(titleContent);
 	m_titleContent = titleContent;
 }
 
 // 设置标题栏长度;
-void BaseTitleBar::setTitleWidth(int width)
+void CustomTitleBar::setTitleWidth(int width)
 {
 	this->setFixedWidth(width);
 }
@@ -110,7 +110,7 @@ void BaseTitleBar::setTitleWidth(int width)
 // 设置标题栏上按钮类型;
 // 由于不同窗口标题栏上的按钮都不一样，所以可以自定义标题栏中的按钮;
 // 这里提供了四个按钮，分别为最小化、还原、最大化、关闭按钮，如果需要其他按钮可自行添加设置;
-void BaseTitleBar::setButtonType(ButtonType buttonType)
+void CustomTitleBar::setButtonType(ButtonType buttonType)
 {
 	m_buttonType = buttonType;
 
@@ -141,28 +141,28 @@ void BaseTitleBar::setButtonType(ButtonType buttonType)
 
 // 设置标题栏中的标题是否会自动滚动，跑马灯的效果;
 // 一般情况下标题栏中的标题内容是不滚动的，但是既然自定义就看自己需要嘛，想怎么设计就怎么搞O(∩_∩)O！
-void BaseTitleBar::setTitleRoll()
+void CustomTitleBar::setTitleRoll()
 {
 	connect(&m_titleRollTimer, SIGNAL(timeout()), this, SLOT(onRollTitle()));
 	m_titleRollTimer.start(200);
 }
 
 // 保存窗口最大化前窗口的位置以及大小;
-void BaseTitleBar::saveRestoreInfo(const QPoint point, const QSize size)
+void CustomTitleBar::saveRestoreInfo(const QPoint point, const QSize size)
 {
 	m_restorePos = point;
 	m_restoreSize = size;
 }
 
 // 获取窗口最大化前窗口的位置以及大小;
-void BaseTitleBar::getRestoreInfo(QPoint& point, QSize& size)
+void CustomTitleBar::getRestoreInfo(QPoint& point, QSize& size)
 {
 	point = m_restorePos;
 	size = m_restoreSize;
 }
 
 // 绘制标题栏背景色;
-void BaseTitleBar::paintEvent(QPaintEvent *event)
+void CustomTitleBar::paintEvent(QPaintEvent *event)
 {
 	//设置背景色;
 	QPainter painter(this);
@@ -181,7 +181,7 @@ void BaseTitleBar::paintEvent(QPaintEvent *event)
 }
 
 // 双击响应事件，主要是实现双击标题栏进行最大化和最小化操作;
-void BaseTitleBar::mouseDoubleClickEvent(QMouseEvent *event)
+void CustomTitleBar::mouseDoubleClickEvent(QMouseEvent *event)
 {
 	// 只有存在最大化、还原按钮时双击才有效;
 	if (m_buttonType == MIN_MAX_BUTTON)
@@ -202,7 +202,7 @@ void BaseTitleBar::mouseDoubleClickEvent(QMouseEvent *event)
 }
 
 // 以下通过mousePressEvent、mouseMoveEvent、mouseReleaseEvent三个事件实现了鼠标拖动标题栏移动窗口的效果;
-void BaseTitleBar::mousePressEvent(QMouseEvent *event)
+void CustomTitleBar::mousePressEvent(QMouseEvent *event)
 {
 	if (m_buttonType == MIN_MAX_BUTTON)
 	{
@@ -222,7 +222,7 @@ void BaseTitleBar::mousePressEvent(QMouseEvent *event)
 	return QWidget::mousePressEvent(event);
 }
 
-void BaseTitleBar::mouseMoveEvent(QMouseEvent *event)
+void CustomTitleBar::mouseMoveEvent(QMouseEvent *event)
 {
 	if (m_isPressed)
 	{
@@ -234,7 +234,7 @@ void BaseTitleBar::mouseMoveEvent(QMouseEvent *event)
 	return QWidget::mouseMoveEvent(event);
 }
 
-void BaseTitleBar::mouseReleaseEvent(QMouseEvent *event)
+void CustomTitleBar::mouseReleaseEvent(QMouseEvent *event)
 {
 	m_isPressed = false;
 	return QWidget::mouseReleaseEvent(event);
@@ -242,7 +242,7 @@ void BaseTitleBar::mouseReleaseEvent(QMouseEvent *event)
 
 // 加载本地样式文件;
 // 可以将样式直接写在文件中，程序运行时直接加载进来;
-void BaseTitleBar::loadStyleSheet(const QString &sheetName)
+void CustomTitleBar::loadStyleSheet(const QString &sheetName)
 {
     QFile file(":/" + sheetName + ".css");
 	file.open(QFile::ReadOnly);
@@ -255,32 +255,32 @@ void BaseTitleBar::loadStyleSheet(const QString &sheetName)
 }
 
 // 以下为按钮操作响应的槽;
-void BaseTitleBar::onButtonMinClicked()
+void CustomTitleBar::onButtonMinClicked()
 {
 	emit signalButtonMinClicked();
 }
 
-void BaseTitleBar::onButtonRestoreClicked()
+void CustomTitleBar::onButtonRestoreClicked()
 {
 	m_pButtonRestore->setVisible(false);
  	m_pButtonMax->setVisible(true);
 	emit signalButtonRestoreClicked();
 }
 
-void BaseTitleBar::onButtonMaxClicked()
+void CustomTitleBar::onButtonMaxClicked()
 {
  	m_pButtonMax->setVisible(false);
 	m_pButtonRestore->setVisible(true);
 	emit signalButtonMaxClicked();
 }
 
-void BaseTitleBar::onButtonCloseClicked()
+void CustomTitleBar::onButtonCloseClicked()
 {
 	emit signalButtonCloseClicked();
 }
 
 // 该方法主要是让标题栏中的标题显示为滚动的效果;
-void BaseTitleBar::onRollTitle()
+void CustomTitleBar::onRollTitle()
 {
 	static int nPos = 0;
 	QString titleContent = m_titleContent;

@@ -200,15 +200,15 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaseTitleBar.cpp" />
-    <ClCompile Include="BaseWindow.cpp" />
+    <ClCompile Include="CustomTitleBar.cpp" />
+    <ClCompile Include="CustomWindow.cpp" />
     <ClCompile Include="CustomMainWindow.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="BaseTitleBar.h">
+    <QtMoc Include="CustomTitleBar.h">
     </QtMoc>
-    <QtMoc Include="BaseWindow.h">
+    <QtMoc Include="CustomWindow.h">
     </QtMoc>
     <QtMoc Include="CustomMainWindow.h">
     </QtMoc>

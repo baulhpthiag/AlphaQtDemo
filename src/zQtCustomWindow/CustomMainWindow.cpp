@@ -2,7 +2,7 @@
 #include "ui_CustomMainWindow.h"
 
 CustomMainWindow::CustomMainWindow(QWidget *parent) :
-    BaseWindow(parent),
+    CustomWindow(parent),
     ui(new Ui::CustomMainWindow)
 {
     initTitleBar();

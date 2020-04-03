@@ -1,29 +1,29 @@
-#include "BaseWindow.h"
+#include "CustomWindow.h"
 #include <QDesktopWidget>
 #include <QApplication>
 #include <QPainter>
 #include <QFile>
 
-BaseWindow::BaseWindow(QWidget *parent)
+CustomWindow::CustomWindow(QWidget *parent)
     : QWidget(parent)
 {
 	// FramelessWindowHint属性设置窗口去除边框;
 	// WindowMinimizeButtonHint 属性设置在窗口最小化时，点击任务栏窗口可以显示出原窗口;
 	this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
 	// 设置窗口背景透明;
-	setAttribute(Qt::WA_TranslucentBackground);
 	// 初始化标题栏;
+	setAttribute(Qt::WA_TranslucentBackground);
 	initTitleBar();
 }
 
-BaseWindow::~BaseWindow()
+CustomWindow::~CustomWindow()
 {
 
 }
 
-void BaseWindow::initTitleBar()
+void CustomWindow::initTitleBar()
 {
-    m_titleBar = new BaseTitleBar(this);
+    m_titleBar = new CustomTitleBar(this);
 	m_titleBar->move(0, 0);
 	
 	connect(m_titleBar, SIGNAL(signalButtonMinClicked()), this, SLOT(onButtonMinClicked()));
@@ -33,7 +33,7 @@ void BaseWindow::initTitleBar()
 
 }
 
-void BaseWindow::paintEvent(QPaintEvent* event)
+void CustomWindow::paintEvent(QPaintEvent* event)
 {
 	// 	Q_UNUSED(event);
 	// 	QStyleOption opt;
@@ -52,7 +52,7 @@ void BaseWindow::paintEvent(QPaintEvent* event)
 	return QWidget::paintEvent(event);
 }
 
-void BaseWindow::loadStyleSheet(const QString &sheetName)
+void CustomWindow::loadStyleSheet(const QString &sheetName)
 {
 	QFile file(":/Resources/" + sheetName + ".css");
 	file.open(QFile::ReadOnly);
@@ -64,7 +64,7 @@ void BaseWindow::loadStyleSheet(const QString &sheetName)
 	}
 }
 
-void BaseWindow::onButtonMinClicked()
+void CustomWindow::onButtonMinClicked()
 {
 	if (Qt::Tool == (windowFlags() & Qt::Tool))
 	{
@@ -76,7 +76,7 @@ void BaseWindow::onButtonMinClicked()
 	}
 }
 
-void BaseWindow::onButtonRestoreClicked()
+void CustomWindow::onButtonRestoreClicked()
 {
 	QPoint windowPos;
 	QSize windowSize;
@@ -84,7 +84,7 @@ void BaseWindow::onButtonRestoreClicked()
 	this->setGeometry(QRect(windowPos, windowSize));
 }
 
-void BaseWindow::onButtonMaxClicked()
+void CustomWindow::onButtonMaxClicked()
 {
 	m_titleBar->saveRestoreInfo(this->pos(), QSize(this->width(), this->height()));
 	QRect desktopRect = QApplication::desktop()->availableGeometry();
@@ -92,7 +92,7 @@ void BaseWindow::onButtonMaxClicked()
 	setGeometry(FactRect);
 }
 
-void BaseWindow::onButtonCloseClicked()
+void CustomWindow::onButtonCloseClicked()
 {
 	close();
 }

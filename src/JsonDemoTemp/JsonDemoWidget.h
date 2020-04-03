@@ -6,6 +6,7 @@
 #include "JsonDemo01Widget.h"
 #include "JsonDemo02Widget.h"
 #include "JsonDemo03Widget.h"
+#include "JsonDemo04Widget.h"
 
 class JsonDemoWidget : public QWidget
 {
@@ -23,7 +24,7 @@ private:
 	JsonDemo01Widget * jsonDemo01Widget;
 	JsonDemo02Widget * jsonDemo02Widget;
 	JsonDemo03Widget * jsonDemo03Widget;
-
+	JsonDemo04Widget * jsonDemo04Widget;
 private:
 	void init();
 
