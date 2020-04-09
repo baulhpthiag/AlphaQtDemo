@@ -70,7 +70,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zNetAssistant", "src\zNetAs
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zCustomWindow", "src\zQtCustomWindow\CustomWindow.vcxproj", "{024222A1-5B72-3610-91E2-B4BEED448486}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TreeWidgetDemoTemp", "src\TreeWidgetDemoTemp\TreeWidgetDemoTemp.vcxproj", "{477BCA8F-EE32-4D95-A57E-C9327B79AD02}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestStyleDemo", "src\TestStyleDemo\TestStyleDemo.vcxproj", "{EF854CC8-F05E-4FD4-B243-E98335D0DF2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -206,10 +206,10 @@ Global
 		{024222A1-5B72-3610-91E2-B4BEED448486}.Debug|x64.Build.0 = Debug|x64
 		{024222A1-5B72-3610-91E2-B4BEED448486}.Release|x64.ActiveCfg = Release|x64
 		{024222A1-5B72-3610-91E2-B4BEED448486}.Release|x64.Build.0 = Release|x64
-		{477BCA8F-EE32-4D95-A57E-C9327B79AD02}.Debug|x64.ActiveCfg = Debug|x64
-		{477BCA8F-EE32-4D95-A57E-C9327B79AD02}.Debug|x64.Build.0 = Debug|x64
-		{477BCA8F-EE32-4D95-A57E-C9327B79AD02}.Release|x64.ActiveCfg = Release|x64
-		{477BCA8F-EE32-4D95-A57E-C9327B79AD02}.Release|x64.Build.0 = Release|x64
+		{EF854CC8-F05E-4FD4-B243-E98335D0DF2D}.Debug|x64.ActiveCfg = Debug|x64
+		{EF854CC8-F05E-4FD4-B243-E98335D0DF2D}.Debug|x64.Build.0 = Debug|x64
+		{EF854CC8-F05E-4FD4-B243-E98335D0DF2D}.Release|x64.ActiveCfg = Release|x64
+		{EF854CC8-F05E-4FD4-B243-E98335D0DF2D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
