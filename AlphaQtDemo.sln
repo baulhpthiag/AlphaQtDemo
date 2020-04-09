@@ -74,6 +74,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestStyleDemo", "src\TestSt
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SwitchControl", "src\SwitchControl\SwitchControl.vcxproj", "{E6150EDB-A6E9-49F3-B5DD-F8735B16A482}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_ShrinkDemo", "src\UI_ShrinkDemo\UI_ShrinkDemo.vcxproj", "{BBC676C0-AB4A-42DA-85D8-C22E004831FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -216,6 +218,10 @@ Global
 		{E6150EDB-A6E9-49F3-B5DD-F8735B16A482}.Debug|x64.Build.0 = Debug|x64
 		{E6150EDB-A6E9-49F3-B5DD-F8735B16A482}.Release|x64.ActiveCfg = Release|x64
 		{E6150EDB-A6E9-49F3-B5DD-F8735B16A482}.Release|x64.Build.0 = Release|x64
+		{BBC676C0-AB4A-42DA-85D8-C22E004831FF}.Debug|x64.ActiveCfg = Debug|x64
+		{BBC676C0-AB4A-42DA-85D8-C22E004831FF}.Debug|x64.Build.0 = Debug|x64
+		{BBC676C0-AB4A-42DA-85D8-C22E004831FF}.Release|x64.ActiveCfg = Release|x64
+		{BBC676C0-AB4A-42DA-85D8-C22E004831FF}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
