@@ -72,6 +72,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zCustomWindow", "src\zQtCus
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestStyleDemo", "src\TestStyleDemo\TestStyleDemo.vcxproj", "{EF854CC8-F05E-4FD4-B243-E98335D0DF2D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SwitchControl", "src\SwitchControl\SwitchControl.vcxproj", "{E6150EDB-A6E9-49F3-B5DD-F8735B16A482}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -210,6 +212,10 @@ Global
 		{EF854CC8-F05E-4FD4-B243-E98335D0DF2D}.Debug|x64.Build.0 = Debug|x64
 		{EF854CC8-F05E-4FD4-B243-E98335D0DF2D}.Release|x64.ActiveCfg = Release|x64
 		{EF854CC8-F05E-4FD4-B243-E98335D0DF2D}.Release|x64.Build.0 = Release|x64
+		{E6150EDB-A6E9-49F3-B5DD-F8735B16A482}.Debug|x64.ActiveCfg = Debug|x64
+		{E6150EDB-A6E9-49F3-B5DD-F8735B16A482}.Debug|x64.Build.0 = Debug|x64
+		{E6150EDB-A6E9-49F3-B5DD-F8735B16A482}.Release|x64.ActiveCfg = Release|x64
+		{E6150EDB-A6E9-49F3-B5DD-F8735B16A482}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
