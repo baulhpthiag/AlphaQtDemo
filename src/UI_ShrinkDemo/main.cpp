@@ -1,10 +1,10 @@
-#include "MainWidget.h"
+#include "shrinkanimation.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	MainWidget w;
+	ShrinkAnimation w;
 	w.show();
 	return a.exec();
 }

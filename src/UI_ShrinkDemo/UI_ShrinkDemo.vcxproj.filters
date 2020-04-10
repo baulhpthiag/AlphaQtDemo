@@ -28,17 +28,35 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainWidget.cpp">
+    <ClCompile Include="shrinkanimation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="statuswidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="titlewidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="MainWidget.h">
+    <QtMoc Include="shrinkanimation.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="statuswidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="titlewidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="MainWidget.ui">
+    <QtUic Include="shrinkanimation.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="statuswidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="titlewidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

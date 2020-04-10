@@ -88,16 +88,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainWidget.cpp" />
+    <ClCompile Include="shrinkanimation.cpp" />
+    <ClCompile Include="statuswidget.cpp" />
+    <ClCompile Include="titlewidget.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="MainWidget.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="MainWidget.ui" />
+    <QtUic Include="shrinkanimation.ui" />
+    <QtUic Include="statuswidget.ui" />
+    <QtUic Include="titlewidget.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="MainWidget.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="shrinkanimation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="statuswidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="titlewidget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
