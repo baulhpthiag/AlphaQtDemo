@@ -80,6 +80,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_Shadow", "src\UI_Shadow\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_animation1", "src\UI_animation1\UI_animation1.vcxproj", "{D20777F3-07D1-498B-889F-1846812A7E52}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_AlphaStyleSheetDemo", "src\UI_AlphaStyleSheetDemo\UI_AlphaStyleSheetDemo.vcxproj", "{45F8321C-B361-44ED-8D85-C751979F9E03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -234,6 +236,10 @@ Global
 		{D20777F3-07D1-498B-889F-1846812A7E52}.Debug|x64.Build.0 = Debug|x64
 		{D20777F3-07D1-498B-889F-1846812A7E52}.Release|x64.ActiveCfg = Release|x64
 		{D20777F3-07D1-498B-889F-1846812A7E52}.Release|x64.Build.0 = Release|x64
+		{45F8321C-B361-44ED-8D85-C751979F9E03}.Debug|x64.ActiveCfg = Debug|x64
+		{45F8321C-B361-44ED-8D85-C751979F9E03}.Debug|x64.Build.0 = Debug|x64
+		{45F8321C-B361-44ED-8D85-C751979F9E03}.Release|x64.ActiveCfg = Release|x64
+		{45F8321C-B361-44ED-8D85-C751979F9E03}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

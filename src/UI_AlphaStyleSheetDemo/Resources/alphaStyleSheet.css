@@ -1,0 +1,290 @@
+/*全局*/
+*{
+	color:white;
+	background:rgb(49,49,49);
+}
+/* 底色*/
+QWidget{
+
+}
+
+/*按钮*/
+QPushButton{
+	background:rgb(30,159,255);
+
+	border:2px solid rgba(150, 150, 255,1);
+	border-radius:5px;
+
+	color:white;
+	font: 75 12pt "Microsoft YaHei UI";
+	font-weight:900;
+	text-align: center;
+
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+QPushButton:hover{
+	background:rgb(75,178,255);
+	border: 2px solid rgb(255, 255, 255);
+}
+
+QToolButton{
+	background:rgb(30,159,255);
+
+	border:2px solid rgba(150, 150, 255,1);
+	border-radius:5px;
+
+	color:white;
+	font: 75 12pt "Microsoft YaHei UI";
+	font-weight:900;
+	text-align: center;
+
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+QToolButton:hover{
+	background:rgb(75,178,255);
+	border: 2px solid rgb(255, 255, 255);
+}
+
+QRadioButton{
+	background:rgb(30,159,255);
+
+	border:2px solid rgba(150, 150, 255,1);
+	border-radius:5px;
+
+	color:white;
+	font: 75 12pt "Microsoft YaHei UI";
+	font-weight:900;
+	text-align: center;
+
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+QRadioButton:hover{
+	background:rgb(75,178,255);
+	border: 2px solid rgb(255, 255, 255);
+}
+QRadioButton:checked{
+	color:blue;
+}
+QRadioButton::indicator {
+   	width: 0px; 
+   	height: 0px;
+}
+
+QCheckBox{
+	color:white;
+	font: 75 12pt "Microsoft YaHei UI";
+	font-weight:900;
+	text-align: center;
+}
+QCheckBox:checked{
+	color:blue;
+}
+
+/*表头*/
+QHeaderView{
+	background: rgb(57, 58, 60);
+	border: none;
+	border-bottom: 3px solid rgb(0, 160, 230);
+}
+/*水平表头*/
+QHeaderView::section:horizontal {
+	background: transparent;
+	border: none;
+	color: white;
+
+}
+/*垂直表头*/
+QHeaderView::section:vertical {
+	background: transparent;
+	border: none;
+	color: white;
+
+}
+/*表格角落按钮*/
+QTableCornerButton:section{
+	background: transparent;
+	border: none;
+}
+
+QSplitter::handle,QTreeWidget::branch{
+	/*background:red;*/
+	
+}
+QHeaderView::section:horizontal:hover {
+	background: rgb(0, 160, 230);
+}
+QHeaderView::section:horizontal:pressed {
+	background: rgb(0, 180, 255);
+}
+QHeaderView::up-arrow {
+	width: 13px;
+	height: 11px;
+	padding-right: 5px;
+	image: url(:/Black/topArrow);
+	subcontrol-position: center right;
+}
+QHeaderView::up-arrow:hover, QHeaderView::up-arrow:pressed {
+	image: url(:/Black/topArrowHover);
+}
+QHeaderView::down-arrow {
+	width: 13px;
+	height: 11px;
+	padding-right: 5px;
+	image: url(:/Black/bottomArrow);
+	subcontrol-position: center right;
+}
+QHeaderView::down-arrow:hover, QHeaderView::down-arrow:pressed {
+	image: url(:/Black/bottomArrowHover);
+}
+
+/*树*/
+/*无数据部分内容样式*/
+QTreeWidget {
+
+	background: rgba(79, 79, 79, 40);
+	color:white;
+	border: 1px solid rgb(45, 45, 45);
+	gridline-color: rgb(60, 60, 60);/*表格数据部分网格线*/
+	
+}
+/*有数据部分内容样式*/
+QTreeWidget::item {
+	color:white;
+
+	background: rgb(72, 72, 74);
+	/*border: none;*/
+	border-right: 1px solid rgb(45, 45, 45);
+	border-bottom: 1px solid rgb(45, 45, 45);
+
+	padding-left: 5px;
+	padding-right: 5px;
+}
+QTreeWidget::item:selected {
+	background: rgba(255, 255, 255, 40);
+}
+QTreeWidget::item:selected:!active {
+	
+}
+QTreeWidget::indicator {
+	width: 0px;
+	height: 0px;
+}
+
+
+/*表格*/
+
+QTableWidget {
+	background: rgb(57, 58, 60);
+	alternate-background-color:rgb(74,74,74);/*隔行换色*/
+
+	color:white;
+	border: 1px solid rgb(45, 45, 45);
+
+	gridline-color: rgb(60, 60, 60);/*表格数据部分网格线*/
+}
+
+QTableWidget::item {
+	background: rgb(72, 72, 74);
+	color:white;
+
+	border: none;
+	border-right: 1px solid rgb(45, 45, 45);
+	border-bottom: 1px solid rgb(45, 45, 45);
+
+	padding-left: 5px;
+	padding-right: 5px;
+}
+QTableWidget::item:selected {
+	background: rgba(255, 255, 255, 40);
+}
+QTableWidget::item:selected:!active {
+
+}
+QTableWidget::indicator {
+	width: 20px;
+	height: 20px;
+}
+
+/* 容器 */
+QGroupBox{
+	border:none;
+	color:white;
+}
+
+QTabWidget::pane {
+	border: none;/*无边框*/
+       	border-top: 3px solid rgb(0, 160, 230);/*边款顶部：3px   实线   颜色(0,160,230)*/
+    	background: transparent;/*背景透明*/
+}
+QTabWidget::tab-bar {/*tab-bar */ 
+        	border: none;	
+}
+QTabBar::tab {
+        	border: none;
+       	border-top-left-radius: 4px;
+        	border-top-right-radius: 4px;
+        	color: rgb(0, 0, 0);
+        	background: rgb(74, 74, 74);
+        	height: 28px;
+        	min-width: 85px;
+        	margin-right: 5px;
+        	padding-left: 5px;
+        	padding-right: 5px;
+}
+/*
+QTabBar::tab:hover {
+   	background: rgb(74, 74, 74, 40);
+}
+*/
+
+QTabBar::tab:selected {
+        	color: white;
+        	background: rgb(0, 160, 230);
+}
+
+
+QComboBox {
+    	border: 1px solid gray;
+    	border-radius: 5px;
+    	padding: 1px 2px 1px 2px;  /* 针对于组合框中的文本内容*/
+    	min-width: 9em;   /* 组合框的最小宽度*/
+	color:white;
+}
+
+QComboBox::drop-down {
+	background-color:transparent;
+    	subcontrol-origin: padding;
+    	subcontrol-position: top right;
+    	width: 20px;
+    	border-left-width: 1px;
+    	border-left-color: darkgray;
+    	border-left-style: solid; /* just a single line */
+    	border-top-right-radius: 3px; /* same radius as the QComboBox */
+    	border-bottom-right-radius: 3px;
+	
+}
+
+
+
+
+QLineEdit{
+	color:white;
+}
+
+QLabel{
+	color:white;
+}
+QGraphicsView{
+	background-color:black;
+}
+
