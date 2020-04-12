@@ -271,9 +271,12 @@ QLineEdit{
 
 }
 
-QLabel{
-
+QLabel#label_7,QLabel#StaticSysLogLabelDes,QLabel#StaticDefectImgLabelDes{
+	font: 75 12pt "Microsoft YaHei UI";
+	font-weight:900;
 }
+
+
 
 QGraphicsView{
 	background-color:black;
