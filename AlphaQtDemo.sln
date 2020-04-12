@@ -84,6 +84,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_AlphaStyleSheetDemo", "s
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_TopNavigation", "src\UI_TopNavigation\UI_TopNavigation.vcxproj", "{EE29D900-7BCA-47A7-AA82-74B3D0B7F9AD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_leftNavigation", "src\UI_leftNavigation\UI_leftNavigation.vcxproj", "{77579DF4-C2FE-4878-A3FF-4426CD128C92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -246,6 +248,10 @@ Global
 		{EE29D900-7BCA-47A7-AA82-74B3D0B7F9AD}.Debug|x64.Build.0 = Debug|x64
 		{EE29D900-7BCA-47A7-AA82-74B3D0B7F9AD}.Release|x64.ActiveCfg = Release|x64
 		{EE29D900-7BCA-47A7-AA82-74B3D0B7F9AD}.Release|x64.Build.0 = Release|x64
+		{77579DF4-C2FE-4878-A3FF-4426CD128C92}.Debug|x64.ActiveCfg = Debug|x64
+		{77579DF4-C2FE-4878-A3FF-4426CD128C92}.Debug|x64.Build.0 = Debug|x64
+		{77579DF4-C2FE-4878-A3FF-4426CD128C92}.Release|x64.ActiveCfg = Release|x64
+		{77579DF4-C2FE-4878-A3FF-4426CD128C92}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
