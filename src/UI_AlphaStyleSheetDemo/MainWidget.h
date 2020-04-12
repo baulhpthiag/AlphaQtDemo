@@ -13,7 +13,4 @@ public:
 private:
 	Ui::MainWidgetClass ui;
 
-	public slots:
-	void reloadStyleSheet();
-
 };
