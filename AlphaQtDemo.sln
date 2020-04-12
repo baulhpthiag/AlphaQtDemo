@@ -82,6 +82,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_animation1", "src\UI_ani
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_AlphaStyleSheetDemo", "src\UI_AlphaStyleSheetDemo\UI_AlphaStyleSheetDemo.vcxproj", "{45F8321C-B361-44ED-8D85-C751979F9E03}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_TopNavigation", "src\UI_TopNavigation\UI_TopNavigation.vcxproj", "{EE29D900-7BCA-47A7-AA82-74B3D0B7F9AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -240,6 +242,10 @@ Global
 		{45F8321C-B361-44ED-8D85-C751979F9E03}.Debug|x64.Build.0 = Debug|x64
 		{45F8321C-B361-44ED-8D85-C751979F9E03}.Release|x64.ActiveCfg = Release|x64
 		{45F8321C-B361-44ED-8D85-C751979F9E03}.Release|x64.Build.0 = Release|x64
+		{EE29D900-7BCA-47A7-AA82-74B3D0B7F9AD}.Debug|x64.ActiveCfg = Debug|x64
+		{EE29D900-7BCA-47A7-AA82-74B3D0B7F9AD}.Debug|x64.Build.0 = Debug|x64
+		{EE29D900-7BCA-47A7-AA82-74B3D0B7F9AD}.Release|x64.ActiveCfg = Release|x64
+		{EE29D900-7BCA-47A7-AA82-74B3D0B7F9AD}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
