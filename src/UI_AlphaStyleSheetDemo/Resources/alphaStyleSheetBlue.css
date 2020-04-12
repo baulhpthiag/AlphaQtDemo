@@ -73,7 +73,7 @@ QRadioButton:hover{
 }
 
 QRadioButton:checked{
-
+	border: 2px solid rgb(0,250,100);
 }
 
 QRadioButton::indicator {

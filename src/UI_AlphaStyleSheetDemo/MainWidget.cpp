@@ -12,5 +12,5 @@ MainWidget::MainWidget(QWidget *parent)
 
 void MainWidget::reloadStyleSheet()
 {
-	StyleSheetHelper::loadStyleSheet(this, qApp->applicationDirPath() + "/alphaStyleSheet.css");
+	StyleSheetHelper::loadStyleSheet(this, qApp->applicationDirPath() + "/alphaStyleSheetBlue.css");
 }
