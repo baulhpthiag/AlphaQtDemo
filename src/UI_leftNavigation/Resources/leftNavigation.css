@@ -1,4 +1,4 @@
-/*È«¾Ö*/
+
 *{
 	color:white;
 	font: 75 12pt "Microsoft YaHei UI";
@@ -6,29 +6,41 @@
 	text-align: center;
 
 	border-radius:5px;
-	background:rgb(50,50,50);
-}
-QListView::hover{
 	background:rgb(100,100,100);
 }
+QListWidget
+{
+	color:rgb(200,200,200);
+	background:rgb(50,50,50);
 
-QStackedWidget{
-	background:rgb(0,0,150);
 }
 
-QRadioButton::indicator {
-   	width: 0px; 
-   	height: 0px;
+QListWidget::item
+{
+	color:rgb(200,200,200);
+}
+
+QListWidget::item:hover
+{
+	color:rgb(255,255,255);
+}
+
+QListWidget::item::selected:active
+{
+	color:white;
+	background:rgb(100,100,100);
+	border-width:0;
+}
+QListWidget::item:selected
+{
+	color:white;
+	border-width:0;
+
 }
 
 
 
 
-
-QTableWidget::indicator {
-	width: 20px;
-	height: 20px;
-}
 
 
 
