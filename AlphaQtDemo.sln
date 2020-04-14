@@ -86,6 +86,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_TopNavigation", "src\UI_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_leftNavigation", "src\UI_leftNavigation\UI_leftNavigation.vcxproj", "{77579DF4-C2FE-4878-A3FF-4426CD128C92}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_layui", "src\UI_layui\UI_layui.vcxproj", "{CD32F674-AAC8-4F19-8BD6-07C75BB44C84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -252,6 +254,10 @@ Global
 		{77579DF4-C2FE-4878-A3FF-4426CD128C92}.Debug|x64.Build.0 = Debug|x64
 		{77579DF4-C2FE-4878-A3FF-4426CD128C92}.Release|x64.ActiveCfg = Release|x64
 		{77579DF4-C2FE-4878-A3FF-4426CD128C92}.Release|x64.Build.0 = Release|x64
+		{CD32F674-AAC8-4F19-8BD6-07C75BB44C84}.Debug|x64.ActiveCfg = Debug|x64
+		{CD32F674-AAC8-4F19-8BD6-07C75BB44C84}.Debug|x64.Build.0 = Debug|x64
+		{CD32F674-AAC8-4F19-8BD6-07C75BB44C84}.Release|x64.ActiveCfg = Release|x64
+		{CD32F674-AAC8-4F19-8BD6-07C75BB44C84}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,218 @@
+
+*{
+	color:white;
+	font: 75 12pt "Microsoft YaHei UI";
+	font-weight:500;
+	text-align: center;
+
+	border-radius:5px;
+	background:rgb(100,100,100);
+}
+QWidget{
+	color:rgba(255,255,255,170);
+	background:rgb(155,155,155);
+}
+QWidget#topWidget{
+	color:rgba(255,255,255,170);
+	background:rgb(30,159,255);
+}
+
+QListWidget
+{
+	color:rgb(255,255,255);
+	background:rgb(52,64,88);
+}
+
+QListWidget::item
+{
+	color:rgb(200,200,200);
+}
+
+QListWidget::item:hover
+{
+	color:rgb(255,255,255);
+	border:none;
+	border-left:2px solid rgb(100,100,100);
+}
+
+QListWidget::item::selected:active
+{
+	color:white;
+	background:rgb(30,159,255);
+	border-width:0;
+}
+QListWidget::item:selected
+{
+	color:white;
+	border-width:0;
+}
+
+QLineEdit{
+	border:2px solid rgb(255,255,255);
+}
+QPushButton{
+	border:2px solid rgb(255,255,255);
+	background:rgb(30,159,255);
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+/*表头*/
+QHeaderView{
+	color:black;
+	background: rgb(0,135,123);
+	border: none;
+	border-bottom: 3px solid rgb(0, 160, 230);
+
+}
+
+/*水平表头*/
+QHeaderView::section:horizontal {
+	color:black;
+	background: rgb(0,135,123);
+	border: none;
+}
+
+/*垂直表头*/
+QHeaderView::section:vertical {
+	color:black;
+	background: rgb(0,135,123);
+	border: none;
+}
+
+/*表格角落按钮*/
+QTableCornerButton:section{
+	color:black;
+	background: rgb(0,135,123);
+	border: none;
+}
+
+QSplitter::handle,QTreeWidget::branch{
+	/*background:red;*/
+	
+}
+
+QHeaderView::section:horizontal:hover {
+	background: rgb(0, 135, 123);
+}
+
+QHeaderView::section:horizontal:pressed {
+	background: rgb(0, 135, 123);
+}
+
+QHeaderView::up-arrow {
+	width: 13px;
+	height: 11px;
+	padding-right: 5px;
+	image: url(:/Black/topArrow);
+	subcontrol-position: center right;
+}
+
+QHeaderView::up-arrow:hover, QHeaderView::up-arrow:pressed {
+	image: url(:/Black/topArrowHover);
+}
+
+QHeaderView::down-arrow {
+	width: 13px;
+	height: 11px;
+	padding-right: 5px;
+	image: url(:/Black/bottomArrow);
+	subcontrol-position: center right;
+}
+QHeaderView::down-arrow:hover, QHeaderView::down-arrow:pressed {
+	image: url(:/Black/bottomArrowHover);
+}
+
+/*树*/
+
+QTreeWidget {
+	background: rgba(75, 75, 75, 40);
+	border: 1px solid rgb(45, 45, 45);
+	gridline-color: rgb(60, 60, 60);/*表格数据部分网格线*/
+	
+}
+
+QTreeWidget::item {
+
+	background: rgb(70, 70, 70);
+	border: none;
+	border-right: 1px solid rgb(45, 45, 45);
+	border-bottom: 1px solid rgb(45, 45, 45);
+
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+QTreeWidget::item:selected {
+	background: rgba(255, 255, 255, 40);
+}
+
+QTreeWidget::item:selected:!active {
+	
+}
+
+QTreeWidget::indicator {
+	width: 0px;
+	height: 0px;
+}
+
+/*表格*/
+QTableWidget {
+	color:black;
+	background: rgb(0,135,123);
+	alternate-background-color:rgb(80,75,75);/*隔行换色*/
+	border: 1px solid rgb(45, 45, 45);
+	gridline-color: rgb(60, 60, 60);/*表格数据部分网格线*/
+}
+
+QTableWidget::item {
+	color:black;
+	background: rgb(0,135,123);
+	border: none;
+	border-right: 1px solid rgb(45, 45, 45);
+	border-bottom: 1px solid rgb(45, 45, 45);
+
+	padding-left: 5px;
+	padding-right: 5px;
+}
+QTableWidget::item:selected {
+	background: rgb(0,135,123);
+}
+QTableWidget::item:selected:!active {
+
+}
+QTableWidget::indicator {
+	width: 20px;
+	height: 20px;
+}
+QComboBox {
+    	border: 2px solid rgb(250,250,250);
+    	border-radius: 5px;
+    	padding: 1px 2px 1px 2px;
+}
+
+QComboBox::drop-down {
+	background-color:transparent;
+    	subcontrol-origin: padding;
+    	subcontrol-position: top right;
+    	width: 20px;
+    	border-left-width: 1px;
+    	border-left-color: darkgray;
+    	border-left-style: solid;
+    	border-top-right-radius: 3px;
+    	border-bottom-right-radius: 3px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

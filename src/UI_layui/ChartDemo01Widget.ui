@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChartDemo01Widget</class>
+ <widget class="QWidget" name="ChartDemo01Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ChartDemo01Widget</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="rootWidget" native="true">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,10">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="topWidget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="updatePieChartButton">
+           <property name="text">
+            <string>更改pie数据</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>898</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QComboBox" name="themeComboBox"/>
+         </item>
+         <item>
+          <widget class="QComboBox" name="animationComboBox"/>
+         </item>
+         <item>
+          <widget class="QComboBox" name="legendComboBox"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="bottomWidget" native="true"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>updatePieChartButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ChartDemo01Widget</receiver>
+   <slot>updatePieChartButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>39</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>47</x>
+     <y>-93</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>themeComboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>ChartDemo01Widget</receiver>
+   <slot>themeComboBoxCurrentIndexChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>818</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>816</x>
+     <y>-20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>animationComboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>ChartDemo01Widget</receiver>
+   <slot>animationComboBoxCurrentIndexChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>873</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>873</x>
+     <y>-16</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>legendComboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>ChartDemo01Widget</receiver>
+   <slot>legendComboBoxCurrentIndexChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>952</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>955</x>
+     <y>-37</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>updatePieChartButtonClicked()</slot>
+  <slot>themeComboBoxCurrentIndexChanged()</slot>
+  <slot>animationComboBoxCurrentIndexChanged()</slot>
+  <slot>legendComboBoxCurrentIndexChanged()</slot>
+ </slots>
+</ui>
