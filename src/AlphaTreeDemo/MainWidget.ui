@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWidgetClass</class>
+ <widget class="QWidget" name="MainWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>736</width>
+    <height>672</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="writeJsonButton">
+       <property name="text">
+        <string>写入json</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="readJsonButton">
+       <property name="text">
+        <string>读取json</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="createTreeButton">
+       <property name="text">
+        <string>生成树</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveTreeButton">
+       <property name="text">
+        <string>保存树</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTreeWidget" name="treeWidget">
+     <column>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MainWidget.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>writeJsonButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>writeJsonButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>128</x>
+     <y>-43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>readJsonButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>readJsonButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>310</x>
+     <y>-129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>createTreeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>createTreeButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>439</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>442</x>
+     <y>-82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveTreeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>saveTreeButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>606</x>
+     <y>26</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>-39</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>writeJsonButtonClicked()</slot>
+  <slot>readJsonButtonClicked()</slot>
+  <slot>createTreeButtonClicked()</slot>
+  <slot>saveTreeButtonClicked()</slot>
+ </slots>
+</ui>
