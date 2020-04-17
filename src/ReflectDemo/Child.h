@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QDebug>
 
 class Child : public QObject
 {
@@ -10,6 +11,13 @@ class Child : public QObject
 public:
 	Child(QObject *parent = nullptr);
 	~Child();
+
+	Child& operator=(const Child & other)
+	{
+		this->_childName = other._childName;
+		this->_childAge = other._childAge;
+		return *this;
+	}
 
 	QString _childName;
 	int _childAge;

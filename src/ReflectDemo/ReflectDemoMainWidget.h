@@ -14,13 +14,13 @@ public:
 
 private:
 	Ui::ReflectDemoMainWidgetClass ui;
-	Parent p;
 	QVariant var;
-
+	Parent _parent;
 	public slots:
-	void varSetValueButton();
-	void varGetValueButton();
+	void varSetValueButtonClicked();
+	void varGetValueButtonClicked();
 
-	
+	void setChildButtonClicked();
+	void getChildButtonClicked();
 
 };

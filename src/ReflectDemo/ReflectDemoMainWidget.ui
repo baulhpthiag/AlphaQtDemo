@@ -39,6 +39,32 @@
     <string>varGetValue</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="setChildButton">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>190</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>setChild</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="getChildButton">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>250</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>getChild</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
@@ -49,15 +75,15 @@
    <sender>varSetValueButton</sender>
    <signal>clicked()</signal>
    <receiver>ReflectDemoMainWidgetClass</receiver>
-   <slot>varSetValueClicked()</slot>
+   <slot>varSetValueButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>90</x>
-     <y>92</y>
+     <x>78</x>
+     <y>91</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-45</x>
-     <y>92</y>
+     <x>-83</x>
+     <y>70</y>
     </hint>
    </hints>
   </connection>
@@ -65,21 +91,55 @@
    <sender>varGetValueButton</sender>
    <signal>clicked()</signal>
    <receiver>ReflectDemoMainWidgetClass</receiver>
-   <slot>varGetValueClicked()</slot>
+   <slot>varGetValueButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>79</x>
-     <y>131</y>
+     <x>107</x>
+     <y>133</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-103</x>
-     <y>131</y>
+     <x>-92</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>setChildButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ReflectDemoMainWidgetClass</receiver>
+   <slot>setChildButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>73</x>
+     <y>207</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-37</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>getChildButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ReflectDemoMainWidgetClass</receiver>
+   <slot>getChildButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>267</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-72</x>
+     <y>267</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>varSetValueClicked()</slot>
-  <slot>varGetValueClicked()</slot>
+  <slot>varSetValueButtonClicked()</slot>
+  <slot>varGetValueButtonClicked()</slot>
+  <slot>setChildButtonClicked()</slot>
+  <slot>getChildButtonClicked()</slot>
  </slots>
 </ui>
