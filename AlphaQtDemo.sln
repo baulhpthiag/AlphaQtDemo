@@ -90,6 +90,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI_layui", "src\UI_layui\UI
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlphaTreeDemo", "src\AlphaTreeDemo\AlphaTreeDemo.vcxproj", "{C497380C-1303-4DB0-913E-A4B07A51CC7D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReflectDemo", "src\ReflectDemo\ReflectDemo.vcxproj", "{610E8743-4C67-4839-A6A2-8A5DBA665268}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -264,6 +266,10 @@ Global
 		{C497380C-1303-4DB0-913E-A4B07A51CC7D}.Debug|x64.Build.0 = Debug|x64
 		{C497380C-1303-4DB0-913E-A4B07A51CC7D}.Release|x64.ActiveCfg = Release|x64
 		{C497380C-1303-4DB0-913E-A4B07A51CC7D}.Release|x64.Build.0 = Release|x64
+		{610E8743-4C67-4839-A6A2-8A5DBA665268}.Debug|x64.ActiveCfg = Debug|x64
+		{610E8743-4C67-4839-A6A2-8A5DBA665268}.Debug|x64.Build.0 = Debug|x64
+		{610E8743-4C67-4839-A6A2-8A5DBA665268}.Release|x64.ActiveCfg = Release|x64
+		{610E8743-4C67-4839-A6A2-8A5DBA665268}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

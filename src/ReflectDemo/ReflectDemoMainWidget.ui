@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReflectDemoMainWidgetClass</class>
+ <widget class="QWidget" name="ReflectDemoMainWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ReflectDemoMainWidget</string>
+  </property>
+  <widget class="QPushButton" name="varSetValueButton">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>80</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>varSetValue</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="varGetValueButton">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>120</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>varGetValue</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="ReflectDemoMainWidget.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>varSetValueButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ReflectDemoMainWidgetClass</receiver>
+   <slot>varSetValueClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-45</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>varGetValueButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ReflectDemoMainWidgetClass</receiver>
+   <slot>varGetValueClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-103</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>varSetValueClicked()</slot>
+  <slot>varGetValueClicked()</slot>
+ </slots>
+</ui>
