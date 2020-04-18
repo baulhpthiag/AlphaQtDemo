@@ -23,10 +23,16 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
-    <Filter Include="Header Files\tree">
+    <Filter Include="Header Files\helper">
+      <UniqueIdentifier>{4e567628-9435-4fbe-ae52-03aee1ebb5a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\helper">
+      <UniqueIdentifier>{a8ba7dff-9a55-49d4-a6f9-ec2f02af58b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\helper\treeNode">
       <UniqueIdentifier>{19a0f8c3-2f06-4d8c-993c-493abc21ee8f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\tree">
+    <Filter Include="Source Files\helper\treeNode">
       <UniqueIdentifier>{579eba97-7fbc-47e8-ae26-99e0845d4e12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -38,34 +44,37 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tree\BoolConfigNode.cpp">
-      <Filter>Source Files\tree</Filter>
+      <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
     <ClCompile Include="tree\DoubleConfigNode.cpp">
-      <Filter>Source Files\tree</Filter>
+      <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
     <ClCompile Include="tree\DoubleEnumConfigNode.cpp">
-      <Filter>Source Files\tree</Filter>
+      <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
     <ClCompile Include="tree\IntConfigNode.cpp">
-      <Filter>Source Files\tree</Filter>
+      <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
     <ClCompile Include="tree\IntEnumConfigNode.cpp">
-      <Filter>Source Files\tree</Filter>
-    </ClCompile>
-    <ClCompile Include="tree\JsonHelper.cpp">
-      <Filter>Source Files\tree</Filter>
+      <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
     <ClCompile Include="tree\StringConfigNode.cpp">
-      <Filter>Source Files\tree</Filter>
+      <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
     <ClCompile Include="tree\StringEnumConfigNode.cpp">
-      <Filter>Source Files\tree</Filter>
-    </ClCompile>
-    <ClCompile Include="tree\TreeWidgetHelper.cpp">
-      <Filter>Source Files\tree</Filter>
+      <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
     <ClCompile Include="TestConfig.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tree\TreeWidgetHelper.cpp">
+      <Filter>Source Files\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="tree\JsonHelper.cpp">
+      <Filter>Source Files\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="BoolListConfigNode.cpp">
+      <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,34 +82,37 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="tree\BoolConfigNode.h">
-      <Filter>Header Files\tree</Filter>
+      <Filter>Header Files\helper\treeNode</Filter>
     </QtMoc>
     <QtMoc Include="tree\DoubleConfigNode.h">
-      <Filter>Header Files\tree</Filter>
+      <Filter>Header Files\helper\treeNode</Filter>
     </QtMoc>
     <QtMoc Include="tree\DoubleEnumConfigNode.h">
-      <Filter>Header Files\tree</Filter>
+      <Filter>Header Files\helper\treeNode</Filter>
     </QtMoc>
     <QtMoc Include="tree\IntConfigNode.h">
-      <Filter>Header Files\tree</Filter>
+      <Filter>Header Files\helper\treeNode</Filter>
     </QtMoc>
     <QtMoc Include="tree\IntEnumConfigNode.h">
-      <Filter>Header Files\tree</Filter>
-    </QtMoc>
-    <QtMoc Include="tree\JsonHelper.h">
-      <Filter>Header Files\tree</Filter>
+      <Filter>Header Files\helper\treeNode</Filter>
     </QtMoc>
     <QtMoc Include="tree\StringConfigNode.h">
-      <Filter>Header Files\tree</Filter>
+      <Filter>Header Files\helper\treeNode</Filter>
     </QtMoc>
     <QtMoc Include="tree\StringEnumConfigNode.h">
-      <Filter>Header Files\tree</Filter>
-    </QtMoc>
-    <QtMoc Include="tree\TreeWidgetHelper.h">
-      <Filter>Header Files\tree</Filter>
+      <Filter>Header Files\helper\treeNode</Filter>
     </QtMoc>
     <QtMoc Include="TestConfig.h">
       <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="tree\JsonHelper.h">
+      <Filter>Header Files\helper</Filter>
+    </QtMoc>
+    <QtMoc Include="tree\TreeWidgetHelper.h">
+      <Filter>Header Files\helper</Filter>
+    </QtMoc>
+    <QtMoc Include="BoolListConfigNode.h">
+      <Filter>Header Files\helper\treeNode</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

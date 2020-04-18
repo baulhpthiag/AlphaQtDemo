@@ -40,35 +40,19 @@ bool JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 		const char * pStrTypeName = var.typeName();
 		QString strTypeName = QString::fromUtf8(pStrTypeName);
 
-		if ("int" == strTypeName)
+		if ("bool" == strTypeName)
 		{
 			jsonObj->insert(strKey, QJsonValue::fromVariant(var));
 		}
-		else if ("QList<int>" == strTypeName)
+		else if ("int" == strTypeName)
 		{
-			QList<int> list = var.value<QList<int>>();
-			QJsonArray jsonArray;
-			for (int i = 0; i < list.count(); i++)
-			{
-				jsonArray.append(list[i]);
-			}
-			jsonObj->insert(strKey, jsonArray);
+			jsonObj->insert(strKey, QJsonValue::fromVariant(var));
 		}
 		else if ("double" == strTypeName)
 		{
 			jsonObj->insert(strKey, QJsonValue::fromVariant(var));
 		}
-		else if ("QList<double>" == strTypeName)
-		{
-			QList<double> list = var.value<QList<double>>();
-			QJsonArray jsonArray;
-			for (int i = 0; i < list.count(); i++)
-			{
-				jsonArray.append(list[i]);
-			}
-			jsonObj->insert(strKey, jsonArray);
-		}
-		else if ("bool" == strTypeName)
+		else if ("QString" == strTypeName)
 		{
 			jsonObj->insert(strKey, QJsonValue::fromVariant(var));
 		}
@@ -82,9 +66,25 @@ bool JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 			}
 			jsonObj->insert(strKey, jsonArray);
 		}
-		else if ("QString" == strTypeName)
+		else if ("QList<int>" == strTypeName)
 		{
-			jsonObj->insert(strKey, QJsonValue::fromVariant(var));
+			QList<int> list = var.value<QList<int>>();
+			QJsonArray jsonArray;
+			for (int i = 0; i < list.count(); i++)
+			{
+				jsonArray.append(list[i]);
+			}
+			jsonObj->insert(strKey, jsonArray);
+		}
+		else if ("QList<double>" == strTypeName)
+		{
+			QList<double> list = var.value<QList<double>>();
+			QJsonArray jsonArray;
+			for (int i = 0; i < list.count(); i++)
+			{
+				jsonArray.append(list[i]);
+			}
+			jsonObj->insert(strKey, jsonArray);
 		}
 		else if ("QList<QString>" == strTypeName)
 		{
@@ -103,6 +103,48 @@ bool JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 			objToJsonObj(&tempJsonObj, &tempConfigNode);
 			jsonObj->insert(strKey, tempJsonObj);
 		}
+		else if ("IntConfigNode" == strTypeName)
+		{
+			IntConfigNode tempConfigNode = var.value<IntConfigNode>();
+			QJsonObject tempJsonObj;
+			objToJsonObj(&tempJsonObj, &tempConfigNode);
+			jsonObj->insert(strKey, tempJsonObj);
+		}
+		else if ("IntEnumConfigNode" == strTypeName)
+		{
+			IntEnumConfigNode tempConfigNode = var.value<IntEnumConfigNode>();
+			QJsonObject tempJsonObj;
+			objToJsonObj(&tempJsonObj, &tempConfigNode);
+			jsonObj->insert(strKey, tempJsonObj);
+		}
+		else if ("DoubleConfigNode" == strTypeName)
+		{
+			DoubleConfigNode tempConfigNode = var.value<DoubleConfigNode>();
+			QJsonObject tempJsonObj;
+			objToJsonObj(&tempJsonObj, &tempConfigNode);
+			jsonObj->insert(strKey, tempJsonObj);
+		}
+		else if ("DoubleEnumConfigNode" == strTypeName)
+		{
+			DoubleEnumConfigNode tempConfigNode = var.value<DoubleEnumConfigNode>();
+			QJsonObject tempJsonObj;
+			objToJsonObj(&tempJsonObj, &tempConfigNode);
+			jsonObj->insert(strKey, tempJsonObj);
+		}
+		else if ("StringConfigNode" == strTypeName)
+		{
+			StringConfigNode tempConfigNode = var.value<StringConfigNode>();
+			QJsonObject tempJsonObj;
+			objToJsonObj(&tempJsonObj, &tempConfigNode);
+			jsonObj->insert(strKey, tempJsonObj);
+		}
+		else if ("StringEnumConfigNode" == strTypeName)
+		{
+			StringEnumConfigNode tempConfigNode = var.value<StringEnumConfigNode>();
+			QJsonObject tempJsonObj;
+			objToJsonObj(&tempJsonObj, &tempConfigNode);
+			jsonObj->insert(strKey, tempJsonObj);
+		}
 		else if ("QList<BoolConfigNode>" == strTypeName)
 		{
 			QList<BoolConfigNode> list = var.value<QList<BoolConfigNode>>();
@@ -115,53 +157,6 @@ bool JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 				jsonArray.append(tempJsonObj);
 			}
 			jsonObj->insert(strKey, jsonArray);
-		}
-		else if ("DoubleConfigNode" == strTypeName)
-		{
-			DoubleConfigNode tempConfigNode = var.value<DoubleConfigNode>();
-			QJsonObject tempJsonObj;
-			objToJsonObj(&tempJsonObj, &tempConfigNode);
-			jsonObj->insert(strKey, tempJsonObj);
-		}
-		else if ("QList<DoubleConfigNode>" == strTypeName)
-		{
-			QList<DoubleConfigNode> list = var.value<QList<DoubleConfigNode>>();
-			QJsonArray jsonArray;
-			for (int i = 0; i < list.count(); i++)
-			{
-				DoubleConfigNode tempConfigNode = list[i];
-				QJsonObject tempJsonObj;
-				objToJsonObj(&tempJsonObj, &tempConfigNode);
-				jsonArray.append(tempJsonObj);
-			}
-			jsonObj->insert(strKey, jsonArray);
-		}
-		else if ("DoubleEnumConfigNode" == strTypeName)
-		{
-			DoubleEnumConfigNode tempConfigNode = var.value<DoubleEnumConfigNode>();
-			QJsonObject tempJsonObj;
-			objToJsonObj(&tempJsonObj, &tempConfigNode);
-			jsonObj->insert(strKey, tempJsonObj);
-		}
-		else if ("QList<DoubleEnumConfigNode>" == strTypeName)
-		{
-			QList<DoubleEnumConfigNode> list = var.value<QList<DoubleEnumConfigNode>>();
-			QJsonArray jsonArray;
-			for (int i = 0; i < list.count(); i++)
-			{
-				DoubleEnumConfigNode tempConfigNode = list[i];
-				QJsonObject tempJsonObj;
-				objToJsonObj(&tempJsonObj, &tempConfigNode);
-				jsonArray.append(tempJsonObj);
-			}
-			jsonObj->insert(strKey, jsonArray);
-		}
-		else if ("IntConfigNode" == strTypeName)
-		{
-			IntConfigNode tempConfigNode = var.value<IntConfigNode>();
-			QJsonObject tempJsonObj;
-			objToJsonObj(&tempJsonObj, &tempConfigNode);
-			jsonObj->insert(strKey, tempJsonObj);
 		}
 		else if ("QList<IntConfigNode>" == strTypeName)
 		{
@@ -176,13 +171,6 @@ bool JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 			}
 			jsonObj->insert(strKey, jsonArray);
 		}
-		else if ("IntEnumConfigNode" == strTypeName)
-		{
-			IntEnumConfigNode tempConfigNode = var.value<IntEnumConfigNode>();
-			QJsonObject tempJsonObj;
-			objToJsonObj(&tempJsonObj, &tempConfigNode);
-			jsonObj->insert(strKey, tempJsonObj);
-		}
 		else if ("QList<IntEnumConfigNode>" == strTypeName)
 		{
 			QList<IntEnumConfigNode> list = var.value<QList<IntEnumConfigNode>>();
@@ -196,12 +184,31 @@ bool JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 			}
 			jsonObj->insert(strKey, jsonArray);
 		}
-		else if ("StringConfigNode" == strTypeName)
+		else if ("QList<DoubleConfigNode>" == strTypeName)
 		{
-			StringConfigNode tempConfigNode = var.value<StringConfigNode>();
-			QJsonObject tempJsonObj;
-			objToJsonObj(&tempJsonObj, &tempConfigNode);
-			jsonObj->insert(strKey, tempJsonObj);
+			QList<DoubleConfigNode> list = var.value<QList<DoubleConfigNode>>();
+			QJsonArray jsonArray;
+			for (int i = 0; i < list.count(); i++)
+			{
+				DoubleConfigNode tempConfigNode = list[i];
+				QJsonObject tempJsonObj;
+				objToJsonObj(&tempJsonObj, &tempConfigNode);
+				jsonArray.append(tempJsonObj);
+			}
+			jsonObj->insert(strKey, jsonArray);
+		}
+		else if ("QList<DoubleEnumConfigNode>" == strTypeName)
+		{
+			QList<DoubleEnumConfigNode> list = var.value<QList<DoubleEnumConfigNode>>();
+			QJsonArray jsonArray;
+			for (int i = 0; i < list.count(); i++)
+			{
+				DoubleEnumConfigNode tempConfigNode = list[i];
+				QJsonObject tempJsonObj;
+				objToJsonObj(&tempJsonObj, &tempConfigNode);
+				jsonArray.append(tempJsonObj);
+			}
+			jsonObj->insert(strKey, jsonArray);
 		}
 		else if ("QList<StringConfigNode>" == strTypeName)
 		{
@@ -215,13 +222,6 @@ bool JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 				jsonArray.append(tempJsonObj);
 			}
 			jsonObj->insert(strKey, jsonArray);
-		}
-		else if ("StringEnumConfigNode" == strTypeName)
-		{
-			StringEnumConfigNode tempConfigNode = var.value<StringEnumConfigNode>();
-			QJsonObject tempJsonObj;
-			objToJsonObj(&tempJsonObj, &tempConfigNode);
-			jsonObj->insert(strKey, tempJsonObj);
 		}
 		else if ("QList<StringEnumConfigNode>" == strTypeName)
 		{
@@ -255,7 +255,6 @@ bool JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 		else if (strTypeName.contains("*"))
 		{
 			qDebug() << "JsonHelper objToJsonObj unknown type " + strTypeName;
-
 			/*QJsonObject tempJsonObj;
 			QString upperFirst = qstringKey.mid(0).at(0).toUpper() + qstringKey.mid(1);
 			QString methodName = "get" + upperFirst;
@@ -297,26 +296,16 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 		const char * pStrTypeName = var.typeName();
 		QString strTypeName = QString::fromUtf8(pStrTypeName);
 
-
-
-		if ("int" == strTypeName)
+		if ("bool" == strTypeName)
 		{
 			QVariant tempVar;
 			tempVar.setValue(jsonObj->value(strKey));
 			obj->setProperty(pStrKey, tempVar);
 		}
-		else if ("QList<int>" == strTypeName)
+		else if ("int" == strTypeName)
 		{
-			QList<int> list;
-			QJsonArray jsonArray = jsonObj->value(strKey).toArray();
-
-			for each (auto item in jsonArray)
-			{
-				list.append(item.toInt());
-			}
 			QVariant tempVar;
-			tempVar.setValue<QList<int>>(list);
-
+			tempVar.setValue(jsonObj->value(strKey));
 			obj->setProperty(pStrKey, tempVar);
 		}
 		else if ("double" == strTypeName)
@@ -325,21 +314,7 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 			tempVar.setValue(jsonObj->value(strKey));
 			obj->setProperty(pStrKey, tempVar);
 		}
-		else if ("QList<double>" == strTypeName)
-		{
-			QList<double> list;
-			QJsonArray jsonArray = jsonObj->value(strKey).toArray();
-
-			for each (auto item in jsonArray)
-			{
-				list.append(item.toDouble());
-			}
-			QVariant tempVar;
-			tempVar.setValue<QList<double>>(list);
-
-			obj->setProperty(pStrKey, tempVar);
-		}
-		else if ("bool" == strTypeName)
+		else if ("QString" == strTypeName)
 		{
 			QVariant tempVar;
 			tempVar.setValue(jsonObj->value(strKey));
@@ -359,10 +334,32 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 
 			obj->setProperty(pStrKey, tempVar);
 		}
-		else if ("QString" == strTypeName)
+		else if ("QList<int>" == strTypeName)
 		{
+			QList<int> list;
+			QJsonArray jsonArray = jsonObj->value(strKey).toArray();
+
+			for each (auto item in jsonArray)
+			{
+				list.append(item.toInt());
+			}
 			QVariant tempVar;
-			tempVar.setValue(jsonObj->value(strKey));
+			tempVar.setValue<QList<int>>(list);
+
+			obj->setProperty(pStrKey, tempVar);
+		}
+		else if ("QList<double>" == strTypeName)
+		{
+			QList<double> list;
+			QJsonArray jsonArray = jsonObj->value(strKey).toArray();
+
+			for each (auto item in jsonArray)
+			{
+				list.append(item.toDouble());
+			}
+			QVariant tempVar;
+			tempVar.setValue<QList<double>>(list);
+
 			obj->setProperty(pStrKey, tempVar);
 		}
 		else if ("QList<QString>" == strTypeName)
@@ -391,6 +388,66 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 			obj->setProperty(pStrKey, tempVar);
 
 		}
+		else if ("IntConfigNode" == strTypeName)
+		{
+			IntConfigNode tempConfigNode;
+			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
+			jsonObjToObj(&tempJsonObj, &tempConfigNode);
+
+			QVariant tempVar;
+			tempVar.setValue<IntConfigNode>(tempConfigNode);
+			obj->setProperty(pStrKey, tempVar);
+		}
+		else if ("IntEnumConfigNode" == strTypeName)
+		{
+			IntEnumConfigNode tempConfigNode;
+			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
+			jsonObjToObj(&tempJsonObj, &tempConfigNode);
+
+			QVariant tempVar;
+			tempVar.setValue<IntEnumConfigNode>(tempConfigNode);
+			obj->setProperty(pStrKey, tempVar);
+		}
+		else if ("DoubleConfigNode" == strTypeName)
+		{
+			DoubleConfigNode tempConfigNode;
+			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
+			jsonObjToObj(&tempJsonObj, &tempConfigNode);
+
+			QVariant tempVar;
+			tempVar.setValue<DoubleConfigNode>(tempConfigNode);
+			obj->setProperty(pStrKey, tempVar);
+		}
+		else if ("DoubleEnumConfigNode" == strTypeName)
+		{
+			DoubleEnumConfigNode tempConfigNode;
+			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
+			jsonObjToObj(&tempJsonObj, &tempConfigNode);
+
+			QVariant tempVar;
+			tempVar.setValue<DoubleEnumConfigNode>(tempConfigNode);
+			obj->setProperty(pStrKey, tempVar);
+		}
+		else if ("StringConfigNode" == strTypeName)
+		{
+			StringConfigNode tempConfigNode;
+			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
+			jsonObjToObj(&tempJsonObj, &tempConfigNode);
+
+			QVariant tempVar;
+			tempVar.setValue<StringConfigNode>(tempConfigNode);
+			obj->setProperty(pStrKey, tempVar);
+		}
+		else if ("StringEnumConfigNode" == strTypeName)
+		{
+			StringEnumConfigNode tempConfigNode;
+			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
+			jsonObjToObj(&tempJsonObj, &tempConfigNode);
+
+			QVariant tempVar;
+			tempVar.setValue<StringEnumConfigNode>(tempConfigNode);
+			obj->setProperty(pStrKey, tempVar);
+		}
 		else if ("QList<BoolConfigNode>" == strTypeName)
 		{
 			QList<BoolConfigNode> list;
@@ -406,73 +463,6 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 
 			QVariant tempVar;
 			tempVar.setValue<QList<BoolConfigNode>>(list);
-			obj->setProperty(pStrKey, tempVar);
-		}
-
-		else if ("DoubleConfigNode" == strTypeName)
-		{
-			DoubleConfigNode tempConfigNode;
-			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
-			jsonObjToObj(&tempJsonObj, &tempConfigNode);
-
-			QVariant tempVar;
-			tempVar.setValue<DoubleConfigNode>(tempConfigNode);
-			obj->setProperty(pStrKey, tempVar);
-		}
-		else if ("QList<DoubleConfigNode>" == strTypeName)
-		{
-			QList<DoubleConfigNode> list;
-			QJsonArray jsonArray = jsonObj->value(strKey).toArray();
-
-			for each (auto item in jsonArray)
-			{
-				DoubleConfigNode tempConfigNode;
-				QJsonObject tempJsonObj = item.toObject();
-				jsonObjToObj(&tempJsonObj, &tempConfigNode);
-				list.append(tempConfigNode);
-			}
-
-			QVariant tempVar;
-			tempVar.setValue<QList<DoubleConfigNode>>(list);
-			obj->setProperty(pStrKey, tempVar);
-		}
-
-		else if ("DoubleEnumConfigNode" == strTypeName)
-		{
-			DoubleEnumConfigNode tempConfigNode;
-			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
-			jsonObjToObj(&tempJsonObj, &tempConfigNode);
-
-			QVariant tempVar;
-			tempVar.setValue<DoubleEnumConfigNode>(tempConfigNode);
-			obj->setProperty(pStrKey, tempVar);
-		}
-		else if ("QList<DoubleEnumConfigNode>" == strTypeName)
-		{
-			QList<DoubleEnumConfigNode> list;
-			QJsonArray jsonArray = jsonObj->value(strKey).toArray();
-
-			for each (auto item in jsonArray)
-			{
-				DoubleEnumConfigNode tempConfigNode;
-				QJsonObject tempJsonObj = item.toObject();
-				jsonObjToObj(&tempJsonObj, &tempConfigNode);
-				list.append(tempConfigNode);
-			}
-
-			QVariant tempVar;
-			tempVar.setValue<QList<DoubleEnumConfigNode>>(list);
-			obj->setProperty(pStrKey, tempVar);
-		}
-
-		else if ("IntConfigNode" == strTypeName)
-		{
-			IntConfigNode tempConfigNode;
-			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
-			jsonObjToObj(&tempJsonObj, &tempConfigNode);
-
-			QVariant tempVar;
-			tempVar.setValue<IntConfigNode>(tempConfigNode);
 			obj->setProperty(pStrKey, tempVar);
 		}
 		else if ("QList<IntConfigNode>" == strTypeName)
@@ -492,17 +482,6 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 			tempVar.setValue<QList<IntConfigNode>>(list);
 			obj->setProperty(pStrKey, tempVar);
 		}
-
-		else if ("IntEnumConfigNode" == strTypeName)
-		{
-			IntEnumConfigNode tempConfigNode;
-			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
-			jsonObjToObj(&tempJsonObj, &tempConfigNode);
-
-			QVariant tempVar;
-			tempVar.setValue<IntEnumConfigNode>(tempConfigNode);
-			obj->setProperty(pStrKey, tempVar);
-		}
 		else if ("QList<IntEnumConfigNode>" == strTypeName)
 		{
 			QList<IntEnumConfigNode> list;
@@ -520,15 +499,38 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 			tempVar.setValue<QList<IntEnumConfigNode>>(list);
 			obj->setProperty(pStrKey, tempVar);
 		}
-
-		else if ("StringConfigNode" == strTypeName)
+		else if ("QList<DoubleConfigNode>" == strTypeName)
 		{
-			StringConfigNode tempConfigNode;
-			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
-			jsonObjToObj(&tempJsonObj, &tempConfigNode);
+			QList<DoubleConfigNode> list;
+			QJsonArray jsonArray = jsonObj->value(strKey).toArray();
+
+			for each (auto item in jsonArray)
+			{
+				DoubleConfigNode tempConfigNode;
+				QJsonObject tempJsonObj = item.toObject();
+				jsonObjToObj(&tempJsonObj, &tempConfigNode);
+				list.append(tempConfigNode);
+			}
 
 			QVariant tempVar;
-			tempVar.setValue<StringConfigNode>(tempConfigNode);
+			tempVar.setValue<QList<DoubleConfigNode>>(list);
+			obj->setProperty(pStrKey, tempVar);
+		}
+		else if ("QList<DoubleEnumConfigNode>" == strTypeName)
+		{
+			QList<DoubleEnumConfigNode> list;
+			QJsonArray jsonArray = jsonObj->value(strKey).toArray();
+
+			for each (auto item in jsonArray)
+			{
+				DoubleEnumConfigNode tempConfigNode;
+				QJsonObject tempJsonObj = item.toObject();
+				jsonObjToObj(&tempJsonObj, &tempConfigNode);
+				list.append(tempConfigNode);
+			}
+
+			QVariant tempVar;
+			tempVar.setValue<QList<DoubleEnumConfigNode>>(list);
 			obj->setProperty(pStrKey, tempVar);
 		}
 		else if ("QList<StringConfigNode>" == strTypeName)
@@ -546,17 +548,6 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 
 			QVariant tempVar;
 			tempVar.setValue<QList<StringConfigNode>>(list);
-			obj->setProperty(pStrKey, tempVar);
-		}
-
-		else if ("StringEnumConfigNode" == strTypeName)
-		{
-			StringEnumConfigNode tempConfigNode;
-			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
-			jsonObjToObj(&tempJsonObj, &tempConfigNode);
-
-			QVariant tempVar;
-			tempVar.setValue<StringEnumConfigNode>(tempConfigNode);
 			obj->setProperty(pStrKey, tempVar);
 		}
 		else if ("QList<StringEnumConfigNode>" == strTypeName)

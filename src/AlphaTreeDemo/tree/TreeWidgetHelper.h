@@ -28,6 +28,8 @@ static void TreeWidgetHelper::loadData(T& t, QTreeWidget* treeWidget)
 		return;
 	}
 	treeWidget->setColumnCount(2);
+	treeWidget->header()->setSectionResizeMode(QHeaderView::Stretch);    //x先自适应宽度
+	treeWidget->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);     //然后设置要根据内容使用宽度的列
 
 	QTreeWidgetItem *treeWidgetItem = new QTreeWidgetItem(treeWidget);
 	QObject *obj = (QObject*)(&t);
