@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QDebug>
 #include "BoolConfigNode.h"
 #include "DoubleConfigNode.h"
 #include "DoubleEnumConfigNode.h"
@@ -12,21 +13,21 @@
 class TestConfig : public QObject
 {
 	Q_OBJECT
-		Q_PROPERTY(BoolConfigNode& testBoolConfigNode READ getTestBoolConfigNode WRITE setTestBoolConfigNode)
-		Q_PROPERTY(DoubleConfigNode& testDoubleConfigNode READ getTestDoubleConfigNode WRITE setTestDoubleConfigNode)
-		Q_PROPERTY(DoubleEnumConfigNode& testDoubleEnumConfigNode READ getTestDoubleEnumConfigNode WRITE setTestDoubleEnumConfigNode)
-		Q_PROPERTY(IntConfigNode& testIntConfigNode READ getTestIntConfigNode WRITE setTestIntConfigNode)
-		Q_PROPERTY(IntEnumConfigNode& testIntEnumConfigNode READ getTestIntEnumConfigNode WRITE setTestIntEnumConfigNode)
-		Q_PROPERTY(StringConfigNode& testStringConfigNode READ getTestStringConfigNode WRITE setTestStringConfigNode)
-		Q_PROPERTY(StringEnumConfigNode& testStringEnumConfigNode READ getTestStringEnumConfigNode WRITE setTestStringEnumConfigNode)
+		Q_PROPERTY(BoolConfigNode testBoolConfigNode READ getTestBoolConfigNode WRITE setTestBoolConfigNode)
+		Q_PROPERTY(DoubleConfigNode testDoubleConfigNode READ getTestDoubleConfigNode WRITE setTestDoubleConfigNode)
+		Q_PROPERTY(DoubleEnumConfigNode testDoubleEnumConfigNode READ getTestDoubleEnumConfigNode WRITE setTestDoubleEnumConfigNode)
+		Q_PROPERTY(IntConfigNode testIntConfigNode READ getTestIntConfigNode WRITE setTestIntConfigNode)
+		Q_PROPERTY(IntEnumConfigNode testIntEnumConfigNode READ getTestIntEnumConfigNode WRITE setTestIntEnumConfigNode)
+		Q_PROPERTY(StringConfigNode testStringConfigNode READ getTestStringConfigNode WRITE setTestStringConfigNode)
+		Q_PROPERTY(StringEnumConfigNode testStringEnumConfigNode READ getTestStringEnumConfigNode WRITE setTestStringEnumConfigNode)
 
-		Q_PROPERTY(QList<BoolConfigNode>& testBoolConfigNodeList READ getTestBoolConfigNodeList WRITE setTestBoolConfigNodeList)
-		Q_PROPERTY(QList<DoubleConfigNode>& testDoubleConfigNodeList READ getTestDoubleConfigNodeList WRITE setTestDoubleConfigNodeList)
-		Q_PROPERTY(QList<DoubleEnumConfigNode>& testDoubleEnumConfigNodeList READ getTestDoubleEnumConfigNodeList WRITE setTestDoubleEnumConfigNodeList)
-		Q_PROPERTY(QList<IntConfigNode>& testIntConfigNodeList READ getTestIntConfigNodeList WRITE setTestIntConfigNodeList)
-		Q_PROPERTY(QList<IntEnumConfigNode>& testIntEnumConfigNodeList READ getTestIntEnumConfigNodeList WRITE setTestIntEnumConfigNodeList)
-		Q_PROPERTY(QList<StringConfigNode>& testStringConfigNodeList READ getTestStringConfigNodeList WRITE setTestStringConfigNodeList)
-		Q_PROPERTY(QList<StringEnumConfigNode>& testStringEnumConfigNodeList READ getTestStringEnumConfigNodeList WRITE setTestStringEnumConfigNodeList)
+		Q_PROPERTY(QList<BoolConfigNode> testBoolConfigNodeList READ getTestBoolConfigNodeList WRITE setTestBoolConfigNodeList)
+		Q_PROPERTY(QList<DoubleConfigNode> testDoubleConfigNodeList READ getTestDoubleConfigNodeList WRITE setTestDoubleConfigNodeList)
+		Q_PROPERTY(QList<DoubleEnumConfigNode> testDoubleEnumConfigNodeList READ getTestDoubleEnumConfigNodeList WRITE setTestDoubleEnumConfigNodeList)
+		Q_PROPERTY(QList<IntConfigNode> testIntConfigNodeList READ getTestIntConfigNodeList WRITE setTestIntConfigNodeList)
+		Q_PROPERTY(QList<IntEnumConfigNode> testIntEnumConfigNodeList READ getTestIntEnumConfigNodeList WRITE setTestIntEnumConfigNodeList)
+		Q_PROPERTY(QList<StringConfigNode> testStringConfigNodeList READ getTestStringConfigNodeList WRITE setTestStringConfigNodeList)
+		Q_PROPERTY(QList<StringEnumConfigNode> testStringEnumConfigNodeList READ getTestStringEnumConfigNodeList WRITE setTestStringEnumConfigNodeList)
 public:
 	TestConfig(QObject *parent = nullptr);
 	~TestConfig();
@@ -47,46 +48,58 @@ public:
 	QList<StringConfigNode> _testStringConfigNodeList;
 	QList<StringEnumConfigNode> _testStringEnumConfigNodeList;
 
-	Q_INVOKABLE BoolConfigNode& getTestBoolConfigNode();
-	Q_INVOKABLE void setTestBoolConfigNode(BoolConfigNode& value);
+	BoolConfigNode& getTestBoolConfigNode();
+	DoubleConfigNode& getTestDoubleConfigNode();
+	DoubleEnumConfigNode& getTestDoubleEnumConfigNode();
+	IntConfigNode& getTestIntConfigNode();
+	IntEnumConfigNode& getTestIntEnumConfigNode();
+	StringConfigNode& getTestStringConfigNode();
+	StringEnumConfigNode& getTestStringEnumConfigNode();
+	QList<BoolConfigNode>& getTestBoolConfigNodeList();
+	QList<DoubleConfigNode>& getTestDoubleConfigNodeList();
+	QList<DoubleEnumConfigNode>& getTestDoubleEnumConfigNodeList();
+	QList<IntConfigNode>& getTestIntConfigNodeList();
+	QList<IntEnumConfigNode>& getTestIntEnumConfigNodeList();
+	QList<StringConfigNode>& getTestStringConfigNodeList();
+	QList<StringEnumConfigNode>& getTestStringEnumConfigNodeList();
 
-	Q_INVOKABLE DoubleConfigNode& getTestDoubleConfigNode();
-	Q_INVOKABLE void setTestDoubleConfigNode(DoubleConfigNode& value);
+	friend  QDebug operator << (QDebug debug, const TestConfig &config)
+	{
 
-	Q_INVOKABLE DoubleEnumConfigNode& getTestDoubleEnumConfigNode();
-	Q_INVOKABLE void setTestDoubleEnumConfigNode(DoubleEnumConfigNode& value);
+		debug << "_testBoolConfigNode:"<< config._testBoolConfigNode;
+		return debug;
+	}
 
-	Q_INVOKABLE IntConfigNode& getTestIntConfigNode();
-	Q_INVOKABLE void setTestIntConfigNode(IntConfigNode& value);
+	Q_INVOKABLE BoolConfigNode* getTestBoolConfigNodeP();
+	Q_INVOKABLE IntConfigNode* getTestIntConfigNodeP();
+	Q_INVOKABLE IntEnumConfigNode* getTestIntEnumConfigNodeP();
+	Q_INVOKABLE DoubleConfigNode* getTestDoubleConfigNodeP();
+	Q_INVOKABLE DoubleEnumConfigNode* getTestDoubleEnumConfigNodeP();
+	Q_INVOKABLE StringConfigNode* getTestStringConfigNodeP();
+	Q_INVOKABLE StringEnumConfigNode* getTestStringEnumConfigNodeP();
+	Q_INVOKABLE QList<BoolConfigNode>* getTestBoolConfigNodeListP();
+	Q_INVOKABLE QList<IntConfigNode>* getTestIntConfigNodeListP();
+	Q_INVOKABLE QList<IntEnumConfigNode>* getTestIntEnumConfigNodeListP();
+	Q_INVOKABLE QList<DoubleConfigNode>* getTestDoubleConfigNodeListP();
+	Q_INVOKABLE QList<DoubleEnumConfigNode>* getTestDoubleEnumConfigNodeListP();
+	Q_INVOKABLE QList<StringConfigNode>* getTestStringConfigNodeListP();
+	Q_INVOKABLE QList<StringEnumConfigNode>* getTestStringEnumConfigNodeListP();
 
-	Q_INVOKABLE IntEnumConfigNode& getTestIntEnumConfigNode();
-	Q_INVOKABLE void setTestIntEnumConfigNode(IntEnumConfigNode& value);
 
-	Q_INVOKABLE StringConfigNode& getTestStringConfigNode();
-	Q_INVOKABLE void setTestStringConfigNode(StringConfigNode& value);
-
-	Q_INVOKABLE StringEnumConfigNode& getTestStringEnumConfigNode();
-	Q_INVOKABLE void setTestStringEnumConfigNode(StringEnumConfigNode& value);
-
-	Q_INVOKABLE QList<BoolConfigNode>& getTestBoolConfigNodeList();
-	Q_INVOKABLE void setTestBoolConfigNodeList(QList<BoolConfigNode>& value);
-
-	Q_INVOKABLE QList<DoubleConfigNode>& getTestDoubleConfigNodeList();
-	Q_INVOKABLE void setTestDoubleConfigNodeList(QList<DoubleConfigNode>& value);
-
-	Q_INVOKABLE QList<DoubleEnumConfigNode>& getTestDoubleEnumConfigNodeList();
-	Q_INVOKABLE void setTestDoubleEnumConfigNodeList(QList<DoubleEnumConfigNode>& value);
-
-	Q_INVOKABLE QList<IntConfigNode>& getTestIntConfigNodeList();
-	Q_INVOKABLE void setTestIntConfigNodeList(QList<IntConfigNode>& value);
-
-	Q_INVOKABLE QList<IntEnumConfigNode>& getTestIntEnumConfigNodeList();
-	Q_INVOKABLE void setTestIntEnumConfigNodeList(QList<IntEnumConfigNode>& value);
-
-	Q_INVOKABLE QList<StringConfigNode>& getTestStringConfigNodeList();
-	Q_INVOKABLE void setTestStringConfigNodeList(QList<StringConfigNode>& value);
-
-	Q_INVOKABLE QList<StringEnumConfigNode>& getTestStringEnumConfigNodeList();
-	Q_INVOKABLE void setTestStringEnumConfigNodeList(QList<StringEnumConfigNode>& value);
+	public slots:
+	void setTestBoolConfigNode(BoolConfigNode& value);
+	void setTestDoubleConfigNode(DoubleConfigNode& value);
+	void setTestDoubleEnumConfigNode(DoubleEnumConfigNode& value);
+	void setTestIntConfigNode(IntConfigNode& value);
+	void setTestIntEnumConfigNode(IntEnumConfigNode& value);
+	void setTestStringConfigNode(StringConfigNode& value);
+	void setTestStringEnumConfigNode(StringEnumConfigNode& value);
+	void setTestBoolConfigNodeList(QList<BoolConfigNode>& value);
+	void setTestDoubleConfigNodeList(QList<DoubleConfigNode>& value);
+	void setTestDoubleEnumConfigNodeList(QList<DoubleEnumConfigNode>& value);
+	void setTestIntConfigNodeList(QList<IntConfigNode>& value);
+	void setTestIntEnumConfigNodeList(QList<IntEnumConfigNode>& value);
+	void setTestStringConfigNodeList(QList<StringConfigNode>& value);
+	void setTestStringEnumConfigNodeList(QList<StringEnumConfigNode>& value);
 
 };

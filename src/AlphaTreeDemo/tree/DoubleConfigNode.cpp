@@ -14,3 +14,13 @@ DoubleConfigNode::DoubleConfigNode(QObject *parent)
 DoubleConfigNode::~DoubleConfigNode()
 {
 }
+
+void DoubleConfigNode::nodeValueChanged(QString strValue)
+{
+	double value = strValue.toDouble();
+	if (value>_maxValue || value<_minValue)
+	{
+		return;
+	}
+	_nodeValue = value;
+}

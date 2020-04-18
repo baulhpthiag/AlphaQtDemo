@@ -15,3 +15,13 @@ IntConfigNode::~IntConfigNode()
 {
 
 }
+
+void IntConfigNode::nodeValueChanged(QString strvalue)
+{
+	int value = strvalue.toInt();
+	if (value>_maxValue|| value<_minValue)
+	{
+		return;
+	}
+	_nodeValue = value;
+}

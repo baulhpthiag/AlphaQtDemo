@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QDebug>
 
 class BoolConfigNode : public QObject
 {
@@ -11,6 +12,8 @@ class BoolConfigNode : public QObject
 		Q_PROPERTY(bool isShow MEMBER _isShow)
 
 public:
+	BoolConfigNode(QObject *parent = nullptr);
+
 	BoolConfigNode(const BoolConfigNode& other, QObject* parent = nullptr)
 	{
 		this->_nodeShowName = other._nodeShowName;
@@ -19,7 +22,6 @@ public:
 		this->_isShow = other._isShow;
 	}
 
-	BoolConfigNode(QObject *parent = nullptr);
 	~BoolConfigNode();
 
 	BoolConfigNode& operator= (const BoolConfigNode& other)
@@ -29,6 +31,12 @@ public:
 		this->_isHot = other._isHot;
 		this->_isShow = other._isShow;
 		return *this;
+	}
+	friend  QDebug operator << (QDebug debug, const BoolConfigNode &config)
+	{
+
+		debug << "BoolConfigNode { _nodeShowName:" << config._nodeShowName << " _nodeValue:"<< config._nodeValue<<" _isHot:"<< config._isHot<<"_isShow"<< config._isShow<<"}";
+		return debug;
 	}
 
 	//Õ¹Ê¾Ãû³Æ

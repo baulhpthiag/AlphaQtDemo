@@ -44,6 +44,13 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="openProgramDirButton">
+       <property name="text">
+        <string>打开程序目录</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
@@ -101,8 +108,8 @@
    <slot>createTreeButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>439</x>
-     <y>19</y>
+     <x>436</x>
+     <y>29</y>
     </hint>
     <hint type="destinationlabel">
      <x>442</x>
@@ -117,12 +124,28 @@
    <slot>saveTreeButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>606</x>
-     <y>26</y>
+     <x>581</x>
+     <y>32</y>
     </hint>
     <hint type="destinationlabel">
      <x>603</x>
      <y>-39</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>openProgramDirButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>openProgramDirButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>674</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>913</x>
+     <y>25</y>
     </hint>
    </hints>
   </connection>
@@ -132,5 +155,6 @@
   <slot>readJsonButtonClicked()</slot>
   <slot>createTreeButtonClicked()</slot>
   <slot>saveTreeButtonClicked()</slot>
+  <slot>openProgramDirButtonClicked()</slot>
  </slots>
 </ui>

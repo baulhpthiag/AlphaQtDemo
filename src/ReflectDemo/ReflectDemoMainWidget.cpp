@@ -52,3 +52,14 @@ void ReflectDemoMainWidget::getChildButtonClicked()
 	qDebug() << "getChild " << &child;
 
 }
+
+void ReflectDemoMainWidget::bindDataButtonClicked()
+{
+	Child* child = nullptr;
+	QMetaObject::invokeMethod(&_parent, "getChildP", Q_RETURN_ARG(Child*, child));
+	qDebug() << child->_childName;
+
+	connect(ui.lineEdit, &QLineEdit::textChanged, child, &Child::setChildName);
+	connect(child,&Child::signalChildNameChanged,ui.parentNameLabel,&QLabel::setText);
+
+}

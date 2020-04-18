@@ -17,9 +17,10 @@ private:
 	TestConfig testConfig;
 
 	public slots:
+	void openProgramDirButtonClicked();
 	void writeJsonButtonClicked();
 	void readJsonButtonClicked();
-	void creatTreeButtonClicked();
+	void createTreeButtonClicked();
 	void saveTreeButtonClicked();
 
 };

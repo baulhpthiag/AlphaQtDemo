@@ -22,5 +22,10 @@ public:
 	QString _childName;
 	int _childAge;
 
+	public slots:
+	void setChildName(const QString & childName);
+
+signals:
+	void signalChildNameChanged(const QString & childName);
 
 };

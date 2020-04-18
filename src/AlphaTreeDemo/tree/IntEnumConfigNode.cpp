@@ -17,5 +17,6 @@ IntEnumConfigNode::~IntEnumConfigNode()
 
 void IntEnumConfigNode::nodeValueIndexChanged(int index)
 {
+	//¼ì²é
 	_enumIndex = index;
 }

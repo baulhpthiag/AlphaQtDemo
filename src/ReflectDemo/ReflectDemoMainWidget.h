@@ -23,4 +23,6 @@ private:
 	void setChildButtonClicked();
 	void getChildButtonClicked();
 
+	void bindDataButtonClicked();
+
 };

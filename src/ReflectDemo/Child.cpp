@@ -11,3 +11,11 @@ Child::~Child()
 	qDebug() << "Child destructor this;" << this;
 
 }
+
+void Child::setChildName(const QString & childName)
+{
+	qDebug() << "Child setChildName " << childName;
+
+	_childName = childName;
+	emit signalChildNameChanged(_childName);
+}

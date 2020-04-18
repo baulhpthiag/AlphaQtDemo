@@ -33,3 +33,8 @@ void Parent::setChild(const Child & child)
 	qDebug() << "setChild child" << &child;
 	qDebug() << "setChild this.child" << &_child0;
 }
+
+Child* Parent::getChildP()
+{
+	return &_child0;
+}

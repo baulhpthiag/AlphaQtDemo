@@ -55,6 +55,8 @@ public:
 	//是否在界面中显示
 	bool _isShow;
 
+	public slots:
+	void nodeValueChanged(QString strValue);
 };
 
 Q_DECLARE_METATYPE(DoubleConfigNode)

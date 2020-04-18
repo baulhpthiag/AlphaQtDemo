@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QComboBox>
 #include <QLineEdit>
+#include <QMetaObject>
 
 #include "BoolConfigNode.h"
 #include "DoubleConfigNode.h"
@@ -43,8 +44,19 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 		const char * pStrTypeName = var.typeName();
 		QString strTypeName = QString::fromUtf8(pStrTypeName);
 
+		QString up = strKey.at(0).toUpper();
+		QString tempMethod = "get" + up + strKey.mid(1) + "P";
+		QByteArray byteArray = tempMethod.toLatin1();
+		char * cp = byteArray.data();
 
-		if ("int" == strTypeName)
+		if ("bool" == strTypeName)
+		{
+			QTreeWidgetItem *tempItem = new QTreeWidgetItem(treeWidgetItem);
+			tempItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+			tempItem->setText(0, strKey);
+			tempItem->setText(1, var.toString());
+		}
+		else if ("int" == strTypeName)
 		{
 			QTreeWidgetItem *tempItem = new QTreeWidgetItem(treeWidgetItem);
 			tempItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
@@ -58,13 +70,6 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 			tempItem->setText(0, strKey);
 			tempItem->setText(1, var.toString());
 		}
-		else if ("bool" == strTypeName)
-		{
-			QTreeWidgetItem *tempItem = new QTreeWidgetItem(treeWidgetItem);
-			tempItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
-			tempItem->setText(0, strKey);
-			tempItem->setText(1, var.toString());
-		}
 		else if ("QString" == strTypeName)
 		{
 			QTreeWidgetItem *tempItem = new QTreeWidgetItem(treeWidgetItem);
@@ -72,12 +77,67 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 			tempItem->setText(0, strKey);
 			tempItem->setText(1, var.toString());
 		}
-		//自定义结构
-		else if ("BoolConfigNode*" == strTypeName)
+		else if ("QList<bool>" == strTypeName)
 		{
-			BoolConfigNode* tempConfigNode = var.value<BoolConfigNode*>();
-			qDebug() << "tree";
-			qDebug() << tempConfigNode;
+			QList<bool> list = var.value<QList<bool>>();
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+			for (int j = 0; j < list.count(); j++)
+			{
+				QTreeWidgetItem *childItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				QString b = list[j] ? "true" : "false";
+				childItem->setText(0, strKey + QString::number(j));
+				childItem->setText(1, b);
+				childItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+			}
+		}
+		else if ("QList<int>" == strTypeName)
+		{
+			QList<int> list = var.value<QList<int>>();
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+			for (int j = 0; j < list.count(); j++)
+			{
+				QTreeWidgetItem *childItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childItem->setText(0, strKey + QString::number(j));
+				childItem->setText(1, QString::number(list[j]));
+				childItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+			}
+		}
+		else if ("QList<double>" == strTypeName)
+		{
+			QList<double> list = var.value<QList<double>>();
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+			for (int j = 0; j < list.count(); j++)
+			{
+				QTreeWidgetItem *childItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childItem->setText(0, strKey + QString::number(j));
+				childItem->setText(1, QString::number(list[j]));
+				childItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+			}
+		}
+		else if ("QList<QString>" == strTypeName)
+		{
+			QList<QString> list = var.value<QList<QString>>();
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+			for (int j = 0; j < list.count(); j++)
+			{
+				QTreeWidgetItem *childItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childItem->setText(0, strKey + QString::number(j));
+				childItem->setText(1, list[j]);
+				childItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+			}
+
+		}
+		//自定义结构
+		else if ("BoolConfigNode" == strTypeName)
+		{
+			
+			BoolConfigNode* tempConfigNode = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(BoolConfigNode*, tempConfigNode));
+
 			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
 			tempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
 
@@ -94,42 +154,12 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 			treeWidget->setItemWidget(tempTreeWidgetItem, 1, tempComboBox);
 
 		}
-		else if ("DoubleConfigNode*" == strTypeName)
+		else if ("IntConfigNode" == strTypeName)
 		{
-			DoubleConfigNode* tempConfigNode = var.value<DoubleConfigNode*>();
-			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-			tempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
-			QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
-			tempLineEdit->setText(QString::number(tempConfigNode->_nodeValue));
-			//信号
+			IntConfigNode* tempConfigNode = nullptr;
+		
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(IntConfigNode*, tempConfigNode));
 
-			treeWidget->setItemWidget(tempTreeWidgetItem, 1, tempLineEdit);
-		}
-		else if ("DoubleEnumConfigNode*" == strTypeName)
-		{
-			DoubleEnumConfigNode* tempConfigNode = var.value<DoubleEnumConfigNode*>();
-			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-			tempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
-
-			QComboBox *tempComboBox = new QComboBox(treeWidget);
-			if (tempConfigNode->_valueEnum.count() > 0)
-			{
-				for (int j = 0; j < tempConfigNode->_valueEnum.count(); j++)
-				{
-					tempComboBox->addItem(QString::number(tempConfigNode->_valueEnum[j]));
-				}
-
-				tempComboBox->setCurrentIndex(tempConfigNode->_enumIndex);
-			}
-
-			void (QComboBox::*signal_currentIndexChanged)(int) = &QComboBox::currentIndexChanged;
-			connect(tempComboBox, signal_currentIndexChanged, tempConfigNode, &DoubleEnumConfigNode::nodeValueIndexChanged);
-
-			treeWidget->setItemWidget(tempTreeWidgetItem, 1, tempComboBox);
-		}
-		else if ("IntConfigNode*" == strTypeName)
-		{
-			IntConfigNode* tempConfigNode = var.value<IntConfigNode*>();
 			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
 			tempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
 
@@ -137,11 +167,15 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 			tempLineEdit->setText(QString::number(tempConfigNode->_nodeValue));
 			//信号
 
+			connect(tempLineEdit, &QLineEdit::textChanged, tempConfigNode, &IntConfigNode::nodeValueChanged);
+
 			treeWidget->setItemWidget(tempTreeWidgetItem, 1, tempLineEdit);
 		}
-		else if ("IntEnumConfigNode*" == strTypeName)
+		else if ("IntEnumConfigNode" == strTypeName)
 		{
-			IntEnumConfigNode* tempConfigNode = var.value<IntEnumConfigNode*>();
+			IntEnumConfigNode* tempConfigNode =nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(IntEnumConfigNode*, tempConfigNode));
+
 			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
 			tempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
 
@@ -161,25 +195,66 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 			treeWidget->setItemWidget(tempTreeWidgetItem, 1, tempComboBox);
 
 		}
-		else if ("StringConfigNode*" == strTypeName)
+		else if ("DoubleConfigNode" == strTypeName)
 		{
-			StringConfigNode* tempConfigNode = var.value<StringConfigNode*>();
+			DoubleConfigNode* tempConfigNode = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(DoubleConfigNode*, tempConfigNode));
+
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
+			QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
+			tempLineEdit->setText(QString::number(tempConfigNode->_nodeValue));
+			//信号
+
+			connect(tempLineEdit, &QLineEdit::textChanged, tempConfigNode, &DoubleConfigNode::nodeValueChanged);
+
+			treeWidget->setItemWidget(tempTreeWidgetItem, 1, tempLineEdit);
+		}
+		else if ("DoubleEnumConfigNode" == strTypeName)
+		{
+			DoubleEnumConfigNode* tempConfigNode = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(DoubleEnumConfigNode*, tempConfigNode));
+
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
+
+			QComboBox *tempComboBox = new QComboBox(treeWidget);
+			if (tempConfigNode->_valueEnum.count() > 0)
+			{
+				for (int j = 0; j < tempConfigNode->_valueEnum.count(); j++)
+				{
+					tempComboBox->addItem(QString::number(tempConfigNode->_valueEnum[j]));
+				}
+
+				tempComboBox->setCurrentIndex(tempConfigNode->_enumIndex);
+			}
+
+			void (QComboBox::*signal_currentIndexChanged)(int) = &QComboBox::currentIndexChanged;
+			connect(tempComboBox, signal_currentIndexChanged, tempConfigNode, &DoubleEnumConfigNode::nodeValueIndexChanged);
+
+			treeWidget->setItemWidget(tempTreeWidgetItem, 1, tempComboBox);
+		}
+		else if ("StringConfigNode" == strTypeName)
+		{
+			StringConfigNode* tempConfigNode = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(StringConfigNode*, tempConfigNode));
+
 			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
 			tempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
 
 			QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
 			tempLineEdit->setText(tempConfigNode->_nodeValue);
 			//信号
-
-			//信号
 			connect(tempLineEdit, &QLineEdit::textChanged, tempConfigNode, &StringConfigNode::nodeValueChanged);
 
 			treeWidget->setItemWidget(tempTreeWidgetItem, 1, tempLineEdit);
 
 		}
-		else if ("StringEnumConfigNode*" == strTypeName)
+		else if ("StringEnumConfigNode" == strTypeName)
 		{
-			StringEnumConfigNode* tempConfigNode = var.value<StringEnumConfigNode*>();
+			StringEnumConfigNode* tempConfigNode = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(StringEnumConfigNode*, tempConfigNode));
+
 			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
 			tempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
 
@@ -199,243 +274,199 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 			treeWidget->setItemWidget(tempTreeWidgetItem, 1, tempComboBox);
 
 		}
+		else if ("QList<BoolConfigNode>" == strTypeName)
+		{
+			QList<BoolConfigNode>* list = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(QList<BoolConfigNode>*, list));
 
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+
+			for (int j = 0; j < list->count(); j++)
+			{
+				BoolConfigNode tempConfigNode = list->at(j);
+
+				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childTempTreeWidgetItem->setText(0, tempConfigNode._nodeShowName);
+
+				QComboBox *tempComboBox = new QComboBox(treeWidget);
+				tempComboBox->addItem("false");
+				tempComboBox->addItem("true");
+				tempComboBox->setCurrentIndex(tempConfigNode._nodeValue ? 1 : 0);
+				//信号
+
+				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
+
+			}
+
+		}
+		else if ("QList<IntConfigNode>" == strTypeName)
+		{
+			QList<IntConfigNode>* list = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(QList<IntConfigNode>*, list));
+
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+
+			for (int j = 0; j < list->count(); j++)
+			{
+				IntConfigNode tempConfigNode = list->at(j);
+				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childTempTreeWidgetItem->setText(0, tempConfigNode._nodeShowName);
+
+				QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
+				tempLineEdit->setText(QString::number(tempConfigNode._nodeValue));
+				//信号
+
+				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempLineEdit);
+			}
+		}
+		else if ("QList<IntEnumConfigNode>" == strTypeName)
+		{
+			QList<IntEnumConfigNode>* list = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(QList<IntEnumConfigNode>*, list));
+
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+			for (int j = 0; j < list->count(); j++)
+			{
+				IntEnumConfigNode tempConfigNode = list->at(j);
+				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childTempTreeWidgetItem->setText(0, tempConfigNode._nodeShowName);
+
+				QComboBox *tempComboBox = new QComboBox(treeWidget);
+				if (tempConfigNode._valueEnum.count() > 0)
+				{
+					for (int k = 0; k < tempConfigNode._valueEnum.count(); k++)
+					{
+						tempComboBox->addItem(QString::number(tempConfigNode._valueEnum[k]));
+					}
+
+					tempComboBox->setCurrentIndex(tempConfigNode._enumIndex);
+				}
+				//信号
+
+				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
+
+			}
+		}
+		else if ("QList<DoubleConfigNode>" == strTypeName)
+		{
+			QList<DoubleConfigNode>* list =nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(QList<DoubleConfigNode>*, list));
+
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+
+			for (int j = 0; j< list->count(); j++)
+			{
+				DoubleConfigNode tempConfigNode = list->at(j);
+				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childTempTreeWidgetItem->setText(0, tempConfigNode._nodeShowName);
+				QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
+				tempLineEdit->setText(QString::number(tempConfigNode._nodeValue));
+				//信号
+
+				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempLineEdit);
+			}
+
+		}
+		else if ("QList<DoubleEnumConfigNode>" == strTypeName)
+		{
+			QList<DoubleEnumConfigNode>* list = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(QList<DoubleEnumConfigNode>*, list));
+
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+
+			for (int j = 0; j < list->count(); j++)
+			{
+				DoubleEnumConfigNode tempConfigNode = list->at(j);
+				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childTempTreeWidgetItem->setText(0, tempConfigNode._nodeShowName);
+
+				QComboBox *tempComboBox = new QComboBox(treeWidget);
+				if (tempConfigNode._valueEnum.count() > 0)
+				{
+					for (int k = 0; k < tempConfigNode._valueEnum.count(); k++)
+					{
+						tempComboBox->addItem(QString::number(tempConfigNode._valueEnum[k]));
+					}
+
+					tempComboBox->setCurrentIndex(tempConfigNode._enumIndex);
+				}
+				//信号
+
+				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
+
+			}
+		}
+		else if ("QList<StringConfigNode>" == strTypeName)
+		{
+			QList<StringConfigNode>* list = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(QList<StringConfigNode>*, list));
+
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+
+			for (int j = 0; j < list->count(); j++)
+			{
+				StringConfigNode tempConfigNode = list->at(j);
+				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childTempTreeWidgetItem->setText(0, tempConfigNode._nodeShowName);
+
+				QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
+				tempLineEdit->setText(tempConfigNode._nodeValue);
+				//信号
+
+				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempLineEdit);
+			}
+		}
+		else if ("QList<StringEnumConfigNode>" == strTypeName)
+		{
+			QList<StringEnumConfigNode>* list = nullptr;
+			QMetaObject::invokeMethod(obj, cp, Q_RETURN_ARG(QList<StringEnumConfigNode>*, list));
+
+			QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
+			tempTreeWidgetItem->setText(0, strKey);
+			for (int j = 0; j < list->count(); j++)
+			{
+				StringEnumConfigNode tempConfigNode = list->at(j);
+				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
+				childTempTreeWidgetItem->setText(0, tempConfigNode._nodeShowName);
+
+				QComboBox *tempComboBox = new QComboBox(treeWidget);
+				if (tempConfigNode._valueEnum.count() > 0)
+				{
+					for (int k = 0; k < tempConfigNode._valueEnum.count(); k++)
+					{
+						tempComboBox->addItem(tempConfigNode._valueEnum[k]);
+					}
+
+					tempComboBox->setCurrentIndex(tempConfigNode._enumIndex);
+				}
+				//信号
+
+				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
+			}
+		}
 		else if (strTypeName.contains("QList"))
 		{
-			if ("QList<QString>" == strTypeName)
+	
+			qDebug() << "TreeWidgetHelper objToJsonObj unknown type " + strTypeName;
+
+			/*QJsonArray jsonArray;
+			QSequentialIterable it = val.value<QSequentialIterable>();
+			for (const QVariant &v : it)
 			{
-				QList<QString> list = var.value<QList<QString>>();
-				QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-				tempTreeWidgetItem->setText(0, strKey);
-				for (int j = 0; j < list.count(); j++)
-				{
-					QTreeWidgetItem *childItem = new QTreeWidgetItem(tempTreeWidgetItem);
-					childItem->setText(0, strKey + QString::number(j));
-					childItem->setText(1, list[j]);
-					childItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
-				}
-
+			QJsonObject childJsonObj;
+			QObject *childObject = qvariant_cast<QObject*>(v);
+			objToJsonObj(&childJsonObj, childObject);
+			jsonArray.append(childJsonObj);
 			}
-			else if ("QList<int>" == strTypeName)
-			{
-				QList<int> list = var.value<QList<int>>();
-				QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-				tempTreeWidgetItem->setText(0, strKey);
-				for (int j = 0; j < list.count(); j++)
-				{
-					QTreeWidgetItem *childItem = new QTreeWidgetItem(tempTreeWidgetItem);
-					childItem->setText(0, strKey + QString::number(j));
-					childItem->setText(1, QString::number(list[j]));
-					childItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
-				}
-			}
-			else if ("QList<double>" == strTypeName)
-			{
-				QList<double> list = var.value<QList<double>>();
-				QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-				tempTreeWidgetItem->setText(0, strKey);
-				for (int j = 0; j < list.count(); j++)
-				{
-					QTreeWidgetItem *childItem = new QTreeWidgetItem(tempTreeWidgetItem);
-					childItem->setText(0, strKey + QString::number(j));
-					childItem->setText(1, QString::number(list[j]));
-					childItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
-				}
-			}
-			else if ("QList<bool>" == strTypeName)
-			{
-				QList<bool> list = var.value<QList<bool>>();
-				QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-				tempTreeWidgetItem->setText(0, strKey);
-				for (int j = 0; j < list.count(); j++)
-				{
-					QTreeWidgetItem *childItem = new QTreeWidgetItem(tempTreeWidgetItem);
-					QString b = list[j] ? "true" : "false";
-					childItem->setText(0, strKey + QString::number(j));
-					childItem->setText(1, b);
-					childItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
-				}
-			}
-			////自定义类型
-			//else if ("QList<BoolConfigNode*>" == strTypeName)
-			//{
-			//	QList<BoolConfigNode*> list = var.value<QList<BoolConfigNode*>>();
+			jsonObj->insert(qstringKey, jsonArray);*/
 
-			//	QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-			//	tempTreeWidgetItem->setText(0, strKey);
-
-			//	for (int j = 0; j < list.count(); j++)
-			//	{
-			//		BoolConfigNode* tempConfigNode = list[j];
-
-			//		QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-			//		childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
-
-			//		QComboBox *tempComboBox = new QComboBox(treeWidget);
-			//		tempComboBox->addItem("false");
-			//		tempComboBox->addItem("true");
-			//		tempComboBox->setCurrentIndex(tempConfigNode->_nodeValue ? 1 : 0);
-			//		//信号
-
-			//		treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
-
-			//	}
-
-			//}
-			//else if ("QList<DoubleConfigNode*>" == strTypeName)
-			//{
-			//	QList<DoubleConfigNode*> list = var.value<QList<DoubleConfigNode*>>();
-			//	QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-			//	tempTreeWidgetItem->setText(0, strKey);
-
-			//	for (int i = 0; i < list.count(); i++)
-			//	{
-			//		DoubleConfigNode* tempConfigNode = list[i];
-			//		QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-			//		childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
-			//		QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
-			//		tempLineEdit->setText(QString::number(tempConfigNode->_nodeValue));
-			//		//信号
-
-			//		treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempLineEdit);
-			//	}
-
-			//}
-			//else if ("QList<DoubleEnumConfigNode*>" == strTypeName)
-			//{
-			//	QList<DoubleEnumConfigNode*> list = var.value<QList<DoubleEnumConfigNode*>>();
-			//	QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-			//	tempTreeWidgetItem->setText(0, strKey);
-
-			//	for (int i = 0; i < list.count(); i++)
-			//	{
-			//		DoubleEnumConfigNode* tempConfigNode = list[i];
-			//		QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-			//		childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
-
-			//		QComboBox *tempComboBox = new QComboBox(treeWidget);
-			//		if (tempConfigNode->_valueEnum.count() > 0)
-			//		{
-			//			for (int j = 0; j < tempConfigNode->_valueEnum.count(); j++)
-			//			{
-			//				tempComboBox->addItem(QString::number(tempConfigNode->_valueEnum[j]));
-			//			}
-
-			//			tempComboBox->setCurrentIndex(tempConfigNode->_enumIndex);
-			//		}
-			//		//信号
-
-			//		treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
-
-			//	}
-			//}
-			//else if ("QList<IntConfigNode*>" == strTypeName)
-			//{
-			//	QList<IntConfigNode*> list = var.value<QList<IntConfigNode*>>();
-			//	QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-			//	tempTreeWidgetItem->setText(0, strKey);
-
-			//	for (int i = 0; i < list.count(); i++)
-			//	{
-			//		IntConfigNode* tempConfigNode = list[i];
-			//		QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-			//		childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
-
-			//		QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
-			//		tempLineEdit->setText(QString::number(tempConfigNode->_nodeValue));
-			//		//信号
-
-			//		treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempLineEdit);
-			//	}
-			//}
-			//else if ("QList<IntEnumConfigNode*>" == strTypeName)
-			//{
-			//	QList<IntEnumConfigNode*> list = var.value<QList<IntEnumConfigNode*>>();
-			//	QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-			//	tempTreeWidgetItem->setText(0, strKey);
-			//	for (int i = 0; i < list.count(); i++)
-			//	{
-			//		IntEnumConfigNode* tempConfigNode = list[i];
-			//		QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-			//		childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
-
-			//		QComboBox *tempComboBox = new QComboBox(treeWidget);
-			//		if (tempConfigNode->_valueEnum.count() > 0)
-			//		{
-			//			for (int j = 0; j < tempConfigNode->_valueEnum.count(); j++)
-			//			{
-			//				tempComboBox->addItem(QString::number(tempConfigNode->_valueEnum[j]));
-			//			}
-
-			//			tempComboBox->setCurrentIndex(tempConfigNode->_enumIndex);
-			//		}
-			//		//信号
-
-			//		treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
-
-			//	}
-			//}
-			//else if ("QList<StringConfigNode*>" == strTypeName)
-			//{
-			//	QList<StringConfigNode*> list = var.value<QList<StringConfigNode*>>();
-			//	QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-			//	tempTreeWidgetItem->setText(0, strKey);
-
-			//	for (int i = 0; i < list.count(); i++)
-			//	{
-			//		StringConfigNode* tempConfigNode = list[i];
-			//		QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-			//		childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
-
-			//		QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
-			//		tempLineEdit->setText(tempConfigNode->_nodeValue);
-			//		//信号
-
-			//		treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempLineEdit);
-			//	}
-			//}
-			//else if ("QList<StringEnumConfigNode*>" == strTypeName)
-			//{
-			//	QList<StringEnumConfigNode*> list = var.value<QList<StringEnumConfigNode*>>();
-			//	QTreeWidgetItem *tempTreeWidgetItem = new QTreeWidgetItem(treeWidgetItem);
-			//	tempTreeWidgetItem->setText(0, strKey);
-			//	for (int i = 0; i < list.count(); i++)
-			//	{
-			//		StringEnumConfigNode* tempConfigNode = list[i];
-			//		QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-			//		childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
-
-			//		QComboBox *tempComboBox = new QComboBox(treeWidget);
-			//		if (tempConfigNode->_valueEnum.count() > 0)
-			//		{
-			//			for (int j = 0; j < tempConfigNode->_valueEnum.count(); j++)
-			//			{
-			//				tempComboBox->addItem(tempConfigNode->_valueEnum[j]);
-			//			}
-
-			//			tempComboBox->setCurrentIndex(tempConfigNode->_enumIndex);
-			//		}
-			//		//信号
-
-			//		treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
-			//	}
-			//}
-			else
-			{
-				qDebug() << "TreeWidgetHelper objToJsonObj unknown type " + strTypeName;
-
-				/*QJsonArray jsonArray;
-				QSequentialIterable it = val.value<QSequentialIterable>();
-				for (const QVariant &v : it)
-				{
-				QJsonObject childJsonObj;
-				QObject *childObject = qvariant_cast<QObject*>(v);
-				objToJsonObj(&childJsonObj, childObject);
-				jsonArray.append(childJsonObj);
-				}
-				jsonObj->insert(qstringKey, jsonArray);*/
-
-			}
+		
 		}
 		else if (strTypeName.contains("*"))
 		{
@@ -457,10 +488,5 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 			qDebug() << "TreeWidgetHelper objToJsonObj unknown type " + strTypeName;
 		}
 
-
-
-
 	}
-
-
 }

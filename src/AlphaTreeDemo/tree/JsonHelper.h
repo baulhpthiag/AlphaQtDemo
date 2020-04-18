@@ -22,7 +22,6 @@ public:
 	template<class T>
 	static bool readJsonFile(T& t,QString filePath);
 
-
 	static bool objToJsonObj(QJsonObject* jsonObj, QObject *obj);
 
 	static bool jsonObjToObj(QJsonObject* jsonObj, QObject *obj);
@@ -31,6 +30,13 @@ public:
 template<class T>
 static bool JsonHelper::writeJsonFile(T& t, QString filePath)
 {
+	QFile file(filePath);
+	if (!file.exists())
+	{
+		qDebug() << "JsonHelper writeJsonFile could not open json " + filePath;
+		return false;
+	}
+
 	QJsonObject jsonObj;
 	QObject *obj = (QObject*)(&t);
 
@@ -42,11 +48,8 @@ static bool JsonHelper::writeJsonFile(T& t, QString filePath)
 	QJsonDocument jsonDoc;
 	jsonDoc.setObject(jsonObj);
 	
-	QFile file(filePath);
-	if (!file.exists())
-	{
-		file.open(QIODevice::WriteOnly);
-	}
+
+	file.open(QIODevice::WriteOnly);
 	file.write(jsonDoc.toJson());
 	file.close();
 
@@ -57,10 +60,9 @@ template<typename T>
 bool JsonHelper::readJsonFile(T& t,QString filePath)
 {
 	QFile file(filePath);
-
 	if (!file.open(QIODevice::ReadOnly))
 	{
-		qDebug() << "JsonHelper readJsonFile could't open json "+ filePath;
+		qDebug() << "JsonHelper readJsonFile could not open json "+ filePath;
 		return false;
 	}
 
@@ -77,9 +79,7 @@ bool JsonHelper::readJsonFile(T& t,QString filePath)
 	}
 
 	QJsonObject jsonObj = jsonDoc.object();
-
 	QObject *obj = (QObject*)(&t);
-
 	return jsonObjToObj(&jsonObj, obj);
 }
 

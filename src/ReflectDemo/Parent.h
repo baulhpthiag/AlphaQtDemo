@@ -35,6 +35,8 @@ public:
 	Child& getChild();
 	void setChild(const Child & child);
 
+	Q_INVOKABLE Child* getChildP();
+
 
 
 };
