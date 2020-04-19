@@ -37,7 +37,7 @@ public:
 	QList<BoolConfigNode> _nodelist;
 
 	QList<BoolConfigNode>& getNodeList();
-
+	QList<BoolConfigNode*> getNodeListP();
 	public slots:
 	void setNodeList(const QList<BoolConfigNode>& nodeList);
 

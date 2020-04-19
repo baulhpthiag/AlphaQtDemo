@@ -40,26 +40,26 @@ void MainWidget::writeJsonButtonClicked()
 	StringEnumConfigNode stringEnumConfigNode;
 
 	TestConfig testConfig;
-	testConfig._testBoolConfigNodeList.append(boolConfigNode);
-	testConfig._testBoolConfigNodeList.append(boolConfigNode);
+	testConfig._testBoolListConfigNode._nodelist.append(boolConfigNode);
+	testConfig._testBoolListConfigNode._nodelist.append(boolConfigNode);
 
-	testConfig._testIntConfigNodeList.append(intConfigNode);
-	testConfig._testIntConfigNodeList.append(intConfigNode);
+	testConfig._testIntListConfigNode._nodelist.append(intConfigNode);
+	testConfig._testIntListConfigNode._nodelist.append(intConfigNode);
 
-	testConfig._testIntEnumConfigNodeList.append(intEnumConfigNode);
-	testConfig._testIntEnumConfigNodeList.append(intEnumConfigNode);
+	testConfig._testIntEnumListConfigNode._nodelist.append(intEnumConfigNode);
+	testConfig._testIntEnumListConfigNode._nodelist.append(intEnumConfigNode);
 
-	testConfig._testDoubleConfigNodeList.append(doubleConfigNode);
-	testConfig._testDoubleConfigNodeList.append(doubleConfigNode);
+	testConfig._testDoubleListConfigNode._nodelist.append(doubleConfigNode);
+	testConfig._testDoubleListConfigNode._nodelist.append(doubleConfigNode);
 
-	testConfig._testDoubleEnumConfigNodeList.append(doubleEnumConfigNode);
-	testConfig._testDoubleEnumConfigNodeList.append(doubleEnumConfigNode);
+	testConfig._testDoubleEnumListConfigNode._nodelist.append(doubleEnumConfigNode);
+	testConfig._testDoubleEnumListConfigNode._nodelist.append(doubleEnumConfigNode);
 
-	testConfig._testStringConfigNodeList.append(stringConfigNode);
-	testConfig._testStringConfigNodeList.append(stringConfigNode);
+	testConfig._testStringListConfigNode._nodelist.append(stringConfigNode);
+	testConfig._testStringListConfigNode._nodelist.append(stringConfigNode);
 
-	testConfig._testStringEnumConfigNodeList.append(stringEnumConfigNode);
-	testConfig._testStringEnumConfigNodeList.append(stringEnumConfigNode);
+	testConfig._testStringEnumListConfigNode._nodelist.append(stringEnumConfigNode);
+	testConfig._testStringEnumListConfigNode._nodelist.append(stringEnumConfigNode);
 
 	JsonHelper::writeJsonFile(testConfig, jsonFilePath);
 }

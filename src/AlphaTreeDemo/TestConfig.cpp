@@ -81,69 +81,69 @@ void TestConfig::setTestStringEnumConfigNode(StringEnumConfigNode& value)
 	_testStringEnumConfigNode = value;
 }
 
-QList<BoolConfigNode>& TestConfig::getTestBoolConfigNodeList()
+BoolListConfigNode& TestConfig::getTestBoolListConfigNode()
 {
-	return _testBoolConfigNodeList;
+	return _testBoolListConfigNode;
 }
 
-void TestConfig::setTestBoolConfigNodeList(QList<BoolConfigNode>& value)
+void TestConfig::setTestBoolListConfigNode(BoolListConfigNode& value)
 {
-	_testBoolConfigNodeList = value;
+	_testBoolListConfigNode = value;
 }
 
-QList<DoubleConfigNode>& TestConfig::getTestDoubleConfigNodeList()
+DoubleListConfigNode& TestConfig::getTestDoubleListConfigNode()
 {
-	return _testDoubleConfigNodeList;
+	return _testDoubleListConfigNode;
 }
 
-void TestConfig::setTestDoubleConfigNodeList(QList<DoubleConfigNode>& value)
+void TestConfig::setTestDoubleListConfigNode(DoubleListConfigNode& value)
 {
-	_testDoubleConfigNodeList = value;
+	_testDoubleListConfigNode = value;
 }
 
-QList<DoubleEnumConfigNode>& TestConfig::getTestDoubleEnumConfigNodeList()
+DoubleEnumListConfigNode& TestConfig::getTestDoubleEnumListConfigNode()
 {
-	return _testDoubleEnumConfigNodeList;
+	return _testDoubleEnumListConfigNode;
 }
 
-void TestConfig::setTestDoubleEnumConfigNodeList(QList<DoubleEnumConfigNode>& value)
+void TestConfig::setTestDoubleEnumListConfigNode(DoubleEnumListConfigNode& value)
 {
-	_testDoubleEnumConfigNodeList = value;
+	_testDoubleEnumListConfigNode = value;
 }
 
-QList<IntConfigNode>& TestConfig::getTestIntConfigNodeList()
+IntListConfigNode& TestConfig::getTestIntListConfigNode()
 {
-	return _testIntConfigNodeList;
+	return _testIntListConfigNode;
 }
 
-void TestConfig::setTestIntConfigNodeList(QList<IntConfigNode>& value)
+void TestConfig::setTestIntListConfigNode(IntListConfigNode& value)
 {
-	_testIntConfigNodeList = value;
+	_testIntListConfigNode = value;
 }
 
-QList<IntEnumConfigNode>& TestConfig::getTestIntEnumConfigNodeList()
+IntEnumListConfigNode& TestConfig::getTestIntEnumListConfigNode()
 {
-	return _testIntEnumConfigNodeList;
+	return _testIntEnumListConfigNode;
 }
 
-void TestConfig::setTestIntEnumConfigNodeList(QList<IntEnumConfigNode>& value)
+void TestConfig::setTestIntEnumListConfigNode(IntEnumListConfigNode& value)
 {
-	_testIntEnumConfigNodeList = value;
+	_testIntEnumListConfigNode = value;
 }
 
-QList<StringConfigNode>& TestConfig::getTestStringConfigNodeList()
+StringListConfigNode& TestConfig::getTestStringListConfigNode()
 {
-	return _testStringConfigNodeList;
+	return _testStringListConfigNode;
 }
 
-void TestConfig::setTestStringConfigNodeList(QList<StringConfigNode>& value)
+void TestConfig::setTestStringListConfigNode(StringListConfigNode& value)
 {
-	_testStringConfigNodeList = value;
+	_testStringListConfigNode = value;
 }
 
-QList<StringEnumConfigNode>& TestConfig::getTestStringEnumConfigNodeList()
+StringEnumListConfigNode& TestConfig::getTestStringEnumListConfigNode()
 {
-	return _testStringEnumConfigNodeList;
+	return _testStringEnumListConfigNode;
 }
 
 Q_INVOKABLE BoolConfigNode* TestConfig::getTestBoolConfigNodeP()
@@ -181,39 +181,39 @@ Q_INVOKABLE StringEnumConfigNode* TestConfig::getTestStringEnumConfigNodeP()
 	return &_testStringEnumConfigNode;
 }
 
-Q_INVOKABLE QList<BoolConfigNode>* TestConfig::getTestBoolConfigNodeListP()
+Q_INVOKABLE BoolListConfigNode* TestConfig::getTestBoolListConfigNodeP()
 {
-	return &_testBoolConfigNodeList;
+	return &_testBoolListConfigNode;
 }
 
-Q_INVOKABLE QList<DoubleConfigNode>* TestConfig::getTestDoubleConfigNodeListP()
+Q_INVOKABLE DoubleListConfigNode* TestConfig::getTestDoubleListConfigNodeP()
 {
-	return &_testDoubleConfigNodeList;
+	return &_testDoubleListConfigNode;
 }
 
-Q_INVOKABLE QList<DoubleEnumConfigNode>* TestConfig::getTestDoubleEnumConfigNodeListP()
+Q_INVOKABLE DoubleEnumListConfigNode* TestConfig::getTestDoubleEnumListConfigNodeP()
 {
-	return &_testDoubleEnumConfigNodeList;
+	return &_testDoubleEnumListConfigNode;
 }
 
-Q_INVOKABLE QList<IntConfigNode>* TestConfig::getTestIntConfigNodeListP()
+Q_INVOKABLE IntListConfigNode* TestConfig::getTestIntListConfigNodeP()
 {
-	return &_testIntConfigNodeList;
+	return &_testIntListConfigNode;
 }
 
-Q_INVOKABLE QList<IntEnumConfigNode>* TestConfig::getTestIntEnumConfigNodeListP()
+Q_INVOKABLE IntEnumListConfigNode* TestConfig::getTestIntEnumListConfigNodeP()
 {
-	return &_testIntEnumConfigNodeList;
+	return &_testIntEnumListConfigNode;
 }
 
-Q_INVOKABLE QList<StringConfigNode>* TestConfig::getTestStringConfigNodeListP()
+Q_INVOKABLE StringListConfigNode* TestConfig::getTestStringListConfigNodeP()
 {
-	return &_testStringConfigNodeList;
+	return &_testStringListConfigNode;
 }
 
-Q_INVOKABLE QList<StringEnumConfigNode>* TestConfig::getTestStringEnumConfigNodeListP()
+Q_INVOKABLE StringEnumListConfigNode* TestConfig::getTestStringEnumListConfigNodeP()
 {
-	return &_testStringEnumConfigNodeList;
+	return &_testStringEnumListConfigNode;
 }
 
 //QDebug TestConfig::operator<<(QDebug debug, const TestConfig & config)
@@ -222,8 +222,8 @@ Q_INVOKABLE QList<StringEnumConfigNode>* TestConfig::getTestStringEnumConfigNode
 //
 //}
 
-void TestConfig::setTestStringEnumConfigNodeList(QList<StringEnumConfigNode>& value)
+void TestConfig::setTestStringEnumListConfigNode(StringEnumListConfigNode& value)
 {
-	_testStringEnumConfigNodeList = value;
+	_testStringEnumListConfigNode = value;
 }
 

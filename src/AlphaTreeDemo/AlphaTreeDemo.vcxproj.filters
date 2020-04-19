@@ -76,6 +76,24 @@
     <ClCompile Include="BoolListConfigNode.cpp">
       <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
+    <ClCompile Include="DoubleEnumListConfigNode.cpp">
+      <Filter>Source Files\helper\treeNode</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleListConfigNode.cpp">
+      <Filter>Source Files\helper\treeNode</Filter>
+    </ClCompile>
+    <ClCompile Include="IntListConfigNode.cpp">
+      <Filter>Source Files\helper\treeNode</Filter>
+    </ClCompile>
+    <ClCompile Include="IntEnumListConfigNode.cpp">
+      <Filter>Source Files\helper\treeNode</Filter>
+    </ClCompile>
+    <ClCompile Include="StringListConfigNode.cpp">
+      <Filter>Source Files\helper\treeNode</Filter>
+    </ClCompile>
+    <ClCompile Include="StringEnumListConfigNode.cpp">
+      <Filter>Source Files\helper\treeNode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MainWidget.h">
@@ -112,6 +130,24 @@
       <Filter>Header Files\helper</Filter>
     </QtMoc>
     <QtMoc Include="BoolListConfigNode.h">
+      <Filter>Header Files\helper\treeNode</Filter>
+    </QtMoc>
+    <QtMoc Include="DoubleListConfigNode.h">
+      <Filter>Header Files\helper\treeNode</Filter>
+    </QtMoc>
+    <QtMoc Include="DoubleEnumListConfigNode.h">
+      <Filter>Header Files\helper\treeNode</Filter>
+    </QtMoc>
+    <QtMoc Include="IntListConfigNode.h">
+      <Filter>Header Files\helper\treeNode</Filter>
+    </QtMoc>
+    <QtMoc Include="IntEnumListConfigNode.h">
+      <Filter>Header Files\helper\treeNode</Filter>
+    </QtMoc>
+    <QtMoc Include="StringListConfigNode.h">
+      <Filter>Header Files\helper\treeNode</Filter>
+    </QtMoc>
+    <QtMoc Include="StringEnumListConfigNode.h">
       <Filter>Header Files\helper\treeNode</Filter>
     </QtMoc>
   </ItemGroup>

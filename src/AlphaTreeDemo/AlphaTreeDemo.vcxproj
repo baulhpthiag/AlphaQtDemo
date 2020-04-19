@@ -90,8 +90,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BoolListConfigNode.cpp" />
+    <ClCompile Include="DoubleEnumListConfigNode.cpp" />
+    <ClCompile Include="DoubleListConfigNode.cpp" />
+    <ClCompile Include="IntEnumListConfigNode.cpp" />
+    <ClCompile Include="IntListConfigNode.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWidget.cpp" />
+    <ClCompile Include="StringEnumListConfigNode.cpp" />
+    <ClCompile Include="StringListConfigNode.cpp" />
     <ClCompile Include="TestConfig.cpp" />
     <ClCompile Include="tree\BoolConfigNode.cpp" />
     <ClCompile Include="tree\DoubleConfigNode.cpp" />
@@ -144,6 +150,24 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="BoolListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="DoubleListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="DoubleEnumListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="IntListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="IntEnumListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="StringListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="StringEnumListConfigNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
