@@ -472,19 +472,19 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 
 			for (int j = 0;j<list.count();j++)
 			{
-				BoolConfigNode* tempConfigNode = list.at(j);
+				BoolConfigNode* childTempConfigNode = list.at(j);
 
 				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-				childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
+				childTempTreeWidgetItem->setText(0, childTempConfigNode->_nodeShowName);
 
 				QComboBox *tempComboBox = new QComboBox(treeWidget);
 				tempComboBox->addItem("false");
 				tempComboBox->addItem("true");
-				tempComboBox->setCurrentIndex(tempConfigNode->_nodeValue ? 1 : 0);
+				tempComboBox->setCurrentIndex(childTempConfigNode->_nodeValue ? 1 : 0);
 				//信号
 
 				void (QComboBox::*signal_currentIndexChanged)(int) = &QComboBox::currentIndexChanged;
-				connect(tempComboBox, signal_currentIndexChanged, tempConfigNode, &BoolConfigNode::nodeValueChanged);
+				connect(tempComboBox, signal_currentIndexChanged, childTempConfigNode, &BoolConfigNode::nodeValueChanged);
 				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
 			}
 
@@ -503,14 +503,14 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 
 			for (int j = 0; j < list.count(); j++)
 			{
-				IntConfigNode* tempConfigNode = list.at(j);
+				IntConfigNode* childTempConfigNode = list.at(j);
 				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-				childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
+				childTempTreeWidgetItem->setText(0, childTempConfigNode->_nodeShowName);
 
 				QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
-				tempLineEdit->setText(QString::number(tempConfigNode->_nodeValue));
+				tempLineEdit->setText(QString::number(childTempConfigNode->_nodeValue));
 				//信号
-				connect(tempLineEdit, &QLineEdit::textChanged, tempConfigNode, &IntConfigNode::nodeValueChanged);
+				connect(tempLineEdit, &QLineEdit::textChanged, childTempConfigNode, &IntConfigNode::nodeValueChanged);
 
 
 				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempLineEdit);
@@ -531,24 +531,24 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 
 			for (int j = 0; j < list.count(); j++)
 			{
-				IntEnumConfigNode* tempConfigNode = list.at(j);
+				IntEnumConfigNode* childTempConfigNode = list.at(j);
 				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-				childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
+				childTempTreeWidgetItem->setText(0, childTempConfigNode->_nodeShowName);
 
 				QComboBox *tempComboBox = new QComboBox(treeWidget);
-				if (tempConfigNode->_valueEnum.count() > 0)
+				if (childTempConfigNode->_valueEnum.count() > 0)
 				{
-					for (int k = 0; k < tempConfigNode->_valueEnum.count(); k++)
+					for (int k = 0; k < childTempConfigNode->_valueEnum.count(); k++)
 					{
-						tempComboBox->addItem(QString::number(tempConfigNode->_valueEnum[k]));
+						tempComboBox->addItem(QString::number(childTempConfigNode->_valueEnum[k]));
 					}
 
-					tempComboBox->setCurrentIndex(tempConfigNode->_enumIndex);
+					tempComboBox->setCurrentIndex(childTempConfigNode->_enumIndex);
 				}
 				//信号
 
 				void (QComboBox::*signal_currentIndexChanged)(int) = &QComboBox::currentIndexChanged;
-				connect(tempComboBox, signal_currentIndexChanged, tempConfigNode, &IntEnumConfigNode::nodeValueIndexChanged);
+				connect(tempComboBox, signal_currentIndexChanged, childTempConfigNode, &IntEnumConfigNode::nodeValueIndexChanged);
 
 				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
 			}
@@ -568,13 +568,13 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 
 			for (int j = 0; j < list.count(); j++)
 			{
-				DoubleConfigNode* tempConfigNode = list.at(j);
+				DoubleConfigNode* childTempConfigNode = list.at(j);
 				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-				childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
+				childTempTreeWidgetItem->setText(0, childTempConfigNode->_nodeShowName);
 				QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
-				tempLineEdit->setText(QString::number(tempConfigNode->_nodeValue));
+				tempLineEdit->setText(QString::number(childTempConfigNode->_nodeValue));
 				//信号
-				connect(tempLineEdit, &QLineEdit::textChanged, tempConfigNode, &DoubleConfigNode::nodeValueChanged);
+				connect(tempLineEdit, &QLineEdit::textChanged, childTempConfigNode, &DoubleConfigNode::nodeValueChanged);
 
 				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempLineEdit);
 			}
@@ -594,19 +594,19 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 
 			for (int j = 0; j < list.count(); j++)
 			{
-				DoubleEnumConfigNode* tempConfigNode = list.at(j);
+				DoubleEnumConfigNode* childTempConfigNode = list.at(j);
 				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-				childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
+				childTempTreeWidgetItem->setText(0, childTempConfigNode->_nodeShowName);
 
 				QComboBox *tempComboBox = new QComboBox(treeWidget);
-				if (tempConfigNode->_valueEnum.count() > 0)
+				if (childTempConfigNode->_valueEnum.count() > 0)
 				{
-					for (int k = 0; k < tempConfigNode->_valueEnum.count(); k++)
+					for (int k = 0; k < childTempConfigNode->_valueEnum.count(); k++)
 					{
-						tempComboBox->addItem(QString::number(tempConfigNode->_valueEnum[k]));
+						tempComboBox->addItem(QString::number(childTempConfigNode->_valueEnum[k]));
 					}
 
-					tempComboBox->setCurrentIndex(tempConfigNode->_enumIndex);
+					tempComboBox->setCurrentIndex(childTempConfigNode->_enumIndex);
 				}
 				//信号
 
@@ -628,14 +628,14 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 
 			for (int j = 0; j < list.count(); j++)
 			{
-				StringConfigNode* tempConfigNode = list.at(j);
+				StringConfigNode* childTempConfigNode = list.at(j);
 				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-				childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
+				childTempTreeWidgetItem->setText(0, childTempConfigNode->_nodeShowName);
 
 				QLineEdit * tempLineEdit = new QLineEdit(treeWidget);
-				tempLineEdit->setText(tempConfigNode->_nodeValue);
+				tempLineEdit->setText(childTempConfigNode->_nodeValue);
 				//信号
-				connect(tempLineEdit, &QLineEdit::textChanged, tempConfigNode, &StringConfigNode::nodeValueChanged);
+				connect(tempLineEdit, &QLineEdit::textChanged, childTempConfigNode, &StringConfigNode::nodeValueChanged);
 
 				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempLineEdit);
 			}
@@ -655,23 +655,23 @@ void TreeWidgetHelper::bindData(QObject* obj, QTreeWidgetItem * treeWidgetItem, 
 
 			for (int j = 0; j < list.count(); j++)
 			{
-				StringEnumConfigNode* tempConfigNode = list.at(j);
+				StringEnumConfigNode* childTempConfigNode = list.at(j);
 				QTreeWidgetItem *childTempTreeWidgetItem = new QTreeWidgetItem(tempTreeWidgetItem);
-				childTempTreeWidgetItem->setText(0, tempConfigNode->_nodeShowName);
+				childTempTreeWidgetItem->setText(0, childTempConfigNode->_nodeShowName);
 
 				QComboBox *tempComboBox = new QComboBox(treeWidget);
-				if (tempConfigNode->_valueEnum.count() > 0)
+				if (childTempConfigNode->_valueEnum.count() > 0)
 				{
-					for (int k = 0; k < tempConfigNode->_valueEnum.count(); k++)
+					for (int k = 0; k < childTempConfigNode->_valueEnum.count(); k++)
 					{
-						tempComboBox->addItem(tempConfigNode->_valueEnum[k]);
+						tempComboBox->addItem(childTempConfigNode->_valueEnum[k]);
 					}
 
-					tempComboBox->setCurrentIndex(tempConfigNode->_enumIndex);
+					tempComboBox->setCurrentIndex(childTempConfigNode->_enumIndex);
 				}
 				//信号
 				void (QComboBox::*signal_currentIndexChanged)(int) = &QComboBox::currentIndexChanged;
-				connect(tempComboBox, signal_currentIndexChanged, tempConfigNode, &StringEnumConfigNode::nodeValueIndexChanged);
+				connect(tempComboBox, signal_currentIndexChanged, childTempConfigNode, &StringEnumConfigNode::nodeValueIndexChanged);
 				treeWidget->setItemWidget(childTempTreeWidgetItem, 1, tempComboBox);
 			}
 
