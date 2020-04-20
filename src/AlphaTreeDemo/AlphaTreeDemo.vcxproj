@@ -98,7 +98,8 @@
     <ClCompile Include="MainWidget.cpp" />
     <ClCompile Include="StringEnumListConfigNode.cpp" />
     <ClCompile Include="StringListConfigNode.cpp" />
-    <ClCompile Include="TestConfig.cpp" />
+    <ClCompile Include="TestChildConfig.cpp" />
+    <ClCompile Include="TestParentConfig.cpp" />
     <ClCompile Include="tree\BoolConfigNode.cpp" />
     <ClCompile Include="tree\DoubleConfigNode.cpp" />
     <ClCompile Include="tree\DoubleEnumConfigNode.cpp" />
@@ -146,7 +147,7 @@
     <QtMoc Include="tree\TreeWidgetHelper.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="TestConfig.h" />
+    <QtMoc Include="TestParentConfig.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="BoolListConfigNode.h" />
@@ -168,6 +169,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="StringEnumListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="TestChildConfig.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

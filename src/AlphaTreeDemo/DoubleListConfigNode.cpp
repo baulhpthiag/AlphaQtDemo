@@ -36,9 +36,11 @@ QList<DoubleConfigNode>& DoubleListConfigNode::getNodeList()
 QList<DoubleConfigNode*> DoubleListConfigNode::getNodeListP()
 {
 	QList<DoubleConfigNode*> list;
-	for each (auto var in _nodelist)
+
+
+	for (int i = 0; i < _nodelist.count(); i++)
 	{
-		list.append(&var);
+		list.append(&_nodelist[i]);
 	}
 	return list;
 }

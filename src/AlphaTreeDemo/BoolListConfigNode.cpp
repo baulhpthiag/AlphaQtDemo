@@ -7,6 +7,7 @@ BoolListConfigNode::BoolListConfigNode(QObject *parent)
 
 BoolListConfigNode::~BoolListConfigNode()
 {
+	qDebug() << "~BoolListConfigNode " << this;
 }
 
 QList<BoolConfigNode>& BoolListConfigNode::getNodeList()
@@ -17,10 +18,20 @@ QList<BoolConfigNode>& BoolListConfigNode::getNodeList()
 QList<BoolConfigNode*> BoolListConfigNode::getNodeListP()
 {
 	QList<BoolConfigNode*> list;
-	for each (auto var in _nodelist)
+
+	////???
+	//for each (auto  var in _nodelist)
+	//{
+	//	qDebug() << "_nodeList " << &var;
+	//	list.append(&var);
+	//}
+
+
+	for (int i=0;i<_nodelist.count();i++)
 	{
-		list.append(&var);
-	} 
+		list.append(&_nodelist[i]);
+	}
+
 	return list;
 }
 

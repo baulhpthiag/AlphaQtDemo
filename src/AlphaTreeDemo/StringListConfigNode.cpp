@@ -25,9 +25,9 @@ QList<StringConfigNode>& StringListConfigNode::getNodeList()
 QList<StringConfigNode*> StringListConfigNode::getNodeListP()
 {
 	QList<StringConfigNode*> list;
-	for each (auto var in _nodelist)
+	for (int i = 0; i < _nodelist.count(); i++)
 	{
-		list.append(&var);
+		list.append(&_nodelist[i]);
 	}
 	return list;
 }

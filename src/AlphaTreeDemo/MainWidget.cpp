@@ -1,6 +1,6 @@
 #include "MainWidget.h"
 #include "JsonHelper.h"
-#include "TestConfig.h"
+#include "TestParentConfig.h"
 #include <QApplication>
 #include <QFile>
 #include <QDir>
@@ -39,7 +39,7 @@ void MainWidget::writeJsonButtonClicked()
 	StringConfigNode stringConfigNode;
 	StringEnumConfigNode stringEnumConfigNode;
 
-	TestConfig testConfig;
+	TestParentConfig testConfig;
 	testConfig._testBoolListConfigNode._nodelist.append(boolConfigNode);
 	testConfig._testBoolListConfigNode._nodelist.append(boolConfigNode);
 
@@ -60,6 +60,9 @@ void MainWidget::writeJsonButtonClicked()
 
 	testConfig._testStringEnumListConfigNode._nodelist.append(stringEnumConfigNode);
 	testConfig._testStringEnumListConfigNode._nodelist.append(stringEnumConfigNode);
+
+	testConfig._testChildConfig._testBoolListConfigNode._nodelist.append(boolConfigNode);
+	testConfig._testChildConfig._testBoolListConfigNode._nodelist.append(boolConfigNode);
 
 	JsonHelper::writeJsonFile(testConfig, jsonFilePath);
 }
@@ -67,7 +70,7 @@ void MainWidget::writeJsonButtonClicked()
 void MainWidget::readJsonButtonClicked()
 {
 	QString jsonFilePath = qApp->applicationDirPath() + "/alphaTreeDemo.json";
-	TestConfig testConfig;
+	TestParentConfig testConfig;
 	JsonHelper::readJsonFile(testConfig, jsonFilePath);
 
 	qDebug() << testConfig;

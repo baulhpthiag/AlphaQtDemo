@@ -34,10 +34,16 @@ QList<DoubleEnumConfigNode>& DoubleEnumListConfigNode::getNodeList()
 QList<DoubleEnumConfigNode*> DoubleEnumListConfigNode::getNodeListP()
 {
 	QList<DoubleEnumConfigNode*> list;
-	for each (auto var in _nodelist)
+	//for each (auto var in _nodelist)
+	//{
+	//	list.append(&var);
+	//}
+
+	for (int i=0;i<_nodelist.count();i++)
 	{
-		list.append(&var);
+		list.append(&_nodelist[i]);
 	}
+
 	return list;
 }
 

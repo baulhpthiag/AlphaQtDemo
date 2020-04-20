@@ -19,6 +19,8 @@
 #include "StringListConfigNode.h"
 #include "StringEnumListConfigNode.h"
 
+#include "TestChildConfig.h"
+
 
 JsonHelper::JsonHelper(QObject *parent)
 	: QObject(parent)
@@ -296,6 +298,16 @@ bool JsonHelper::objToJsonObj(QJsonObject* jsonObj, QObject *obj)
 			objToJsonObj(&tempJsonObj, &tempConfigNode);
 			jsonObj->insert(strKey, tempJsonObj);
 		}
+
+		//自定义
+		else if ("TestChildConfig" == strTypeName)
+		{
+			TestChildConfig tempConfigNode = var.value<TestChildConfig>();
+			QJsonObject tempJsonObj;
+			objToJsonObj(&tempJsonObj, &tempConfigNode);
+			jsonObj->insert(strKey, tempJsonObj);
+		}
+
 		else if (strTypeName.contains("QList"))
 		{
 			qDebug() << "JsonHelper objToJsonObj unknown type " + strTypeName;
@@ -436,7 +448,7 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 
 			obj->setProperty(pStrKey, tempVar);
 		}
-		//自定义数据类型
+
 		else if ("BoolConfigNode" == strTypeName)
 		{
 			BoolConfigNode tempConfigNode;
@@ -706,6 +718,20 @@ bool JsonHelper::jsonObjToObj(QJsonObject* jsonObj, QObject *obj)
 			obj->setProperty(pStrKey, tempVar);
 
 		}
+
+		//自定义
+		else if ("TestChildConfig" == strTypeName)
+		{
+			TestChildConfig tempConfigNode;
+			QJsonObject tempJsonObj = jsonObj->value(strKey).toObject();
+			jsonObjToObj(&tempJsonObj, &tempConfigNode);
+
+			QVariant tempVar;
+			tempVar.setValue<TestChildConfig>(tempConfigNode);
+			obj->setProperty(pStrKey, tempVar);
+
+		}
+
 		else if (strTypeName.contains("QList"))
 		{
 

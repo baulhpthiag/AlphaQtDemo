@@ -64,9 +64,6 @@
     <ClCompile Include="tree\StringEnumConfigNode.cpp">
       <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
-    <ClCompile Include="TestConfig.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="tree\TreeWidgetHelper.cpp">
       <Filter>Source Files\helper</Filter>
     </ClCompile>
@@ -94,6 +91,12 @@
     <ClCompile Include="StringEnumListConfigNode.cpp">
       <Filter>Source Files\helper\treeNode</Filter>
     </ClCompile>
+    <ClCompile Include="TestParentConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestChildConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MainWidget.h">
@@ -119,9 +122,6 @@
     </QtMoc>
     <QtMoc Include="tree\StringEnumConfigNode.h">
       <Filter>Header Files\helper\treeNode</Filter>
-    </QtMoc>
-    <QtMoc Include="TestConfig.h">
-      <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="tree\JsonHelper.h">
       <Filter>Header Files\helper</Filter>
@@ -149,6 +149,12 @@
     </QtMoc>
     <QtMoc Include="StringEnumListConfigNode.h">
       <Filter>Header Files\helper\treeNode</Filter>
+    </QtMoc>
+    <QtMoc Include="TestParentConfig.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TestChildConfig.h">
+      <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 
 #include <QtWidgets/QWidget>
 #include "ui_MainWidget.h"
-#include "TestConfig.h"
+#include "TestParentConfig.h"
 
 class MainWidget : public QWidget
 {
@@ -14,7 +14,7 @@ public:
 private:
 	Ui::MainWidgetClass ui;
 
-	TestConfig testConfig;
+	TestParentConfig testConfig;
 
 	public slots:
 	void openProgramDirButtonClicked();
