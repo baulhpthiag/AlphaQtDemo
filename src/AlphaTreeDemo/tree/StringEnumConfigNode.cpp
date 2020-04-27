@@ -11,6 +11,25 @@ StringEnumConfigNode::StringEnumConfigNode(QObject *parent)
 	this->_isShow = true;
 }
 
+StringEnumConfigNode::StringEnumConfigNode(const StringEnumConfigNode& other, QObject* parent /*= nullptr*/)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_enumIndex = other._enumIndex;
+	this->_valueEnum = other._valueEnum;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+}
+
+StringEnumConfigNode& StringEnumConfigNode::operator=(const StringEnumConfigNode& other)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_enumIndex = other._enumIndex;
+	this->_valueEnum = other._valueEnum;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+	return *this;
+}
+
 StringEnumConfigNode::~StringEnumConfigNode()
 {
 }

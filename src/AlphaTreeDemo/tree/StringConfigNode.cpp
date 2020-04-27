@@ -9,6 +9,23 @@ StringConfigNode::StringConfigNode(QObject *parent)
 	this->_isShow = true;
 }
 
+StringConfigNode::StringConfigNode(const StringConfigNode& other, QObject* parent /*= nullptr*/)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_nodeValue = other._nodeValue;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+}
+
+StringConfigNode& StringConfigNode::operator=(const StringConfigNode & other)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_nodeValue = other._nodeValue;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+	return *this;
+}
+
 StringConfigNode::~StringConfigNode()
 {
 }

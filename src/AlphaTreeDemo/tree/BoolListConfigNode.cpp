@@ -5,9 +5,26 @@ BoolListConfigNode::BoolListConfigNode(QObject *parent)
 {
 }
 
+BoolListConfigNode::BoolListConfigNode(const BoolListConfigNode & other, QObject*parent /*= nullptr*/)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_isShow = other._isShow;
+	this->_isHot = other._isHot;
+	this->_nodelist = other._nodelist;
+}
+
 BoolListConfigNode::~BoolListConfigNode()
 {
 	qDebug() << "~BoolListConfigNode " << this;
+}
+
+BoolListConfigNode& BoolListConfigNode::operator=(const BoolListConfigNode& other)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_isShow = other._isShow;
+	this->_isHot = other._isHot;
+	this->_nodelist = other._nodelist;
+	return *this;
 }
 
 QList<BoolConfigNode>& BoolListConfigNode::getNodeList()

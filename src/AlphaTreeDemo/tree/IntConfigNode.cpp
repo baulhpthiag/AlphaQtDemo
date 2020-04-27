@@ -11,9 +11,30 @@ IntConfigNode::IntConfigNode(QObject *parent)
 	this->_isShow = true;
 }
 
+IntConfigNode::IntConfigNode(const IntConfigNode& other, QObject* parent /*= nullptr*/)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_nodeValue = other._nodeValue;
+	this->_maxValue = other._maxValue;
+	this->_minValue = other._minValue;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+}
+
 IntConfigNode::~IntConfigNode()
 {
 
+}
+
+IntConfigNode& IntConfigNode::operator=(const IntConfigNode& other)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_nodeValue = other._nodeValue;
+	this->_maxValue = other._maxValue;
+	this->_minValue = other._minValue;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+	return *this;
 }
 
 void IntConfigNode::nodeValueChanged(QString strvalue)

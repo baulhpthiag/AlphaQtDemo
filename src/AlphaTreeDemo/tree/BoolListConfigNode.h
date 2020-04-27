@@ -12,24 +12,9 @@ class BoolListConfigNode : public QObject
 		Q_PROPERTY(QList<BoolConfigNode> nodeList READ getNodeList WRITE setNodeList)
 public:
 	BoolListConfigNode(QObject *parent = nullptr);
-	BoolListConfigNode(const BoolListConfigNode & other, QObject*parent = nullptr)
-	{
-		this->_nodeShowName = other._nodeShowName;
-		this->_isShow = other._isShow;
-		this->_isHot = other._isHot;
-		this->_nodelist = other._nodelist;
-	}
-
+	BoolListConfigNode(const BoolListConfigNode & other, QObject*parent = nullptr);
 	~BoolListConfigNode();
-
-	BoolListConfigNode& operator=(const BoolListConfigNode& other) 
-	{
-		this->_nodeShowName = other._nodeShowName;
-		this->_isShow = other._isShow;
-		this->_isHot = other._isHot;
-		this->_nodelist = other._nodelist;
-		return *this;
-	}
+	BoolListConfigNode& operator =(const BoolListConfigNode& other);
 
 	QString _nodeShowName;
 	bool _isShow;

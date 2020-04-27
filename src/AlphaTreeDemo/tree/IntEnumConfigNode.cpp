@@ -11,8 +11,27 @@ IntEnumConfigNode::IntEnumConfigNode(QObject *parent)
 	this->_isShow = true;
 }
 
+IntEnumConfigNode::IntEnumConfigNode(const IntEnumConfigNode& other, QObject* parent /*= nullptr*/)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_enumIndex = other._enumIndex;
+	this->_valueEnum = other._valueEnum;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+}
+
 IntEnumConfigNode::~IntEnumConfigNode()
 {
+}
+
+IntEnumConfigNode& IntEnumConfigNode::operator=(const IntEnumConfigNode & other)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_enumIndex = other._enumIndex;
+	this->_valueEnum = other._valueEnum;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+	return *this;
 }
 
 void IntEnumConfigNode::nodeValueIndexChanged(int index)

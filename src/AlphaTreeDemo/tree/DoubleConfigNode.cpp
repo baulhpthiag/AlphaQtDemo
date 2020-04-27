@@ -11,8 +11,29 @@ DoubleConfigNode::DoubleConfigNode(QObject *parent)
 	this->_isShow = true;
 }
 
+DoubleConfigNode::DoubleConfigNode(const DoubleConfigNode& other, QObject* parent /*= nullptr*/)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_nodeValue = other._nodeValue;
+	this->_maxValue = other._maxValue;
+	this->_minValue = other._minValue;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+}
+
 DoubleConfigNode::~DoubleConfigNode()
 {
+}
+
+DoubleConfigNode& DoubleConfigNode::operator=(const DoubleConfigNode & other)
+{
+	this->_nodeShowName = other._nodeShowName;
+	this->_nodeValue = other._nodeValue;
+	this->_maxValue = other._maxValue;
+	this->_minValue = other._minValue;
+	this->_isHot = other._isHot;
+	this->_isShow = other._isShow;
+	return *this;
 }
 
 void DoubleConfigNode::nodeValueChanged(QString strValue)

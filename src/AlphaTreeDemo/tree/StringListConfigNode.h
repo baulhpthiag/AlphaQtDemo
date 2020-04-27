@@ -14,7 +14,6 @@ public:
 	StringListConfigNode(QObject *parent = nullptr);
 	StringListConfigNode(const StringListConfigNode& other,QObject* parent= nullptr);
 	~StringListConfigNode();
-
 	StringListConfigNode& operator = (const StringListConfigNode& other);
 
 	QString _nodeShowName;
@@ -26,7 +25,6 @@ public:
 	QList<StringConfigNode*> getNodeListP();
 	public slots:
 	void setNodeList(const QList<StringConfigNode>& nodeList);
-
 
 };
 Q_DECLARE_METATYPE(StringListConfigNode)

@@ -89,25 +89,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BoolListConfigNode.cpp" />
-    <ClCompile Include="DoubleEnumListConfigNode.cpp" />
-    <ClCompile Include="DoubleListConfigNode.cpp" />
-    <ClCompile Include="IntEnumListConfigNode.cpp" />
-    <ClCompile Include="IntListConfigNode.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWidget.cpp" />
-    <ClCompile Include="StringEnumListConfigNode.cpp" />
-    <ClCompile Include="StringListConfigNode.cpp" />
     <ClCompile Include="TestChildConfig.cpp" />
     <ClCompile Include="TestParentConfig.cpp" />
     <ClCompile Include="tree\BoolConfigNode.cpp" />
+    <ClCompile Include="tree\BoolListConfigNode.cpp" />
     <ClCompile Include="tree\DoubleConfigNode.cpp" />
     <ClCompile Include="tree\DoubleEnumConfigNode.cpp" />
+    <ClCompile Include="tree\DoubleEnumListConfigNode.cpp" />
+    <ClCompile Include="tree\DoubleListConfigNode.cpp" />
     <ClCompile Include="tree\IntConfigNode.cpp" />
     <ClCompile Include="tree\IntEnumConfigNode.cpp" />
+    <ClCompile Include="tree\IntEnumListConfigNode.cpp" />
+    <ClCompile Include="tree\IntListConfigNode.cpp" />
     <ClCompile Include="tree\JsonHelper.cpp" />
     <ClCompile Include="tree\StringConfigNode.cpp" />
     <ClCompile Include="tree\StringEnumConfigNode.cpp" />
+    <ClCompile Include="tree\StringEnumListConfigNode.cpp" />
+    <ClCompile Include="tree\StringListConfigNode.cpp" />
     <ClCompile Include="tree\TreeWidgetHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -120,28 +120,7 @@
     <QtRcc Include="MainWidget.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="tree\BoolConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="tree\DoubleConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="tree\DoubleEnumConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="tree\IntConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="tree\IntEnumConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
     <QtMoc Include="tree\JsonHelper.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="tree\StringConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="tree\StringEnumConfigNode.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="tree\TreeWidgetHelper.h" />
@@ -150,28 +129,49 @@
     <QtMoc Include="TestParentConfig.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="BoolListConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="DoubleListConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="DoubleEnumListConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="IntListConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="IntEnumListConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="StringListConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="StringEnumListConfigNode.h" />
-  </ItemGroup>
-  <ItemGroup>
     <QtMoc Include="TestChildConfig.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\BoolConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\BoolListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\DoubleConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\DoubleEnumConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\DoubleEnumListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\DoubleListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\IntConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\IntEnumConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\IntEnumListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\IntListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\StringConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\StringEnumConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\StringEnumListConfigNode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tree\StringListConfigNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

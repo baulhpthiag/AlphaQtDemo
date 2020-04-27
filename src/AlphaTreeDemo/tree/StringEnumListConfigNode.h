@@ -14,7 +14,6 @@ public:
 	StringEnumListConfigNode(QObject *parent = nullptr);
 	StringEnumListConfigNode(const StringEnumListConfigNode& other,QObject*parent = nullptr);
 	~StringEnumListConfigNode();
-
 	StringEnumListConfigNode& operator = (const StringEnumListConfigNode & other);
 
 	QString _nodeShowName;

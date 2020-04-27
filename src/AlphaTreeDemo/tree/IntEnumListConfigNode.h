@@ -14,7 +14,6 @@ public:
 	IntEnumListConfigNode(QObject *parent=nullptr);
 	IntEnumListConfigNode(const IntEnumListConfigNode& other, QObject * parent = nullptr);
 	~IntEnumListConfigNode();
-
 	IntEnumListConfigNode& operator=(const IntEnumListConfigNode& other);
 
 	QString _nodeShowName;
