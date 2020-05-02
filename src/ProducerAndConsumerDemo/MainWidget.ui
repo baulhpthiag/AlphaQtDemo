@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWidgetClass</class>
+ <widget class="QWidget" name="MainWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+   <item>
+    <widget class="QWidget" name="topWidget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="startButton">
+        <property name="text">
+         <string>启动</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopButton">
+        <property name="text">
+         <string>停止</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="bottomWidget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QTextBrowser" name="producerTextBrowser"/>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="imageButterTextBrowser"/>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="consumerTextBrowser"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MainWidget.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>startButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>startButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>-42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stopButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>stopButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>466</x>
+     <y>26</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>465</x>
+     <y>-69</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>startButtonClicked()</slot>
+  <slot>stopButtonClicked()</slot>
+ </slots>
+</ui>
