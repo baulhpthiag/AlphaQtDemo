@@ -5,6 +5,7 @@
 #include <QThread>
 #include "Consumer.h"
 #include "Producer.h"
+#include "Product.h"
 
 class MainWidget : public QWidget
 {
@@ -12,7 +13,7 @@ class MainWidget : public QWidget
 
 public:
 	MainWidget(QWidget *parent = Q_NULLPTR);
-
+	~MainWidget();
 private:
 	Ui::MainWidgetClass ui;
 
@@ -22,10 +23,22 @@ private:
 	QThread consumerThread;
 	QThread producerThread;
 
+	bool producerState;
+
 	void init();
 
 	public slots:
 
 	void startButtonClicked();
 	void stopButtonClicked();
+	void producerMessageChanged(QString message);
+	void consumerMessageChanged(QString message);
+
+	void addProduct(Product product);
+
+signals:
+	void signalContinueProduce();
+	void signalContinueConsume();
+	void signalProducerChangeState(bool b);
+
 };

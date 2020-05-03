@@ -93,6 +93,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWidget.cpp" />
     <ClCompile Include="Producer.cpp" />
+    <ClCompile Include="Product.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MainWidget.h" />
@@ -108,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Producer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Product.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

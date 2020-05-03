@@ -31,6 +31,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="clearTextBrowerButton">
+        <property name="text">
+         <string>清除</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
@@ -39,9 +46,6 @@
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QTextBrowser" name="producerTextBrowser"/>
-      </item>
-      <item>
-       <widget class="QTextBrowser" name="imageButterTextBrowser"/>
       </item>
       <item>
        <widget class="QTextBrowser" name="consumerTextBrowser"/>

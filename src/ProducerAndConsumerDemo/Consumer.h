@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QObject>
-
+#include "Product.h"
 class Consumer : public QObject
 {
 	Q_OBJECT
@@ -10,13 +10,16 @@ public:
 	Consumer(QObject *parent = nullptr);
 	~Consumer();
 
-	QList<int> products;
+	int interval;
+	bool continueFlag;
+	bool consumeFlag;
+
+	QList<Product> products;
 
 	public slots:
-	void addProduct(int product);
-
-	void process();
+	void continueConsume();
+	void signalConsume(Product product);
 
 signals:
-	void signalSendMessage(QString message);
+	void signalMessageChanged(QString message);
 };

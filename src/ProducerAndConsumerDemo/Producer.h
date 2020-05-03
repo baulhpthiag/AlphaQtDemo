@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include "Product.h"
 
 class Producer : public QObject
 {
@@ -9,13 +10,15 @@ class Producer : public QObject
 public:
 	Producer(QObject *parent = nullptr);
 	~Producer();
-	bool runFlag;
-	int product;
+	bool continueFlag;
+	bool produceFlag;
+	int data;
+	int interval;
+
 public slots:
-void produce();
-void changeState(bool b);
+void continueProduce();
 
 signals:
-void signalProduceProduct(int i);
-void signalSendMessage(QString message);
+void signalProduceProduct(Product product);
+void signalMessageChanged(QString message);
 };

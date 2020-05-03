@@ -1,32 +1,37 @@
 #include "Producer.h"
 #include <QThread>
+#include <QDebug>
+#include <QUuid>
 
 Producer::Producer(QObject *parent)
 	: QObject(parent)
 {
-	product = 0;
+	data = 0;
+	continueFlag = false;
+	produceFlag = false;
+	interval = 2;
 }
 
 Producer::~Producer()
 {
 }
 
-void Producer::produce()
+void Producer::continueProduce()
 {
-	while (true)
+	while (continueFlag)
 	{
-		if (runFlag)
+		if (produceFlag)
 		{
-			QThread::msleep(100);
-			emit signalSendMessage(u8"producer生产了一个product:"+QString::number(product));
+			QThread::sleep(interval);
+			Product product;
+			product._productId = QUuid::createUuid().toString();
+			product._data = data;
+			emit signalMessageChanged(u8"producer生产了一个product:"+product.toString());
 			emit signalProduceProduct(product);
-			product++;
+			data++;
 		}
 
 	}
 }
 
-void Producer::changeState(bool b)
-{
-	runFlag = b;
-}
+
