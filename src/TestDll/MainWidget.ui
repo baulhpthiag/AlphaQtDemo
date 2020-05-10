@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWidgetClass</class>
+ <widget class="QWidget" name="MainWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="loadDllButton">
+        <property name="text">
+         <string>加载dll</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="invokeDllButton">
+        <property name="text">
+         <string>调用dll</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTextBrowser" name="textBrowser"/>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MainWidget.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>loadDllButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>loadDllButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>166</x>
+     <y>-47</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>invokeDllButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWidgetClass</receiver>
+   <slot>invokeDllButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>444</x>
+     <y>26</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>-64</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>loadDllButtonClicked()</slot>
+  <slot>invokeDllButtonClicked()</slot>
+ </slots>
+</ui>
