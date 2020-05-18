@@ -102,6 +102,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileAndDirDemo", "src\FileA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestDll", "src\TestDll\TestDll.vcxproj", "{14F37735-9569-46E2-ACF3-842F2E983DDE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "comtool", "..\comtool\comtool\comtool.vcxproj", "{83ACDF68-0E96-3AB8-8AAD-1D28566C2C99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -300,6 +302,10 @@ Global
 		{14F37735-9569-46E2-ACF3-842F2E983DDE}.Debug|x64.Build.0 = Debug|x64
 		{14F37735-9569-46E2-ACF3-842F2E983DDE}.Release|x64.ActiveCfg = Release|x64
 		{14F37735-9569-46E2-ACF3-842F2E983DDE}.Release|x64.Build.0 = Release|x64
+		{83ACDF68-0E96-3AB8-8AAD-1D28566C2C99}.Debug|x64.ActiveCfg = Debug|x64
+		{83ACDF68-0E96-3AB8-8AAD-1D28566C2C99}.Debug|x64.Build.0 = Debug|x64
+		{83ACDF68-0E96-3AB8-8AAD-1D28566C2C99}.Release|x64.ActiveCfg = Release|x64
+		{83ACDF68-0E96-3AB8-8AAD-1D28566C2C99}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
